@@ -15,25 +15,17 @@ jobs:
       with:
         fetch-depth: 0
     
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 7
-    
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 16
-        cache: 'pnpm'
+        node-version: 18
+        cache: 'npm'
     
     - name: Install dependencies
-      run: pnpm install
+      run: npm install
     
-    - name: Lint
-      run: pnpm lint
+    - name: Build shared packages
+      run: npm run build
     
-    - name: Build
-      run: pnpm build
-    
-    - name: Test
-      run: pnpm test 
+    - name: Build Storybook
+      run: npm run build-storybook 

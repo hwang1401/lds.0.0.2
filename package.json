@@ -16,8 +16,9 @@
     "storybook": "cd packages/storybook && npm run storybook",
     "build-storybook": "cd packages/storybook && npm run build-storybook",
     "clean": "turbo clean && rm -rf node_modules packages/*/node_modules",
-    "fresh": "npm run clean && pnpm install",
-    "deploy": "npm run build-storybook"
+    "fresh": "npm run clean && npm install",
+    "deploy": "npm run build-storybook",
+    "release": "changeset publish"
   },
   "devDependencies": {
     "turbo": "^2.5.3",
