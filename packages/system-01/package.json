@@ -1,6 +1,6 @@
 {
-  "name": "@lumir/system-01",
-  "version": "1.0.0",
+  "name": "lumir-system-01",
+  "version": "1.0.1",
   "type": "module",
   "description": "Lumir Design System 01 - Clean & Efficient",
   "main": "dist/index.js",
@@ -44,11 +44,10 @@
     "build:components": "rollup -c",
     "build": "npm run build:tokens && npm run build:components",
     "build:watch": "concurrently \"npm run build:tokens\" \"npm run build:components -- --watch\"",
-    "typecheck": "tsc --noEmit",
-    "prebuild": "cd ../shared && npm run build"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@lumir/shared": "file:../shared",
+    "lumir-shared": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Divider, Frame, Text, Surface } from '@lumir/shared';
+import { Divider, Frame, Text, Surface } from 'lumir-shared';
 
 const meta: Meta<typeof Divider> = {
   title: 'Shared/Primitives/Divider',

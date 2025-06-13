@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox as System01Checkbox } from '@lumir/system-01';
-import { Checkbox as System02Checkbox } from '@lumir/system-02';
-import { Text, Frame } from '@lumir/shared';
+import { Checkbox as System01Checkbox } from 'lumir-system-01';
+import { Checkbox as System02Checkbox } from 'lumir-system-02';
+import { Text, Frame } from 'lumir-shared';
 
 // 시스템별 Checkbox 컴포넌트 매핑
 const CheckboxComponents = {

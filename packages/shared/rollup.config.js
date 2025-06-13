@@ -33,13 +33,11 @@ export default {
       inlineSources: true
     }),
     postcss({
-      modules: true,
+      modules: {
+        generateScopedName: '[local]'
+      },
       extract: 'styles.css',
-      namedExports: true,
-      minimize: true,
-      config: {
-        path: './postcss.config.js'
-      }
+      minimize: true
     }),
   ],
 }; 

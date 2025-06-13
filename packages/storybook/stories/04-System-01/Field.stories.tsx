@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Field } from '@lumir/system-01';
-import { Frame, Text } from '@lumir/shared';
+import { Field } from 'lumir-system-01';
+import { Frame, Text } from 'lumir-shared';
 
 const meta: Meta<typeof Field> = {
   title: 'System-01/Compounds/Field',

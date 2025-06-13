@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox, Button } from '@lumir/system-01';
-import { Frame, Surface, Sizing, Text } from '@lumir/shared';
+import { Checkbox, Button } from 'lumir-system-01';
+import { Frame, Surface, Sizing, Text } from 'lumir-shared';
 
 const meta: Meta<typeof Checkbox> = {
   title: 'System-01/Compounds/SelectionControls/Checkbox',

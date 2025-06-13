@@ -105,7 +105,7 @@
 }
 
 .interactive--hover-elevation:hover {
-  box-shadow: var(--foundation-shadow-light-20);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* === 상태 클래스들 === */

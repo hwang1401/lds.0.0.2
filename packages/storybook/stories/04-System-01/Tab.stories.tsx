@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Tab } from '@lumir/system-01';
-import { Text, Frame, Surface } from '@lumir/shared';
+import { Tab } from 'lumir-system-01';
+import { Text, Frame, Surface } from 'lumir-shared';
 
 const meta: Meta<typeof Tab> = {
   title: 'System-01/Compounds/Tab',

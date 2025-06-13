@@ -2,32 +2,23 @@
   "name": "@lumir/storybook",
   "version": "0.1.0",
   "private": true,
-  "description": "Lumir Design System Storybook",
   "scripts": {
-    "dev": "storybook dev -p 6006",
-    "build": "storybook build",
-    "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "preview": "storybook build && npx http-server storybook-static",
-    "prebuild": "cd ../shared && npm run build && cd ../system-01 && npm run build && cd ../system-02 && npm run build"
+    "build-storybook": "storybook build",
+    "build": "storybook build"
   },
   "dependencies": {
-    "@lumir/shared": "file:../shared",
-    "@lumir/system-01": "file:../system-01",
-    "@lumir/system-02": "file:../system-02",
+    "lumir-shared": "^1.0.0",
+    "lumir-system-01": "^1.0.1",
+    "lumir-system-02": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^8.0.0",
     "@storybook/addon-essentials": "^8.0.0",
-    "@storybook/addon-interactions": "^8.0.0",
     "@storybook/addon-links": "^8.0.0",
-    "@storybook/blocks": "^8.0.0",
     "@storybook/react": "^8.0.0",
     "@storybook/react-vite": "^8.0.0",
-    "@storybook/test": "^8.0.0",
-    "@storybook/theming": "^8.0.0",
     "storybook": "^8.0.0",
     "vite": "^5.0.0"
   }

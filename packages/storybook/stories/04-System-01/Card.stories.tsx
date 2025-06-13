@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card } from '@lumir/system-01';
-import { Frame, Surface, Sizing } from '@lumir/shared';
+import { Card } from 'lumir-system-01';
+import { Frame, Surface, Sizing } from 'lumir-shared';
 
 const meta: Meta<typeof Card> = {
   title: 'System-01/Compounds/Card',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Frame, Text, Surface } from '@lumir/shared';
-import type { DisplayValue, PositionValue, FlexDirection, JustifyContent, AlignItems, SpacingValue } from '@lumir/shared';
+import { Frame, Text, Surface } from 'lumir-shared';
+import type { DisplayValue, PositionValue, FlexDirection, JustifyContent, AlignItems, SpacingValue } from 'lumir-shared';
 
 const meta: Meta<typeof Frame> = {
   title: 'Shared/Primitives/Frame',

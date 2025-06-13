@@ -1,5 +1,5 @@
 {
-  "name": "@lumir/shared",
+  "name": "lumir-shared",
   "version": "1.0.0",
   "type": "module",
   "description": "Lumir Design System Foundation & Primitives",

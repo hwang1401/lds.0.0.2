@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Badge } from '@lumir/system-01';
-import { Frame } from '@lumir/shared';
+import { Badge } from 'lumir-system-01';
+import { Frame } from 'lumir-shared';
 
 const meta: Meta<typeof Badge> = {
   title: 'System-01/Compounds/Badge',

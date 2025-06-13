@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ComboBox } from '@lumir/system-01';
-import { Surface, Frame, Sizing, Text } from '@lumir/shared';
+import { ComboBox } from 'lumir-system-01';
+import { Surface, Frame, Sizing, Text } from 'lumir-shared';
 
 const meta: Meta<typeof ComboBox> = {
   title: 'System-01/Compounds/ComboBox',

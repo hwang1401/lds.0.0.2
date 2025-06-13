@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Icon, Text, Frame, Surface } from '@lumir/shared';
-import type { IconName, IconSize, IconColor } from '@lumir/shared';
-import { Field, Badge, Button, TextDisplay } from '@lumir/system-01';
-import * as GeneratedIcons from '@lumir/shared';
+import { Icon, Text, Frame, Surface } from 'lumir-shared';
+import type { IconName, IconSize, IconColor } from 'lumir-shared';
+import { Field, Badge, Button, TextDisplay } from 'lumir-system-01';
+import * as GeneratedIcons from 'lumir-shared';
 
 const meta: Meta<typeof Icon> = {
   title: 'Shared/Primitives/Icon',

@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Chip } from '@lumir/system-01';
-import { Surface, Frame, Text } from '@lumir/shared';
+import { Chip } from 'lumir-system-01';
+import { Surface, Frame, Text } from 'lumir-shared';
 
 const meta: Meta<typeof Chip> = {
   title: 'System-01/Compounds/Chip',

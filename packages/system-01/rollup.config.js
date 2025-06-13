@@ -42,7 +42,7 @@ export default {
       extract: 'styles.css',
       minimize: true,
       modules: {
-        generateScopedName: '[name]__[local]___[hash:base64:5]'
+        generateScopedName: '[local]'
       }
     })
   ]

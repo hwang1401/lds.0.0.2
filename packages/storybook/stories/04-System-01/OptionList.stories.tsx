@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { OptionList } from '@lumir/system-01';
-import { Frame, Surface, Sizing } from '@lumir/shared';
+import { OptionList } from 'lumir-system-01';
+import { Frame, Surface, Sizing } from 'lumir-shared';
 
 const meta: Meta<typeof OptionList> = {
   title: 'System-01/Compounds/OptionList',

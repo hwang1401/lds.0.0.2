@@ -730,6 +730,67 @@
         }
       }
     },
+    "objectFit": {
+      "fill": "fill",
+      "contain": "contain",
+      "cover": "cover",
+      "none": "none",
+      "scaleDown": "scale-down",
+      "stretch": "fill",
+      "fitInside": "contain",
+      "fillArea": "fill",
+      "crop": "cover"
+    },
+    "objectPosition": {
+      "center": "center",
+      "top": "top",
+      "bottom": "bottom",
+      "left": "left",
+      "right": "right",
+      "topLeft": "top left",
+      "topRight": "top right",
+      "bottomLeft": "bottom left",
+      "bottomRight": "bottom right",
+      "cropCenter": "center",
+      "cropTop": "top",
+      "cropBottom": "bottom",
+      "cropLeft": "left",
+      "cropRight": "right",
+      "cropTopLeft": "top left",
+      "cropTopRight": "top right",
+      "cropBottomLeft": "bottom left",
+      "cropBottomRight": "bottom right"
+    },
+    "animation": {
+      "duration": {
+        "instant": "0ms",
+        "fast": "150ms",
+        "normal": "300ms",
+        "slow": "500ms"
+      },
+      "easing": {
+        "default": "ease",
+        "linear": "linear",
+        "easeIn": "ease-in",
+        "easeOut": "ease-out",
+        "easeInOut": "ease-in-out"
+      }
+    },
+    "opacity": {
+      "disabled": "0.5",
+      "hover": "0.8",
+      "active": "0.6",
+      "transparent": "0",
+      "opaque": "1"
+    },
+    "focus": {
+      "outline": {
+        "width": "2px",
+        "style": "solid",
+        "color": "#2196F3",
+        "offset": "2px"
+      }
+    },
     "blur": {
       "0": "0px",
       "20": "2px",

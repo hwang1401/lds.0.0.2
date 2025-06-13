@@ -336,64 +336,64 @@
 /* === 반응형 Object-fit 클래스들 === */
 @media (max-width: 767px) {
   .sizing--object-fit-fill--mobile img,
-  .sizing--object-fit-fill--mobile video { object-fit: var(--foundation-object-fit-fill); }
+  .sizing--object-fit-fill--mobile video { object-fit: fill; }
   .sizing--object-fit-contain--mobile img,
-  .sizing--object-fit-contain--mobile video { object-fit: var(--foundation-object-fit-contain); }
+  .sizing--object-fit-contain--mobile video { object-fit: contain; }
   .sizing--object-fit-cover--mobile img,
-  .sizing--object-fit-cover--mobile video { object-fit: var(--foundation-object-fit-cover); }
+  .sizing--object-fit-cover--mobile video { object-fit: cover; }
   .sizing--object-fit-none--mobile img,
-  .sizing--object-fit-none--mobile video { object-fit: var(--foundation-object-fit-none); }
+  .sizing--object-fit-none--mobile video { object-fit: none; }
   .sizing--object-fit-scale-down--mobile img,
-  .sizing--object-fit-scale-down--mobile video { object-fit: var(--foundation-object-fit-scaleDown); }
+  .sizing--object-fit-scale-down--mobile video { object-fit: scale-down; }
 
   /* 별칭 클래스들 - Mobile */
   .sizing--object-fit-stretch--mobile img,
-  .sizing--object-fit-stretch--mobile video { object-fit: var(--foundation-object-fit-stretch); }
+  .sizing--object-fit-stretch--mobile video { object-fit: fill; }
   .sizing--object-fit-fit-inside--mobile img,
-  .sizing--object-fit-fit-inside--mobile video { object-fit: var(--foundation-object-fit-fitInside); }
+  .sizing--object-fit-fit-inside--mobile video { object-fit: contain; }
   .sizing--object-fit-fill-area--mobile img,
-  .sizing--object-fit-fill-area--mobile video { object-fit: var(--foundation-object-fit-fillArea); }
+  .sizing--object-fit-fill-area--mobile video { object-fit: fill; }
   .sizing--object-fit-crop--mobile img,
-  .sizing--object-fit-crop--mobile video { object-fit: var(--foundation-object-fit-crop); }
+  .sizing--object-fit-crop--mobile video { object-fit: cover; }
 
   .sizing--object-position-center--mobile img,
-  .sizing--object-position-center--mobile video { object-position: var(--foundation-object-position-center); }
+  .sizing--object-position-center--mobile video { object-position: center; }
   .sizing--object-position-top--mobile img,
-  .sizing--object-position-top--mobile video { object-position: var(--foundation-object-position-top); }
+  .sizing--object-position-top--mobile video { object-position: top; }
   .sizing--object-position-bottom--mobile img,
-  .sizing--object-position-bottom--mobile video { object-position: var(--foundation-object-position-bottom); }
+  .sizing--object-position-bottom--mobile video { object-position: bottom; }
   .sizing--object-position-left--mobile img,
-  .sizing--object-position-left--mobile video { object-position: var(--foundation-object-position-left); }
+  .sizing--object-position-left--mobile video { object-position: left; }
   .sizing--object-position-right--mobile img,
-  .sizing--object-position-right--mobile video { object-position: var(--foundation-object-position-right); }
+  .sizing--object-position-right--mobile video { object-position: right; }
   .sizing--object-position-top-left--mobile img,
-  .sizing--object-position-top-left--mobile video { object-position: var(--foundation-object-position-topLeft); }
+  .sizing--object-position-top-left--mobile video { object-position: top left; }
   .sizing--object-position-top-right--mobile img,
-  .sizing--object-position-top-right--mobile video { object-position: var(--foundation-object-position-topRight); }
+  .sizing--object-position-top-right--mobile video { object-position: top right; }
   .sizing--object-position-bottom-left--mobile img,
-  .sizing--object-position-bottom-left--mobile video { object-position: var(--foundation-object-position-bottomLeft); }
+  .sizing--object-position-bottom-left--mobile video { object-position: bottom left; }
   .sizing--object-position-bottom-right--mobile img,
-  .sizing--object-position-bottom-right--mobile video { object-position: var(--foundation-object-position-bottomRight); }
+  .sizing--object-position-bottom-right--mobile video { object-position: bottom right; }
 
   /* crop 별칭 클래스들 - Mobile */
   .sizing--object-position-crop-center--mobile img,
-  .sizing--object-position-crop-center--mobile video { object-position: var(--foundation-object-position-cropCenter); }
+  .sizing--object-position-crop-center--mobile video { object-position: var(--foundation-foundation-objectposition-cropcenter); }
   .sizing--object-position-crop-top--mobile img,
-  .sizing--object-position-crop-top--mobile video { object-position: var(--foundation-object-position-cropTop); }
+  .sizing--object-position-crop-top--mobile video { object-position: var(--foundation-foundation-objectposition-croptop); }
   .sizing--object-position-crop-bottom--mobile img,
-  .sizing--object-position-crop-bottom--mobile video { object-position: var(--foundation-object-position-cropBottom); }
+  .sizing--object-position-crop-bottom--mobile video { object-position: var(--foundation-foundation-objectposition-cropbottom); }
   .sizing--object-position-crop-left--mobile img,
-  .sizing--object-position-crop-left--mobile video { object-position: var(--foundation-object-position-cropLeft); }
+  .sizing--object-position-crop-left--mobile video { object-position: var(--foundation-foundation-objectposition-cropleft); }
   .sizing--object-position-crop-right--mobile img,
-  .sizing--object-position-crop-right--mobile video { object-position: var(--foundation-object-position-cropRight); }
+  .sizing--object-position-crop-right--mobile video { object-position: var(--foundation-foundation-objectposition-cropright); }
   .sizing--object-position-crop-top-left--mobile img,
-  .sizing--object-position-crop-top-left--mobile video { object-position: var(--foundation-object-position-cropTopLeft); }
+  .sizing--object-position-crop-top-left--mobile video { object-position: var(--foundation-foundation-objectposition-croptopleft); }
   .sizing--object-position-crop-top-right--mobile img,
-  .sizing--object-position-crop-top-right--mobile video { object-position: var(--foundation-object-position-cropTopRight); }
+  .sizing--object-position-crop-top-right--mobile video { object-position: var(--foundation-foundation-objectposition-croptopright); }
   .sizing--object-position-crop-bottom-left--mobile img,
-  .sizing--object-position-crop-bottom-left--mobile video { object-position: var(--foundation-object-position-cropBottomLeft); }
+  .sizing--object-position-crop-bottom-left--mobile video { object-position: var(--foundation-foundation-objectposition-cropbottomleft); }
   .sizing--object-position-crop-bottom-right--mobile img,
-  .sizing--object-position-crop-bottom-right--mobile video { object-position: var(--foundation-object-position-cropBottomRight); }
+  .sizing--object-position-crop-bottom-right--mobile video { object-position: var(--foundation-foundation-objectposition-cropbottomright); }
 
   .sizing--box-sizing-content-box--mobile { box-sizing: content-box; }
   .sizing--box-sizing-border-box--mobile { box-sizing: border-box; }
@@ -401,64 +401,64 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .sizing--object-fit-fill--tablet img,
-  .sizing--object-fit-fill--tablet video { object-fit: var(--foundation-object-fit-fill); }
+  .sizing--object-fit-fill--tablet video { object-fit: var(--foundation-foundation-objectfit-fill); }
   .sizing--object-fit-contain--tablet img,
-  .sizing--object-fit-contain--tablet video { object-fit: var(--foundation-object-fit-contain); }
+  .sizing--object-fit-contain--tablet video { object-fit: var(--foundation-foundation-objectfit-contain); }
   .sizing--object-fit-cover--tablet img,
-  .sizing--object-fit-cover--tablet video { object-fit: var(--foundation-object-fit-cover); }
+  .sizing--object-fit-cover--tablet video { object-fit: var(--foundation-foundation-objectfit-cover); }
   .sizing--object-fit-none--tablet img,
-  .sizing--object-fit-none--tablet video { object-fit: var(--foundation-object-fit-none); }
+  .sizing--object-fit-none--tablet video { object-fit: var(--foundation-foundation-objectfit-none); }
   .sizing--object-fit-scale-down--tablet img,
-  .sizing--object-fit-scale-down--tablet video { object-fit: var(--foundation-object-fit-scaleDown); }
+  .sizing--object-fit-scale-down--tablet video { object-fit: var(--foundation-foundation-objectfit-scaledown); }
 
   /* 별칭 클래스들 - Tablet */
   .sizing--object-fit-stretch--tablet img,
-  .sizing--object-fit-stretch--tablet video { object-fit: var(--foundation-object-fit-stretch); }
+  .sizing--object-fit-stretch--tablet video { object-fit: var(--foundation-foundation-objectfit-stretch); }
   .sizing--object-fit-fit-inside--tablet img,
-  .sizing--object-fit-fit-inside--tablet video { object-fit: var(--foundation-object-fit-fitInside); }
+  .sizing--object-fit-fit-inside--tablet video { object-fit: var(--foundation-foundation-objectfit-fitinside); }
   .sizing--object-fit-fill-area--tablet img,
-  .sizing--object-fit-fill-area--tablet video { object-fit: var(--foundation-object-fit-fillArea); }
+  .sizing--object-fit-fill-area--tablet video { object-fit: var(--foundation-foundation-objectfit-fillarea); }
   .sizing--object-fit-crop--tablet img,
-  .sizing--object-fit-crop--tablet video { object-fit: var(--foundation-object-fit-crop); }
+  .sizing--object-fit-crop--tablet video { object-fit: var(--foundation-foundation-objectfit-crop); }
 
   .sizing--object-position-center--tablet img,
-  .sizing--object-position-center--tablet video { object-position: var(--foundation-object-position-center); }
+  .sizing--object-position-center--tablet video { object-position: var(--foundation-foundation-objectposition-center); }
   .sizing--object-position-top--tablet img,
-  .sizing--object-position-top--tablet video { object-position: var(--foundation-object-position-top); }
+  .sizing--object-position-top--tablet video { object-position: var(--foundation-foundation-objectposition-top); }
   .sizing--object-position-bottom--tablet img,
-  .sizing--object-position-bottom--tablet video { object-position: var(--foundation-object-position-bottom); }
+  .sizing--object-position-bottom--tablet video { object-position: var(--foundation-foundation-objectposition-bottom); }
   .sizing--object-position-left--tablet img,
-  .sizing--object-position-left--tablet video { object-position: var(--foundation-object-position-left); }
+  .sizing--object-position-left--tablet video { object-position: var(--foundation-foundation-objectposition-left); }
   .sizing--object-position-right--tablet img,
-  .sizing--object-position-right--tablet video { object-position: var(--foundation-object-position-right); }
+  .sizing--object-position-right--tablet video { object-position: var(--foundation-foundation-objectposition-right); }
   .sizing--object-position-top-left--tablet img,
-  .sizing--object-position-top-left--tablet video { object-position: var(--foundation-object-position-topLeft); }
+  .sizing--object-position-top-left--tablet video { object-position: var(--foundation-foundation-objectposition-topleft); }
   .sizing--object-position-top-right--tablet img,
-  .sizing--object-position-top-right--tablet video { object-position: var(--foundation-object-position-topRight); }
+  .sizing--object-position-top-right--tablet video { object-position: var(--foundation-foundation-objectposition-topright); }
   .sizing--object-position-bottom-left--tablet img,
-  .sizing--object-position-bottom-left--tablet video { object-position: var(--foundation-object-position-bottomLeft); }
+  .sizing--object-position-bottom-left--tablet video { object-position: var(--foundation-foundation-objectposition-bottomleft); }
   .sizing--object-position-bottom-right--tablet img,
-  .sizing--object-position-bottom-right--tablet video { object-position: var(--foundation-object-position-bottomRight); }
+  .sizing--object-position-bottom-right--tablet video { object-position: var(--foundation-foundation-objectposition-bottomright); }
 
   /* crop 별칭 클래스들 - Tablet */
   .sizing--object-position-crop-center--tablet img,
-  .sizing--object-position-crop-center--tablet video { object-position: var(--foundation-object-position-cropCenter); }
+  .sizing--object-position-crop-center--tablet video { object-position: var(--foundation-foundation-objectposition-cropcenter); }
   .sizing--object-position-crop-top--tablet img,
-  .sizing--object-position-crop-top--tablet video { object-position: var(--foundation-object-position-cropTop); }
+  .sizing--object-position-crop-top--tablet video { object-position: var(--foundation-foundation-objectposition-croptop); }
   .sizing--object-position-crop-bottom--tablet img,
-  .sizing--object-position-crop-bottom--tablet video { object-position: var(--foundation-object-position-cropBottom); }
+  .sizing--object-position-crop-bottom--tablet video { object-position: var(--foundation-foundation-objectposition-cropbottom); }
   .sizing--object-position-crop-left--tablet img,
-  .sizing--object-position-crop-left--tablet video { object-position: var(--foundation-object-position-cropLeft); }
+  .sizing--object-position-crop-left--tablet video { object-position: var(--foundation-foundation-objectposition-cropleft); }
   .sizing--object-position-crop-right--tablet img,
-  .sizing--object-position-crop-right--tablet video { object-position: var(--foundation-object-position-cropRight); }
+  .sizing--object-position-crop-right--tablet video { object-position: var(--foundation-foundation-objectposition-cropright); }
   .sizing--object-position-crop-top-left--tablet img,
-  .sizing--object-position-crop-top-left--tablet video { object-position: var(--foundation-object-position-cropTopLeft); }
+  .sizing--object-position-crop-top-left--tablet video { object-position: var(--foundation-foundation-objectposition-croptopleft); }
   .sizing--object-position-crop-top-right--tablet img,
-  .sizing--object-position-crop-top-right--tablet video { object-position: var(--foundation-object-position-cropTopRight); }
+  .sizing--object-position-crop-top-right--tablet video { object-position: var(--foundation-foundation-objectposition-croptopright); }
   .sizing--object-position-crop-bottom-left--tablet img,
-  .sizing--object-position-crop-bottom-left--tablet video { object-position: var(--foundation-object-position-cropBottomLeft); }
+  .sizing--object-position-crop-bottom-left--tablet video { object-position: var(--foundation-foundation-objectposition-cropbottomleft); }
   .sizing--object-position-crop-bottom-right--tablet img,
-  .sizing--object-position-crop-bottom-right--tablet video { object-position: var(--foundation-object-position-cropBottomRight); }
+  .sizing--object-position-crop-bottom-right--tablet video { object-position: var(--foundation-foundation-objectposition-cropbottomright); }
 
   .sizing--box-sizing-content-box--tablet { box-sizing: content-box; }
   .sizing--box-sizing-border-box--tablet { box-sizing: border-box; }
@@ -466,64 +466,64 @@
 
 @media (min-width: 1024px) and (max-width: 1439px) {
   .sizing--object-fit-fill--desktop img,
-  .sizing--object-fit-fill--desktop video { object-fit: var(--foundation-object-fit-fill); }
+  .sizing--object-fit-fill--desktop video { object-fit: var(--foundation-foundation-objectfit-fill); }
   .sizing--object-fit-contain--desktop img,
-  .sizing--object-fit-contain--desktop video { object-fit: var(--foundation-object-fit-contain); }
+  .sizing--object-fit-contain--desktop video { object-fit: var(--foundation-foundation-objectfit-contain); }
   .sizing--object-fit-cover--desktop img,
-  .sizing--object-fit-cover--desktop video { object-fit: var(--foundation-object-fit-cover); }
+  .sizing--object-fit-cover--desktop video { object-fit: var(--foundation-foundation-objectfit-cover); }
   .sizing--object-fit-none--desktop img,
-  .sizing--object-fit-none--desktop video { object-fit: var(--foundation-object-fit-none); }
+  .sizing--object-fit-none--desktop video { object-fit: var(--foundation-foundation-objectfit-none); }
   .sizing--object-fit-scale-down--desktop img,
-  .sizing--object-fit-scale-down--desktop video { object-fit: var(--foundation-object-fit-scaleDown); }
+  .sizing--object-fit-scale-down--desktop video { object-fit: var(--foundation-foundation-objectfit-scaledown); }
 
   /* 별칭 클래스들 - Desktop */
   .sizing--object-fit-stretch--desktop img,
-  .sizing--object-fit-stretch--desktop video { object-fit: var(--foundation-object-fit-stretch); }
+  .sizing--object-fit-stretch--desktop video { object-fit: var(--foundation-foundation-objectfit-stretch); }
   .sizing--object-fit-fit-inside--desktop img,
-  .sizing--object-fit-fit-inside--desktop video { object-fit: var(--foundation-object-fit-fitInside); }
+  .sizing--object-fit-fit-inside--desktop video { object-fit: var(--foundation-foundation-objectfit-fitinside); }
   .sizing--object-fit-fill-area--desktop img,
-  .sizing--object-fit-fill-area--desktop video { object-fit: var(--foundation-object-fit-fillArea); }
+  .sizing--object-fit-fill-area--desktop video { object-fit: var(--foundation-foundation-objectfit-fillarea); }
   .sizing--object-fit-crop--desktop img,
-  .sizing--object-fit-crop--desktop video { object-fit: var(--foundation-object-fit-crop); }
+  .sizing--object-fit-crop--desktop video { object-fit: var(--foundation-foundation-objectfit-crop); }
 
   .sizing--object-position-center--desktop img,
-  .sizing--object-position-center--desktop video { object-position: var(--foundation-object-position-center); }
+  .sizing--object-position-center--desktop video { object-position: var(--foundation-foundation-objectposition-center); }
   .sizing--object-position-top--desktop img,
-  .sizing--object-position-top--desktop video { object-position: var(--foundation-object-position-top); }
+  .sizing--object-position-top--desktop video { object-position: var(--foundation-foundation-objectposition-top); }
   .sizing--object-position-bottom--desktop img,
-  .sizing--object-position-bottom--desktop video { object-position: var(--foundation-object-position-bottom); }
+  .sizing--object-position-bottom--desktop video { object-position: var(--foundation-foundation-objectposition-bottom); }
   .sizing--object-position-left--desktop img,
-  .sizing--object-position-left--desktop video { object-position: var(--foundation-object-position-left); }
+  .sizing--object-position-left--desktop video { object-position: var(--foundation-foundation-objectposition-left); }
   .sizing--object-position-right--desktop img,
-  .sizing--object-position-right--desktop video { object-position: var(--foundation-object-position-right); }
+  .sizing--object-position-right--desktop video { object-position: var(--foundation-foundation-objectposition-right); }
   .sizing--object-position-top-left--desktop img,
-  .sizing--object-position-top-left--desktop video { object-position: var(--foundation-object-position-topLeft); }
+  .sizing--object-position-top-left--desktop video { object-position: var(--foundation-foundation-objectposition-topleft); }
   .sizing--object-position-top-right--desktop img,
-  .sizing--object-position-top-right--desktop video { object-position: var(--foundation-object-position-topRight); }
+  .sizing--object-position-top-right--desktop video { object-position: var(--foundation-foundation-objectposition-topright); }
   .sizing--object-position-bottom-left--desktop img,
-  .sizing--object-position-bottom-left--desktop video { object-position: var(--foundation-object-position-bottomLeft); }
+  .sizing--object-position-bottom-left--desktop video { object-position: var(--foundation-foundation-objectposition-bottomleft); }
   .sizing--object-position-bottom-right--desktop img,
-  .sizing--object-position-bottom-right--desktop video { object-position: var(--foundation-object-position-bottomRight); }
+  .sizing--object-position-bottom-right--desktop video { object-position: var(--foundation-foundation-objectposition-bottomright); }
 
   /* crop 별칭 클래스들 - Desktop */
   .sizing--object-position-crop-center--desktop img,
-  .sizing--object-position-crop-center--desktop video { object-position: var(--foundation-object-position-cropCenter); }
+  .sizing--object-position-crop-center--desktop video { object-position: var(--foundation-foundation-objectposition-cropcenter); }
   .sizing--object-position-crop-top--desktop img,
-  .sizing--object-position-crop-top--desktop video { object-position: var(--foundation-object-position-cropTop); }
+  .sizing--object-position-crop-top--desktop video { object-position: var(--foundation-foundation-objectposition-croptop); }
   .sizing--object-position-crop-bottom--desktop img,
-  .sizing--object-position-crop-bottom--desktop video { object-position: var(--foundation-object-position-cropBottom); }
+  .sizing--object-position-crop-bottom--desktop video { object-position: var(--foundation-foundation-objectposition-cropbottom); }
   .sizing--object-position-crop-left--desktop img,
-  .sizing--object-position-crop-left--desktop video { object-position: var(--foundation-object-position-cropLeft); }
+  .sizing--object-position-crop-left--desktop video { object-position: var(--foundation-foundation-objectposition-cropleft); }
   .sizing--object-position-crop-right--desktop img,
-  .sizing--object-position-crop-right--desktop video { object-position: var(--foundation-object-position-cropRight); }
+  .sizing--object-position-crop-right--desktop video { object-position: var(--foundation-foundation-objectposition-cropright); }
   .sizing--object-position-crop-top-left--desktop img,
-  .sizing--object-position-crop-top-left--desktop video { object-position: var(--foundation-object-position-cropTopLeft); }
+  .sizing--object-position-crop-top-left--desktop video { object-position: var(--foundation-foundation-objectposition-croptopleft); }
   .sizing--object-position-crop-top-right--desktop img,
-  .sizing--object-position-crop-top-right--desktop video { object-position: var(--foundation-object-position-cropTopRight); }
+  .sizing--object-position-crop-top-right--desktop video { object-position: var(--foundation-foundation-objectposition-croptopright); }
   .sizing--object-position-crop-bottom-left--desktop img,
-  .sizing--object-position-crop-bottom-left--desktop video { object-position: var(--foundation-object-position-cropBottomLeft); }
+  .sizing--object-position-crop-bottom-left--desktop video { object-position: var(--foundation-foundation-objectposition-cropbottomleft); }
   .sizing--object-position-crop-bottom-right--desktop img,
-  .sizing--object-position-crop-bottom-right--desktop video { object-position: var(--foundation-object-position-cropBottomRight); }
+  .sizing--object-position-crop-bottom-right--desktop video { object-position: var(--foundation-foundation-objectposition-cropbottomright); }
 
   .sizing--box-sizing-content-box--desktop { box-sizing: content-box; }
   .sizing--box-sizing-border-box--desktop { box-sizing: border-box; }
@@ -531,64 +531,64 @@
 
 @media (min-width: 1440px) and (max-width: 1919px) {
   .sizing--object-fit-fill--desktopL img,
-  .sizing--object-fit-fill--desktopL video { object-fit: var(--foundation-object-fit-fill); }
+  .sizing--object-fit-fill--desktopL video { object-fit: var(--foundation-foundation-objectfit-fill); }
   .sizing--object-fit-contain--desktopL img,
-  .sizing--object-fit-contain--desktopL video { object-fit: var(--foundation-object-fit-contain); }
+  .sizing--object-fit-contain--desktopL video { object-fit: var(--foundation-foundation-objectfit-contain); }
   .sizing--object-fit-cover--desktopL img,
-  .sizing--object-fit-cover--desktopL video { object-fit: var(--foundation-object-fit-cover); }
+  .sizing--object-fit-cover--desktopL video { object-fit: var(--foundation-foundation-objectfit-cover); }
   .sizing--object-fit-none--desktopL img,
-  .sizing--object-fit-none--desktopL video { object-fit: var(--foundation-object-fit-none); }
+  .sizing--object-fit-none--desktopL video { object-fit: var(--foundation-foundation-objectfit-none); }
   .sizing--object-fit-scale-down--desktopL img,
-  .sizing--object-fit-scale-down--desktopL video { object-fit: var(--foundation-object-fit-scaleDown); }
+  .sizing--object-fit-scale-down--desktopL video { object-fit: var(--foundation-foundation-objectfit-scaledown); }
 
   /* 별칭 클래스들 - Desktop L */
   .sizing--object-fit-stretch--desktopL img,
-  .sizing--object-fit-stretch--desktopL video { object-fit: var(--foundation-object-fit-stretch); }
+  .sizing--object-fit-stretch--desktopL video { object-fit: var(--foundation-foundation-objectfit-stretch); }
   .sizing--object-fit-fit-inside--desktopL img,
-  .sizing--object-fit-fit-inside--desktopL video { object-fit: var(--foundation-object-fit-fitInside); }
+  .sizing--object-fit-fit-inside--desktopL video { object-fit: var(--foundation-foundation-objectfit-fitinside); }
   .sizing--object-fit-fill-area--desktopL img,
-  .sizing--object-fit-fill-area--desktopL video { object-fit: var(--foundation-object-fit-fillArea); }
+  .sizing--object-fit-fill-area--desktopL video { object-fit: var(--foundation-foundation-objectfit-fillarea); }
   .sizing--object-fit-crop--desktopL img,
-  .sizing--object-fit-crop--desktopL video { object-fit: var(--foundation-object-fit-crop); }
+  .sizing--object-fit-crop--desktopL video { object-fit: var(--foundation-foundation-objectfit-crop); }
 
   .sizing--object-position-center--desktopL img,
-  .sizing--object-position-center--desktopL video { object-position: var(--foundation-object-position-center); }
+  .sizing--object-position-center--desktopL video { object-position: var(--foundation-foundation-objectposition-center); }
   .sizing--object-position-top--desktopL img,
-  .sizing--object-position-top--desktopL video { object-position: var(--foundation-object-position-top); }
+  .sizing--object-position-top--desktopL video { object-position: var(--foundation-foundation-objectposition-top); }
   .sizing--object-position-bottom--desktopL img,
-  .sizing--object-position-bottom--desktopL video { object-position: var(--foundation-object-position-bottom); }
+  .sizing--object-position-bottom--desktopL video { object-position: var(--foundation-foundation-objectposition-bottom); }
   .sizing--object-position-left--desktopL img,
-  .sizing--object-position-left--desktopL video { object-position: var(--foundation-object-position-left); }
+  .sizing--object-position-left--desktopL video { object-position: var(--foundation-foundation-objectposition-left); }
   .sizing--object-position-right--desktopL img,
-  .sizing--object-position-right--desktopL video { object-position: var(--foundation-object-position-right); }
+  .sizing--object-position-right--desktopL video { object-position: var(--foundation-foundation-objectposition-right); }
   .sizing--object-position-top-left--desktopL img,
-  .sizing--object-position-top-left--desktopL video { object-position: var(--foundation-object-position-topLeft); }
+  .sizing--object-position-top-left--desktopL video { object-position: var(--foundation-foundation-objectposition-topleft); }
   .sizing--object-position-top-right--desktopL img,
-  .sizing--object-position-top-right--desktopL video { object-position: var(--foundation-object-position-topRight); }
+  .sizing--object-position-top-right--desktopL video { object-position: var(--foundation-foundation-objectposition-topright); }
   .sizing--object-position-bottom-left--desktopL img,
-  .sizing--object-position-bottom-left--desktopL video { object-position: var(--foundation-object-position-bottomLeft); }
+  .sizing--object-position-bottom-left--desktopL video { object-position: var(--foundation-foundation-objectposition-bottomleft); }
   .sizing--object-position-bottom-right--desktopL img,
-  .sizing--object-position-bottom-right--desktopL video { object-position: var(--foundation-object-position-bottomRight); }
+  .sizing--object-position-bottom-right--desktopL video { object-position: var(--foundation-foundation-objectposition-bottomright); }
 
   /* crop 별칭 클래스들 - Desktop L */
   .sizing--object-position-crop-center--desktopL img,
-  .sizing--object-position-crop-center--desktopL video { object-position: var(--foundation-object-position-cropCenter); }
+  .sizing--object-position-crop-center--desktopL video { object-position: var(--foundation-foundation-objectposition-cropcenter); }
   .sizing--object-position-crop-top--desktopL img,
-  .sizing--object-position-crop-top--desktopL video { object-position: var(--foundation-object-position-cropTop); }
+  .sizing--object-position-crop-top--desktopL video { object-position: var(--foundation-foundation-objectposition-croptop); }
   .sizing--object-position-crop-bottom--desktopL img,
-  .sizing--object-position-crop-bottom--desktopL video { object-position: var(--foundation-object-position-cropBottom); }
+  .sizing--object-position-crop-bottom--desktopL video { object-position: var(--foundation-foundation-objectposition-cropbottom); }
   .sizing--object-position-crop-left--desktopL img,
-  .sizing--object-position-crop-left--desktopL video { object-position: var(--foundation-object-position-cropLeft); }
+  .sizing--object-position-crop-left--desktopL video { object-position: var(--foundation-foundation-objectposition-cropleft); }
   .sizing--object-position-crop-right--desktopL img,
-  .sizing--object-position-crop-right--desktopL video { object-position: var(--foundation-object-position-cropRight); }
+  .sizing--object-position-crop-right--desktopL video { object-position: var(--foundation-foundation-objectposition-cropright); }
   .sizing--object-position-crop-top-left--desktopL img,
-  .sizing--object-position-crop-top-left--desktopL video { object-position: var(--foundation-object-position-cropTopLeft); }
+  .sizing--object-position-crop-top-left--desktopL video { object-position: var(--foundation-foundation-objectposition-croptopleft); }
   .sizing--object-position-crop-top-right--desktopL img,
-  .sizing--object-position-crop-top-right--desktopL video { object-position: var(--foundation-object-position-cropTopRight); }
+  .sizing--object-position-crop-top-right--desktopL video { object-position: var(--foundation-foundation-objectposition-croptopright); }
   .sizing--object-position-crop-bottom-left--desktopL img,
-  .sizing--object-position-crop-bottom-left--desktopL video { object-position: var(--foundation-object-position-cropBottomLeft); }
+  .sizing--object-position-crop-bottom-left--desktopL video { object-position: var(--foundation-foundation-objectposition-cropbottomleft); }
   .sizing--object-position-crop-bottom-right--desktopL img,
-  .sizing--object-position-crop-bottom-right--desktopL video { object-position: var(--foundation-object-position-cropBottomRight); }
+  .sizing--object-position-crop-bottom-right--desktopL video { object-position: var(--foundation-foundation-objectposition-cropbottomright); }
 
   .sizing--box-sizing-content-box--desktopL { box-sizing: content-box; }
   .sizing--box-sizing-border-box--desktopL { box-sizing: border-box; }
@@ -596,64 +596,64 @@
 
 @media (min-width: 1920px) {
   .sizing--object-fit-fill--desktopXL img,
-  .sizing--object-fit-fill--desktopXL video { object-fit: var(--foundation-object-fit-fill); }
+  .sizing--object-fit-fill--desktopXL video { object-fit: var(--foundation-foundation-objectfit-fill); }
   .sizing--object-fit-contain--desktopXL img,
-  .sizing--object-fit-contain--desktopXL video { object-fit: var(--foundation-object-fit-contain); }
+  .sizing--object-fit-contain--desktopXL video { object-fit: var(--foundation-foundation-objectfit-contain); }
   .sizing--object-fit-cover--desktopXL img,
-  .sizing--object-fit-cover--desktopXL video { object-fit: var(--foundation-object-fit-cover); }
+  .sizing--object-fit-cover--desktopXL video { object-fit: var(--foundation-foundation-objectfit-cover); }
   .sizing--object-fit-none--desktopXL img,
-  .sizing--object-fit-none--desktopXL video { object-fit: var(--foundation-object-fit-none); }
+  .sizing--object-fit-none--desktopXL video { object-fit: var(--foundation-foundation-objectfit-none); }
   .sizing--object-fit-scale-down--desktopXL img,
-  .sizing--object-fit-scale-down--desktopXL video { object-fit: var(--foundation-object-fit-scaleDown); }
+  .sizing--object-fit-scale-down--desktopXL video { object-fit: var(--foundation-foundation-objectfit-scaledown); }
 
   /* 별칭 클래스들 - Desktop XL */
   .sizing--object-fit-stretch--desktopXL img,
-  .sizing--object-fit-stretch--desktopXL video { object-fit: var(--foundation-object-fit-stretch); }
+  .sizing--object-fit-stretch--desktopXL video { object-fit: var(--foundation-foundation-objectfit-stretch); }
   .sizing--object-fit-fit-inside--desktopXL img,
-  .sizing--object-fit-fit-inside--desktopXL video { object-fit: var(--foundation-object-fit-fitInside); }
+  .sizing--object-fit-fit-inside--desktopXL video { object-fit: var(--foundation-foundation-objectfit-fitinside); }
   .sizing--object-fit-fill-area--desktopXL img,
-  .sizing--object-fit-fill-area--desktopXL video { object-fit: var(--foundation-object-fit-fillArea); }
+  .sizing--object-fit-fill-area--desktopXL video { object-fit: var(--foundation-foundation-objectfit-fillarea); }
   .sizing--object-fit-crop--desktopXL img,
-  .sizing--object-fit-crop--desktopXL video { object-fit: var(--foundation-object-fit-crop); }
+  .sizing--object-fit-crop--desktopXL video { object-fit: var(--foundation-foundation-objectfit-crop); }
 
   .sizing--object-position-center--desktopXL img,
-  .sizing--object-position-center--desktopXL video { object-position: var(--foundation-object-position-center); }
+  .sizing--object-position-center--desktopXL video { object-position: var(--foundation-foundation-objectposition-center); }
   .sizing--object-position-top--desktopXL img,
-  .sizing--object-position-top--desktopXL video { object-position: var(--foundation-object-position-top); }
+  .sizing--object-position-top--desktopXL video { object-position: var(--foundation-foundation-objectposition-top); }
   .sizing--object-position-bottom--desktopXL img,
-  .sizing--object-position-bottom--desktopXL video { object-position: var(--foundation-object-position-bottom); }
+  .sizing--object-position-bottom--desktopXL video { object-position: var(--foundation-foundation-objectposition-bottom); }
   .sizing--object-position-left--desktopXL img,
-  .sizing--object-position-left--desktopXL video { object-position: var(--foundation-object-position-left); }
+  .sizing--object-position-left--desktopXL video { object-position: var(--foundation-foundation-objectposition-left); }
   .sizing--object-position-right--desktopXL img,
-  .sizing--object-position-right--desktopXL video { object-position: var(--foundation-object-position-right); }
+  .sizing--object-position-right--desktopXL video { object-position: var(--foundation-foundation-objectposition-right); }
   .sizing--object-position-top-left--desktopXL img,
-  .sizing--object-position-top-left--desktopXL video { object-position: var(--foundation-object-position-topLeft); }
+  .sizing--object-position-top-left--desktopXL video { object-position: var(--foundation-foundation-objectposition-topleft); }
   .sizing--object-position-top-right--desktopXL img,
-  .sizing--object-position-top-right--desktopXL video { object-position: var(--foundation-object-position-topRight); }
+  .sizing--object-position-top-right--desktopXL video { object-position: var(--foundation-foundation-objectposition-topright); }
   .sizing--object-position-bottom-left--desktopXL img,
-  .sizing--object-position-bottom-left--desktopXL video { object-position: var(--foundation-object-position-bottomLeft); }
+  .sizing--object-position-bottom-left--desktopXL video { object-position: var(--foundation-foundation-objectposition-bottomleft); }
   .sizing--object-position-bottom-right--desktopXL img,
-  .sizing--object-position-bottom-right--desktopXL video { object-position: var(--foundation-object-position-bottomRight); }
+  .sizing--object-position-bottom-right--desktopXL video { object-position: var(--foundation-foundation-objectposition-bottomright); }
 
   /* crop 별칭 클래스들 - Desktop XL */
   .sizing--object-position-crop-center--desktopXL img,
-  .sizing--object-position-crop-center--desktopXL video { object-position: var(--foundation-object-position-cropCenter); }
+  .sizing--object-position-crop-center--desktopXL video { object-position: var(--foundation-foundation-objectposition-cropcenter); }
   .sizing--object-position-crop-top--desktopXL img,
-  .sizing--object-position-crop-top--desktopXL video { object-position: var(--foundation-object-position-cropTop); }
+  .sizing--object-position-crop-top--desktopXL video { object-position: var(--foundation-foundation-objectposition-croptop); }
   .sizing--object-position-crop-bottom--desktopXL img,
-  .sizing--object-position-crop-bottom--desktopXL video { object-position: var(--foundation-object-position-cropBottom); }
+  .sizing--object-position-crop-bottom--desktopXL video { object-position: var(--foundation-foundation-objectposition-cropbottom); }
   .sizing--object-position-crop-left--desktopXL img,
-  .sizing--object-position-crop-left--desktopXL video { object-position: var(--foundation-object-position-cropLeft); }
+  .sizing--object-position-crop-left--desktopXL video { object-position: var(--foundation-foundation-objectposition-cropleft); }
   .sizing--object-position-crop-right--desktopXL img,
-  .sizing--object-position-crop-right--desktopXL video { object-position: var(--foundation-object-position-cropRight); }
+  .sizing--object-position-crop-right--desktopXL video { object-position: var(--foundation-foundation-objectposition-cropright); }
   .sizing--object-position-crop-top-left--desktopXL img,
-  .sizing--object-position-crop-top-left--desktopXL video { object-position: var(--foundation-object-position-cropTopLeft); }
+  .sizing--object-position-crop-top-left--desktopXL video { object-position: var(--foundation-foundation-objectposition-croptopleft); }
   .sizing--object-position-crop-top-right--desktopXL img,
-  .sizing--object-position-crop-top-right--desktopXL video { object-position: var(--foundation-object-position-cropTopRight); }
+  .sizing--object-position-crop-top-right--desktopXL video { object-position: var(--foundation-foundation-objectposition-croptopright); }
   .sizing--object-position-crop-bottom-left--desktopXL img,
-  .sizing--object-position-crop-bottom-left--desktopXL video { object-position: var(--foundation-object-position-cropBottomLeft); }
+  .sizing--object-position-crop-bottom-left--desktopXL video { object-position: var(--foundation-foundation-objectposition-cropbottomleft); }
   .sizing--object-position-crop-bottom-right--desktopXL img,
-  .sizing--object-position-crop-bottom-right--desktopXL video { object-position: var(--foundation-object-position-cropBottomRight); }
+  .sizing--object-position-crop-bottom-right--desktopXL video { object-position: var(--foundation-foundation-objectposition-cropbottomright); }
 
   .sizing--box-sizing-content-box--desktopXL { box-sizing: content-box; }
   .sizing--box-sizing-border-box--desktopXL { box-sizing: border-box; }
