@@ -47,7 +47,7 @@
         "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "lumir-shared": "^1.0.0",
+    "lumir-shared": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

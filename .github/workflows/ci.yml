@@ -35,12 +35,25 @@ jobs:
     
     - name: Build system packages
       run: |
+        echo "Building system-01..."
         cd packages/system-01
+        pwd
+        ls -la
         npm install --no-workspaces
         npm run build
+        echo "Checking system-01 build output..."
+        ls -la dist/
+        ls -la dist/css/ || echo "No CSS directory found"
+        
+        echo "Building system-02..."
         cd ../system-02
+        pwd
+        ls -la
         npm install --no-workspaces
         npm run build
+        echo "Checking system-02 build output..."
+        ls -la dist/
+        ls -la dist/css/ || echo "No CSS directory found"
     
     - name: Install storybook dependencies
       run: |
