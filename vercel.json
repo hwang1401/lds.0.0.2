@@ -1,9 +1,15 @@
 {
   "version": 2,
-  "installCommand": "cd packages/storybook && npm install --no-workspaces",
-  "buildCommand": "cd packages/storybook && npm run build-storybook",
+  "buildCommand": "cd packages/storybook && npm install && npm run build-storybook",
   "outputDirectory": "packages/storybook/storybook-static",
+  "installCommand": null,
   "env": {
-    "NODE_VERSION": "18.17.0"
+    "NODE_VERSION": "18.17.0",
+    "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
+  },
+  "functions": {
+    "packages/storybook/storybook-static/**": {
+      "includeFiles": "packages/storybook/storybook-static/**"
+    }
   }
 } 
