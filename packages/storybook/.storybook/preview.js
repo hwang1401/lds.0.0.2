@@ -1,6 +1,6 @@
 // 🔧 CSS 변수를 포함한 스타일 시트 가져오기 (순서 중요!)
-import '../../shared/dist/css/foundation-tokens.css';   // 1️⃣ Foundation 토큰 정의 (최우선)
-import '../../shared/dist/styles.css';                  // 2️⃣ Primitives CSS (Foundation 토큰 변수 사용)
+import 'lumir-shared/dist/css/foundation-tokens.css';   // 1️⃣ Foundation 토큰 정의 (최우선)
+import 'lumir-shared/dist/styles.css';                  // 2️⃣ Primitives CSS (Foundation 토큰 변수 사용)
 // 3️⃣ System CSS는 동적으로 로드
 
 // 🚀 동적 CSS 로딩 함수 (개선된 버전)
