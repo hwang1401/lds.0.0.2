@@ -5,6 +5,7 @@
   "outputDirectory": "packages/storybook/storybook-static",
   "installCommand": null,
   "framework": null,
+  "rootDirectory": ".",
   "env": {
     "NODE_VERSION": "18"
   },
