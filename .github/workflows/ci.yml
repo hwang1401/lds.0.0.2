@@ -26,43 +26,41 @@ jobs:
         ls -la
         ls -la packages/
     
-    # Skip shared package build - using published npm package instead
-    # - name: Build shared package
+    # npm 패키지 기반으로 전환 - system 패키지 빌드 불필요
+    # - name: Build system packages
     #   run: |
-    #     cd packages/shared
+    #     echo "Building system-01..."
+    #     cd packages/system-01
+    #     pwd
+    #     ls -la
     #     npm install --no-workspaces
     #     npm run build
-    
-    - name: Build system packages
-      run: |
-        echo "Building system-01..."
-        cd packages/system-01
-        pwd
-        ls -la
-        npm install --no-workspaces
-        npm run build
-        echo "Checking system-01 build output..."
-        ls -la dist/
-        ls -la dist/css/ || echo "No CSS directory found"
-        
-        echo "Building system-02..."
-        cd ../system-02
-        pwd
-        ls -la
-        npm install --no-workspaces
-        npm run build
-        echo "Checking system-02 build output..."
-        ls -la dist/
-        ls -la dist/css/ || echo "No CSS directory found"
+    #     echo "Checking system-01 build output..."
+    #     ls -la dist/
+    #     ls -la dist/css/ || echo "No CSS directory found"
+    #     
+    #     echo "Building system-02..."
+    #     cd ../system-02
+    #     pwd
+    #     ls -la
+    #     npm install --no-workspaces
+    #     npm run build
+    #     echo "Checking system-02 build output..."
+    #     ls -la dist/
+    #     ls -la dist/css/ || echo "No CSS directory found"
     
     - name: Install storybook dependencies
       run: |
         cd packages/storybook
         pwd
         ls -la
+        echo "Installing npm packages..."
         npm install --no-workspaces --verbose
+        echo "Checking installed packages..."
+        ls -la node_modules/lumir-* || echo "No lumir packages found"
     
     - name: Build Storybook
       run: |
         cd packages/storybook
+        echo "Building storybook with npm packages..."
         npm run build-storybook 
