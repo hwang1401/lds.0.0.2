@@ -1,13 +1,12 @@
 {
   "version": 2,
   "name": "lumir-design-system-storybook",
-  "buildCommand": "echo 'Skip build - using static files'",
+  "buildCommand": null,
   "outputDirectory": "packages/storybook/storybook-static",
-  "installCommand": "echo 'Skip install - using static files'",
+  "installCommand": null,
   "framework": null,
   "env": {
-    "NODE_VERSION": "18",
-    "SKIP_INSTALL": "true"
+    "NODE_VERSION": "18"
   },
   "routes": [
     {
