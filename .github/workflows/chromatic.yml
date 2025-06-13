@@ -26,6 +26,12 @@ jobs:
           ls -la
           ls -la packages/
       
+      - name: Build shared package
+        run: |
+          cd packages/shared
+          npm install --no-workspaces
+          npm run build
+      
       - name: Build system packages
         run: |
           cd packages/system-01
