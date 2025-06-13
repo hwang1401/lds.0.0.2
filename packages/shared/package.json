@@ -1,14 +1,14 @@
 {
   "name": "lumir-shared",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Lumir Design System Foundation & Primitives",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/types/src/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
+      "types": "./dist/types/src/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js"
     },
