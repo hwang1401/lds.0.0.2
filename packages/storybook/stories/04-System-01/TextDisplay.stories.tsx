@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TextDisplay } from 'lumir-system-01';
 import { Surface, Frame, Text } from 'lumir-shared';
 
-const meta = {
+const meta: Meta<typeof TextDisplay> = {
   title: 'System-01/Compounds/TextDisplay',
   component: TextDisplay,
   parameters: {
@@ -64,7 +64,7 @@ TextDisplay는 다양한 텍스트 요소들을 조합하여 표시하는 컴파
     }
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof TextDisplay>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

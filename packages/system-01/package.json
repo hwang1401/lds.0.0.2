@@ -25,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/lumir-design-system.git",
+    "url": "git+https://github.com/your-org/lumir-design-system.git",
     "directory": "packages/system-01"
   },
   "publishConfig": {
@@ -65,5 +65,11 @@
     "rollup": "^3.19.0",
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^4.9.5"
-  }
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/your-org/lumir-design-system/issues"
+  },
+  "homepage": "https://github.com/your-org/lumir-design-system#readme"
 }
