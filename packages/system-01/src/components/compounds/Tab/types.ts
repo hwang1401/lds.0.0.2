@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { SurfaceProps, TextProps, IconProps } from '@lumir/shared';
+import { SurfaceProps, TextProps, IconProps } from 'lumir-shared';
 
 export type TabSize = 'lg' | 'md';
 export type TabState = 'default' | 'hovered' | 'pressed' | 'disabled' | 'focused';

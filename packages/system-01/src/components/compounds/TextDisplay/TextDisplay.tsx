@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Frame, Surface, Text, Icon, IconName } from '@lumir/shared';
+import { Frame, Surface, Text, Icon, IconName } from 'lumir-shared';
 
 type Size = 'xsm' | 'sm' | 'md' | 'lg' | 'xlg';
 type Style = 'left' | 'center';

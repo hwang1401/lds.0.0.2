@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, HeightValue, Text, Icon, IconName } from '@lumir/shared';
-import { ResponsiveOrSingle } from '@lumir/shared';
+import { Surface, Frame, Sizing, HeightValue, Text, Icon, IconName } from 'lumir-shared';
+import { ResponsiveOrSingle } from 'lumir-shared';
 import { Label } from '../Label';
 
 export interface FieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {

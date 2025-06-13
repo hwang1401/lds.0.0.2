@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, Text } from '@lumir/shared';
+import { Surface, Frame, Sizing, Text } from 'lumir-shared';
 import { Radio } from '../Radio';
 import { Checkbox } from '../Checkbox';
 

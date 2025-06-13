@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { Text, Icon } from '@lumir/shared';
-import { ResponsiveOrSingle } from '@lumir/shared';
+import { Text, Icon } from 'lumir-shared';
+import { ResponsiveOrSingle } from 'lumir-shared';
 
 // Link variant 타입
 type LinkVariant = 'default' | 'subtle' | 'prominent';

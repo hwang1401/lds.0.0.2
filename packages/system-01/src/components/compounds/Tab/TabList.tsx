@@ -1,5 +1,5 @@
 import React from 'react';
-import { Surface, Frame } from '@lumir/shared';
+import { Surface, Frame } from 'lumir-shared';
 import { TabListProps } from './types';
 
 export const TabList = ({ children, ...props }: TabListProps) => {

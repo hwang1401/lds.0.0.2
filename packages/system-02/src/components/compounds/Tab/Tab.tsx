@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { Surface, Frame, Sizing, Text, Icon, IconName } from '@lumir/shared';
+import { Surface, Frame, Sizing, Text, Icon, IconName } from 'lumir-shared';
 
 interface TabContextType {
   selectedId: string;
