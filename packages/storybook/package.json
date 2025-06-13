@@ -8,7 +8,7 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "lumir-shared": "^1.0.2",
+    "lumir-shared": "^1.0.3",
     "lumir-system-01": "^1.0.1",
     "lumir-system-02": "^1.0.2",
     "react": "^18.2.0",
