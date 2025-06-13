@@ -62,4 +62,5 @@ turbo.json
 # 스크립트 파일들
 scripts/
 *.js
+!packages/storybook/.storybook/**/*.js
 !packages/storybook/storybook-static/**/*.js 
