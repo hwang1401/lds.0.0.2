@@ -9,7 +9,6 @@
     "NODE_VERSION": "18",
     "SKIP_INSTALL": "true"
   },
-  "functions": {},
   "routes": [
     {
       "src": "/sb-addons/(.*)",
