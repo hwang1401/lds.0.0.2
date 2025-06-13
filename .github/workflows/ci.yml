@@ -21,8 +21,20 @@ jobs:
         node-version: 18
         cache: 'npm'
     
+    - name: Check directory structure
+      run: |
+        pwd
+        ls -la
+        ls -la packages/
+    
     - name: Install storybook dependencies
-      run: cd packages/storybook && npm install --no-workspaces
+      run: |
+        cd packages/storybook
+        pwd
+        ls -la
+        npm install --no-workspaces --verbose
     
     - name: Build Storybook
-      run: cd packages/storybook && npm run build-storybook 
+      run: |
+        cd packages/storybook
+        npm run build-storybook 
