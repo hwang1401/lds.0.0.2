@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "npm install && npm run build && npm run build-storybook",
+  "installCommand": "cd packages/storybook && npm install --no-workspaces",
+  "buildCommand": "cd packages/storybook && npm run build-storybook",
   "outputDirectory": "packages/storybook/storybook-static",
   "env": {
     "NODE_VERSION": "18.17.0"
