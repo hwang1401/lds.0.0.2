@@ -1,7 +1,6 @@
 {
   "name": "lumir-shared",
-  "version": "1.0.3",
-  "type": "module",
+  "version": "1.0.4",
   "description": "Lumir Design System Foundation & Primitives",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
