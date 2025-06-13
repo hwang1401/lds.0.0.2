@@ -26,6 +26,15 @@ jobs:
           ls -la
           ls -la packages/
       
+      - name: Build system packages
+        run: |
+          cd packages/system-01
+          npm install --no-workspaces
+          npm run build
+          cd ../system-02
+          npm install --no-workspaces
+          npm run build
+      
       - name: Install storybook dependencies
         run: |
           cd packages/storybook
