@@ -1,6 +1,6 @@
 {
   "name": "lumir-system-01",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Lumir Design System 01 - Clean & Efficient",
   "main": "dist/index.js",
@@ -13,6 +13,7 @@
       "require": "./dist/index.js"
     },
     "./tokens": "./dist/css/tokens.css",
+    "./dist/css/tokens.css": "./dist/css/tokens.css",
     "./tokens/js": "./dist/js/tokens.js",
     "./tokens/scss": "./dist/scss/_tokens.scss",
     "./styles": "./dist/styles.css",
