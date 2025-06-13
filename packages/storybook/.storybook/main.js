@@ -43,6 +43,27 @@ const config = {
       ...(config.resolve.extensions || [])
     ];
     
+    // npm 패키지 해결 문제 수정
+    config.optimizeDeps = {
+      ...config.optimizeDeps,
+      include: [
+        'lumir-shared',
+        'lumir-system-01', 
+        'lumir-system-02',
+        'react',
+        'react-dom'
+      ],
+      force: true
+    };
+    
+    // CommonJS 패키지 처리
+    config.build = {
+      ...config.build,
+      commonjsOptions: {
+        include: [/lumir-/, /node_modules/]
+      }
+    };
+    
     return config;
   },
   
