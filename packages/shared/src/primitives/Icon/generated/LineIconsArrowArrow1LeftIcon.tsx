@@ -1,0 +1,93 @@
+import React from 'react';
+
+export interface LineIconsArrowArrow1LeftIconProps {
+  /**
+   * 아이콘 크기
+   */
+  size?: number | string;
+  
+  /**
+   * 아이콘 색상 (CSS color 값)
+   */
+  color?: string;
+  
+  /**
+   * 추가 CSS 클래스
+   */
+  className?: string;
+  
+  /**
+   * 인라인 스타일
+   */
+  style?: React.CSSProperties;
+  
+  /**
+   * 접근성을 위한 라벨
+   */
+  'aria-label'?: string;
+  
+  /**
+   * 클릭 이벤트 핸들러
+   */
+  onClick?: () => void;
+}
+
+/**
+ * LineIconsArrowArrow1LeftIcon 아이콘 컴포넌트
+ * 
+ * @param props - 아이콘 속성
+ * @returns JSX 엘리먼트
+ */
+export const LineIconsArrowArrow1LeftIcon: React.FC<LineIconsArrowArrow1LeftIconProps> = ({
+  size = 24,
+  color = 'currentColor',
+  className,
+  style,
+  'aria-label': ariaLabel,
+  onClick,
+  ...props
+}) => {
+  const combinedStyle = {
+    width: typeof size === 'number' ? `${size}px` : size,
+    height: typeof size === 'number' ? `${size}px` : size,
+    color,
+    ...style,
+  };
+
+  // SVG의 width/height 속성은 숫자나 픽셀 값만 허용하므로 토큰을 변환
+  const getSvgSize = (size: number | string): number => {
+    if (typeof size === 'number') return size;
+    // 토큰을 픽셀 값으로 변환
+    const tokenToPixel: Record<string, number> = {
+      'xxsm': 12,
+      'xsm': 14,
+      'sm': 16,
+      'md': 20,
+      'lg': 24,
+      'xl': 32,
+      'xxl': 40
+    };
+    return tokenToPixel[size as string] || 24; // 기본값 24px
+  };
+
+  const svgSize = getSvgSize(size);
+
+  return (
+    <svg
+      width={svgSize}
+      height={svgSize}
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={combinedStyle}
+      aria-label={ariaLabel}
+      onClick={onClick}
+      {...props}
+    >
+      <path fillRule="evenodd" clipRule="evenodd" d="M5.36613 9.93988L14.6339 16.5V3.5L5.36613 9.93988ZM13.9573 18C13.2247 18 12.5029 17.7907 11.9304 17.3855L3.99711 11.7681C3.364 11.3202 3 10.675 3 10.0005C3 9.32596 3.364 8.68078 3.99711 8.23288L11.9304 2.61681C12.8762 1.94496 14.2249 1.81033 15.3667 2.27022C16.3731 2.67813 17 3.48728 17 4.38441V15.6165C17 16.5137 16.3731 17.3228 15.3667 17.7307C14.9171 17.912 14.4349 18 13.9573 18Z" fill="currentColor"/>
+    </svg>
+  );
+};
+
+export default LineIconsArrowArrow1LeftIcon;

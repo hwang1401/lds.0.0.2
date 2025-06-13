@@ -1,0 +1,587 @@
+.text {
+    margin: 0;
+    padding: 0;
+    font-family: var(--foundation-foundation-font-fontfamily-base);
+  }
+  
+  /* 기본 타이포그래피 스타일 */
+  
+  /* Hero 타이포그래피 */
+.text--hero-1-regular {
+  font-size: var(--foundation-foundation-font-fontsize-480);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-400);
+}
+
+.text--hero-1-medium {
+  font-size: var(--foundation-foundation-font-fontsize-480);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-500);
+}
+
+.text--hero-1-bold {
+  font-size: var(--foundation-foundation-font-fontsize-480);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-700);
+}
+
+.text--hero-2-regular {
+  font-size: var(--foundation-foundation-font-fontsize-360);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-400);
+}
+
+.text--hero-2-medium {
+  font-size: var(--foundation-foundation-font-fontsize-360);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-500);
+}
+
+.text--hero-2-bold {
+  font-size: var(--foundation-foundation-font-fontsize-360);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-700);
+}
+  
+  /* Title 타이포그래피 */
+.text--title-1-regular {
+  font-size: var(--foundation-foundation-font-fontsize-300);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-400);
+}
+
+.text--title-1-medium {
+  font-size: var(--foundation-foundation-font-fontsize-300);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-500);
+}
+
+.text--title-1-bold {
+  font-size: var(--foundation-foundation-font-fontsize-300);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-700);
+}
+
+.text--title-2-regular {
+  font-size: var(--foundation-foundation-font-fontsize-240);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-400);
+}
+
+.text--title-2-medium {
+  font-size: var(--foundation-foundation-font-fontsize-240);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-500);
+}
+
+.text--title-2-bold {
+  font-size: var(--foundation-foundation-font-fontsize-240);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-20);
+  font-weight: var(--foundation-foundation-font-fontweight-700);
+}
+  
+  /* Heading 타이포그래피 */
+.text--heading-1-regular {
+  font-size: var(--foundation-foundation-font-fontsize-200);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-10);
+  font-weight: var(--foundation-foundation-font-fontweight-400);
+}
+
+.text--heading-1-medium {
+  font-size: var(--foundation-foundation-font-fontsize-200);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-10);
+  font-weight: var(--foundation-foundation-font-fontweight-500);
+}
+
+.text--heading-1-bold {
+  font-size: var(--foundation-foundation-font-fontsize-200);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-10);
+  font-weight: var(--foundation-foundation-font-fontweight-600);
+}
+
+.text--heading-2-regular {
+  font-size: var(--foundation-foundation-font-fontsize-200);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-10);
+  font-weight: var(--foundation-foundation-font-fontweight-400);
+}
+
+.text--heading-2-medium {
+  font-size: var(--foundation-foundation-font-fontsize-200);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-10);
+  font-weight: var(--foundation-foundation-font-fontweight-500);
+}
+
+.text--heading-2-bold {
+  font-size: var(--foundation-foundation-font-fontsize-200);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-10);
+  font-weight: var(--foundation-foundation-font-fontweight-600);
+}
+
+.text--heading-3-regular {
+  font-size: var(--foundation-foundation-font-fontsize-160);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+  font-weight: var(--foundation-foundation-font-fontweight-400);
+}
+
+.text--heading-3-medium {
+  font-size: var(--foundation-foundation-font-fontsize-160);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+  font-weight: var(--foundation-foundation-font-fontweight-500);
+}
+
+.text--heading-3-bold {
+  font-size: var(--foundation-foundation-font-fontsize-160);
+  line-height: var(--foundation-foundation-font-lineheight-14);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+  font-weight: var(--foundation-foundation-font-fontweight-600);
+}
+  
+  /* Body 타이포그래피 */
+.text--body-1-regular {
+  font-size: var(--foundation-foundation-font-fontsize-160);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-40);
+  font-weight: var(--foundation-foundation-font-fontweight-400);
+}
+
+.text--body-1-medium {
+  font-size: var(--foundation-foundation-font-fontsize-160);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-40);
+  font-weight: var(--foundation-foundation-font-fontweight-500);
+}
+
+.text--body-1-bold {
+  font-size: var(--foundation-foundation-font-fontsize-160);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-40);
+  font-weight: var(--foundation-foundation-font-fontweight-700);
+}
+
+.text--body-2-regular {
+  font-size: var(--foundation-foundation-font-fontsize-140);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-40);
+  font-weight: var(--foundation-foundation-font-fontweight-400);
+}
+
+.text--body-2-medium {
+  font-size: var(--foundation-foundation-font-fontsize-140);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-40);
+  font-weight: var(--foundation-foundation-font-fontweight-500);
+}
+
+.text--body-2-bold {
+  font-size: var(--foundation-foundation-font-fontsize-140);
+  line-height: var(--foundation-foundation-font-lineheight-16);
+  letter-spacing: var(--foundation-foundation-font-letterspacing-40);
+  font-weight: var(--foundation-foundation-font-fontweight-700);
+}
+  
+  /* Reading 타이포그래피 */
+  .text--reading-regular {
+    font-size: var(--foundation-foundation-font-fontsize-160);
+    line-height: var(--foundation-foundation-font-lineheight-18);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-400);
+  }
+  
+  .text--reading-medium {
+    font-size: var(--foundation-foundation-font-fontsize-160);
+    line-height: var(--foundation-foundation-font-lineheight-18);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-500);
+  }
+  
+  .text--reading-bold {
+    font-size: var(--foundation-foundation-font-fontsize-160);
+    line-height: var(--foundation-foundation-font-lineheight-18);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-700);
+  }
+  
+  /* Label 타이포그래피 */
+  .text--label-1-regular {
+    font-size: var(--foundation-foundation-font-fontsize-140);
+    line-height: var(--foundation-foundation-font-lineheight-16);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-400);
+  }
+  
+  .text--label-1-medium {
+    font-size: var(--foundation-foundation-font-fontsize-140);
+    line-height: var(--foundation-foundation-font-lineheight-16);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-500);
+  }
+  
+  .text--label-1-bold {
+    font-size: var(--foundation-foundation-font-fontsize-140);
+    line-height: var(--foundation-foundation-font-lineheight-16);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-700);
+  }
+  
+  .text--label-2-regular {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-16);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-400);
+  }
+  
+  .text--label-2-medium {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-16);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-500);
+  }
+  
+  .text--label-2-bold {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-16);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-700);
+  }
+  
+  /* Caption 타이포그래피 */
+  .text--caption-1-regular {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-14);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-400);
+  }
+  
+  .text--caption-1-medium {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-14);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-500);
+  }
+  
+  .text--caption-1-bold {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-14);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-700);
+  }
+  
+  .text--caption-2-regular {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-14);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-400);
+  }
+  
+  .text--caption-2-medium {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-14);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-500);
+  }
+  
+  .text--caption-2-bold {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-14);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-700);
+  }
+  
+  .text--caption-3-regular {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-14);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-400);
+  }
+  
+  .text--caption-3-medium {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-14);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-500);
+  }
+  
+  .text--caption-3-bold {
+    font-size: var(--foundation-foundation-font-fontsize-120);
+    line-height: var(--foundation-foundation-font-lineheight-14);
+    letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+    font-weight: var(--foundation-foundation-font-fontweight-700);
+  }
+  
+  /* 정렬 */
+  .text--align-left {
+    text-align: left;
+  }
+  
+  .text--align-center {
+    text-align: center;
+  }
+  
+  .text--align-right {
+    text-align: right;
+  }
+  
+  .text--align-justify {
+    text-align: justify;
+  }
+  
+  /* 텍스트 변형 */
+  .text--transform-none {
+    text-transform: none;
+  }
+  
+  .text--transform-capitalize {
+    text-transform: capitalize;
+  }
+  
+  .text--transform-uppercase {
+    text-transform: uppercase;
+  }
+  
+  .text--transform-lowercase {
+    text-transform: lowercase;
+  }
+  
+  /* 노랩 및 truncate */
+  .text--nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .text--truncate {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--webkit-line-clamp);
+    line-clamp: var(--webkit-line-clamp);
+  }
+  
+  /* ================================================
+     반응형 미디어 쿼리 스타일 
+     ================================================ */
+  
+  /* Mobile 브레이크포인트 (max-width: 479px) */
+  @media (max-width: 479px) {
+    /* Typography Variants */
+    .text--hero-1-regular--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-720);
+      line-height: var(--foundation-foundation-font-lineheight-12);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--hero-1-medium--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-720);
+      line-height: var(--foundation-foundation-font-lineheight-12);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-500);
+    }
+    .text--hero-1-bold--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-720);
+      line-height: var(--foundation-foundation-font-lineheight-12);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-700);
+    }
+  
+    .text--title-1-regular--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-480);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--title-1-medium--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-480);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-500);
+    }
+    .text--title-1-bold--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-480);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-700);
+    }
+  
+    .text--heading-1-regular--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-300);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--heading-1-medium--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-300);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-500);
+    }
+    .text--heading-1-bold--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-300);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-700);
+    }
+  
+    .text--body-1-regular--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-160);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--body-1-medium--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-160);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-500);
+    }
+    .text--body-1-bold--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-160);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-700);
+    }
+  
+    .text--body-2-regular--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-140);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--body-2-medium--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-140);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-500);
+    }
+    .text--body-2-bold--mobile {
+      font-size: var(--foundation-foundation-font-fontsize-140);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-700);
+    }
+  
+    /* 정렬 클래스들 */
+    .text--align-left--mobile { text-align: left; }
+    .text--align-center--mobile { text-align: center; }
+    .text--align-right--mobile { text-align: right; }
+    .text--align-justify--mobile { text-align: justify; }
+  }
+  
+  /* Tablet 브레이크포인트 (480px ~ 639px) */
+  @media (min-width: 480px) and (max-width: 639px) {
+    .text--hero-1-regular--tablet {
+      font-size: var(--foundation-foundation-font-fontsize-720);
+      line-height: var(--foundation-foundation-font-lineheight-12);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--title-1-regular--tablet {
+      font-size: var(--foundation-foundation-font-fontsize-480);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--body-1-regular--tablet {
+      font-size: var(--foundation-foundation-font-fontsize-160);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--align-left--tablet { text-align: left; }
+    .text--align-center--tablet { text-align: center; }
+    .text--align-right--tablet { text-align: right; }
+  }
+  
+  /* Desktop 브레이크포인트 (640px ~ 1023px) */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .text--hero-1-regular--desktop {
+      font-size: var(--foundation-foundation-font-fontsize-720);
+      line-height: var(--foundation-foundation-font-lineheight-12);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--title-1-regular--desktop {
+      font-size: var(--foundation-foundation-font-fontsize-480);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--body-1-regular--desktop {
+      font-size: var(--foundation-foundation-font-fontsize-160);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--align-left--desktop { text-align: left; }
+    .text--align-center--desktop { text-align: center; }
+    .text--align-right--desktop { text-align: right; }
+  }
+  
+  /* Desktop Large 브레이크포인트 (1024px ~ 1365px) */
+  @media (min-width: 1024px) and (max-width: 1365px) {
+    .text--hero-1-regular--desktopLg {
+      font-size: var(--foundation-foundation-font-fontsize-720);
+      line-height: var(--foundation-foundation-font-lineheight-12);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--title-1-regular--desktopLg {
+      font-size: var(--foundation-foundation-font-fontsize-480);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--body-1-regular--desktopLg {
+      font-size: var(--foundation-foundation-font-fontsize-160);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--align-left--desktopLg { text-align: left; }
+    .text--align-center--desktopLg { text-align: center; }
+    .text--align-right--desktopLg { text-align: right; }
+  }
+  
+  /* Desktop XL 브레이크포인트 (1366px+) */
+  @media (min-width: 1366px) {
+    .text--hero-1-regular--desktopXl {
+      font-size: var(--foundation-foundation-font-fontsize-720);
+      line-height: var(--foundation-foundation-font-lineheight-12);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--title-1-regular--desktopXl {
+      font-size: var(--foundation-foundation-font-fontsize-480);
+      line-height: var(--foundation-foundation-font-lineheight-14);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--body-1-regular--desktopXl {
+      font-size: var(--foundation-foundation-font-fontsize-160);
+      line-height: var(--foundation-foundation-font-lineheight-16);
+      letter-spacing: var(--foundation-foundation-font-letterspacing-30);
+      font-weight: var(--foundation-foundation-font-fontweight-400);
+    }
+    .text--align-left--desktopXl { text-align: left; }
+    .text--align-center--desktopXl { text-align: center; }
+    .text--align-right--desktopXl { text-align: right; }
+  } 

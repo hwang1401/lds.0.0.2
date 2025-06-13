@@ -1,0 +1,69 @@
+{
+  "name": "@lumir/system-02",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Lumir Design System 01 - Clean & Efficient",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./tokens": "./dist/css/tokens.css",
+    "./tokens/js": "./dist/js/tokens.js",
+    "./tokens/scss": "./dist/scss/_tokens.scss",
+    "./styles": "./dist/styles.css",
+    "./components/*": "./dist/components/*"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/lumir-design-system.git",
+    "directory": "packages/system-01"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "design-system",
+    "react",
+    "typescript",
+    "clean-efficient",
+    "aerospace",
+    "backoffice"
+  ],
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.js",
+    "build:components": "rollup -c",
+    "build": "npm run build:tokens && npm run build:components",
+    "build:watch": "concurrently \"npm run build:tokens\" \"npm run build:components -- --watch\"",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "cd ../shared && npm run build"
+  },
+  "dependencies": {
+    "@lumir/shared": "file:../shared",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": ">=16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "chokidar": "^3.5.3",
+    "concurrently": "^7.6.0",
+    "rollup": "^3.19.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^4.9.5"
+  }
+}

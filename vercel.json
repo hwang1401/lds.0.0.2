@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "name": "lumir-design-system-storybook",
+  "buildCommand": "echo 'Skip build - using static files'",
+  "outputDirectory": "packages/storybook/storybook-static",
+  "installCommand": "echo 'Skip install - using static files'",
+  "framework": null,
+  "env": {
+    "NODE_VERSION": "18",
+    "SKIP_INSTALL": "true"
+  },
+  "functions": {},
+  "routes": [
+    {
+      "src": "/sb-addons/(.*)",
+      "dest": "/sb-addons/$1"
+    },
+    {
+      "src": "/sb-manager/(.*)",
+      "dest": "/sb-manager/$1"
+    },
+    {
+      "src": "/sb-common-assets/(.*)",
+      "dest": "/sb-common-assets/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/system-01/(.*)",
+      "dest": "/system-01/$1"
+    },
+    {
+      "src": "/system-02/(.*)",
+      "dest": "/system-02/$1"
+    },
+    {
+      "src": "/iframe.html",
+      "dest": "/iframe.html"
+    },
+    {
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|ico|json))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+} 

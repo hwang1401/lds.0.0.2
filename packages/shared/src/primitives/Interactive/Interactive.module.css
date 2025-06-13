@@ -1,0 +1,164 @@
+/* Interactive 기본 클래스 */
+.interactive {
+  box-sizing: border-box;
+}
+
+/* === z-index 클래스들 === */
+.interactive--z-index-base { z-index: 0; }
+.interactive--z-index-raised { z-index: 100; }
+.interactive--z-index-navigation { z-index: 200; }
+.interactive--z-index-header { z-index: 300; }
+.interactive--z-index-dropdown { z-index: 400; }
+.interactive--z-index-sticky { z-index: 500; }
+.interactive--z-index-overlay { z-index: 600; }
+.interactive--z-index-modal { z-index: 700; }
+.interactive--z-index-toast { z-index: 800; }
+.interactive--z-index-popover { z-index: 900; }
+.interactive--z-index-tooltip { z-index: 1000; }
+
+/* === 커서 클래스들 === */
+.interactive--cursor-auto { cursor: auto; }
+.interactive--cursor-default { cursor: default; }
+.interactive--cursor-pointer { cursor: pointer; }
+.interactive--cursor-wait { cursor: wait; }
+.interactive--cursor-text { cursor: text; }
+.interactive--cursor-move { cursor: move; }
+.interactive--cursor-help { cursor: help; }
+.interactive--cursor-not-allowed { cursor: not-allowed; }
+.interactive--cursor-grab { cursor: grab; }
+.interactive--cursor-grabbing { cursor: grabbing; }
+.interactive--cursor-zoom-in { cursor: zoom-in; }
+.interactive--cursor-zoom-out { cursor: zoom-out; }
+.interactive--cursor-crosshair { cursor: crosshair; }
+.interactive--cursor-cell { cursor: cell; }
+.interactive--cursor-context-menu { cursor: context-menu; }
+.interactive--cursor-copy { cursor: copy; }
+.interactive--cursor-alias { cursor: alias; }
+
+/* === 포커스 스타일 클래스들 === */
+.interactive--focus-outline:focus {
+  outline: 2px solid #2196F3;
+  outline-offset: 2px;
+}
+
+.interactive--focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #2196F3;
+}
+
+.interactive--focus-within:focus-within {
+  outline: 2px solid #2196F3;
+  outline-offset: 2px;
+}
+
+/* === 포인터 이벤트 클래스들 === */
+.interactive--pointer-events-auto { pointer-events: auto; }
+.interactive--pointer-events-none { pointer-events: none; }
+
+/* === 사용자 선택 클래스들 === */
+.interactive--user-select-auto { user-select: auto; }
+.interactive--user-select-none { user-select: none; }
+.interactive--user-select-text { user-select: text; }
+.interactive--user-select-all { user-select: all; }
+
+/* === 투명도 클래스들 === */
+.interactive--opacity-hover { opacity: 0.8; }
+.interactive--opacity-disabled { opacity: 0.4; }
+.interactive--opacity-overlay-light { opacity: 0.2; }
+.interactive--opacity-overlay-medium { opacity: 0.4; }
+.interactive--opacity-overlay-heavy { opacity: 0.6; }
+
+/* === 호버 투명도 클래스들 === */
+.interactive--hover-opacity-hover:hover { 
+  opacity: 0.8; 
+  transition: opacity 0.2s ease-in-out;
+}
+.interactive--hover-opacity-disabled:hover { 
+  opacity: 0.4; 
+  transition: opacity 0.2s ease-in-out;
+}
+.interactive--hover-opacity-overlay-light:hover { 
+  opacity: 0.2; 
+  transition: opacity 0.2s ease-in-out;
+}
+.interactive--hover-opacity-overlay-medium:hover { 
+  opacity: 0.4; 
+  transition: opacity 0.2s ease-in-out;
+}
+.interactive--hover-opacity-overlay-heavy:hover { 
+  opacity: 0.6; 
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* === 호버 스케일 클래스 === */
+.interactive--hover-scale {
+  transition: transform var(--foundation-animation-duration-fast) var(--foundation-animation-easing-default);
+}
+
+.interactive--hover-scale:hover {
+  transform: scale(var(--hover-scale, 1.05));
+}
+
+/* === 호버 엘리베이션 클래스 === */
+.interactive--hover-elevation {
+  transition: box-shadow var(--foundation-animation-duration-fast) var(--foundation-animation-easing-default);
+}
+
+.interactive--hover-elevation:hover {
+  box-shadow: var(--foundation-shadow-light-20);
+}
+
+/* === 상태 클래스들 === */
+.interactive--pressed {
+  transform: scale(0.98);
+  transition: transform var(--foundation-animation-duration-instant) var(--foundation-animation-easing-default);
+}
+
+.interactive--disabled {
+  opacity: var(--foundation-opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* === 터치 액션 클래스들 === */
+.interactive--touch-action-auto { touch-action: auto; }
+.interactive--touch-action-none { touch-action: none; }
+.interactive--touch-action-pan-x { touch-action: pan-x; }
+.interactive--touch-action-pan-y { touch-action: pan-y; }
+.interactive--touch-action-manipulation { touch-action: manipulation; }
+
+/* === 조합 효과들 === */
+
+/* 클릭 가능한 요소들의 기본 효과 */
+.interactive--cursor-pointer {
+  transition: all var(--foundation-animation-duration-fast) var(--foundation-animation-easing-default);
+}
+
+.interactive--cursor-pointer:active {
+  transform: scale(0.98);
+}
+
+/* 그랩 가능한 요소들의 효과 */
+.interactive--cursor-grab:active {
+  cursor: grabbing;
+}
+
+/* 접근성 개선: 키보드 네비게이션 */
+.interactive:focus-visible {
+  outline: var(--foundation-focus-outline-width) var(--foundation-focus-outline-style) var(--foundation-focus-outline-color);
+  outline-offset: var(--foundation-focus-outline-offset);
+}
+
+/* 모션 감소 설정 고려 */
+@media (prefers-reduced-motion: reduce) {
+  .interactive--hover-scale,
+  .interactive--hover-elevation,
+  .interactive--pressed,
+  .interactive--cursor-pointer {
+    transition: none;
+  }
+  
+  .interactive--hover-scale:hover {
+    transform: none;
+  }
+} 

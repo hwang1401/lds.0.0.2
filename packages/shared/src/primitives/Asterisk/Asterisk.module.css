@@ -1,0 +1,10 @@
+.asterisk {
+  color: var(--foundation-foundation-color-red-light-40);
+  margin-left: 4px;
+  font-family: var(--foundation-foundation-font-fontfamily-base);
+}
+
+.disabled {
+  color: var(--foundation-foundation-color-red-light-40);
+  opacity: 0.5;
+} 

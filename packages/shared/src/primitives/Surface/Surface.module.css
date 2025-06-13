@@ -1,0 +1,419 @@
+/* ================================================================================================
+ * Surface 컴포넌트 스타일
+ * 시각적 표면 담당: 색상, 테두리, 반지름, 그림자
+ * ================================================================================================ */
+
+.surface {
+  /* 기본 스타일 초기화 */
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 부모 컨테이너 완전 채움 */
+.surface__fill {
+  width: 100%;
+  height: 100%;
+}
+
+/* 글로벌 유틸리티 클래스 - 모든 요소에서 사용 가능 */
+:global(.fill) {
+  width: 100%;
+  height: 100%;
+}
+
+/* ================================================================================================
+ * 배경색 (시스템별 토큰 매핑)
+ * ================================================================================================ */
+
+/* Primary System01 - Classic & Compact (GitHub Blue) */
+.surface--background-primary-system01-1-rest { background-color: var(--foundation-foundation-color-blue-light-50); }
+.surface--background-primary-system01-1-hovered { background-color: var(--foundation-foundation-color-blue-light-70); }
+.surface--background-primary-system01-1-pressed { background-color: var(--foundation-foundation-color-blue-light-30); }
+.surface--background-primary-system01-1-selected { background-color: var(--foundation-foundation-color-blue-light-60); }
+.surface--background-primary-system01-1-disabled { background-color: var(--foundation-foundation-color-blue-light-10); }
+.surface--background-primary-system01-2-rest { background-color: var(--foundation-foundation-color-blue-light-40); }
+.surface--background-primary-system01-2-hovered { background-color: var(--foundation-foundation-color-blue-light-60); }
+.surface--background-primary-system01-2-pressed { background-color: var(--foundation-foundation-color-blue-light-20); }
+.surface--background-primary-system01-2-selected { background-color: var(--foundation-foundation-color-blue-light-50); }
+.surface--background-primary-system01-2-disabled { background-color: var(--foundation-foundation-color-blue-light-0); }
+
+/* Primary System02 - Modern & Spacious (Green - Notion/Figma 느낌) */
+.surface--background-primary-system02-1-rest { background-color: var(--foundation-foundation-color-green-light-50); }
+.surface--background-primary-system02-1-hovered { background-color: var(--foundation-foundation-color-green-light-70); }
+.surface--background-primary-system02-1-pressed { background-color: var(--foundation-foundation-color-green-light-30); }
+.surface--background-primary-system02-1-selected { background-color: var(--foundation-foundation-color-green-light-60); }
+.surface--background-primary-system02-1-disabled { background-color: var(--foundation-foundation-color-green-light-10); }
+.surface--background-primary-system02-2-rest { background-color: var(--foundation-foundation-color-green-light-40); }
+.surface--background-primary-system02-2-hovered { background-color: var(--foundation-foundation-color-green-light-60); }
+.surface--background-primary-system02-2-pressed { background-color: var(--foundation-foundation-color-green-light-20); }
+.surface--background-primary-system02-2-selected { background-color: var(--foundation-foundation-color-green-light-50); }
+.surface--background-primary-system02-2-disabled { background-color: var(--foundation-foundation-color-green-light-0); }
+
+/* Primary System03 - Playful & Dynamic (Orange - Discord 느낌) */
+.surface--background-primary-system03-1-rest { background-color: var(--foundation-foundation-color-orange-light-50); }
+.surface--background-primary-system03-1-hovered { background-color: var(--foundation-foundation-color-orange-light-70); }
+.surface--background-primary-system03-1-pressed { background-color: var(--foundation-foundation-color-orange-light-30); }
+.surface--background-primary-system03-1-selected { background-color: var(--foundation-foundation-color-orange-light-60); }
+.surface--background-primary-system03-1-disabled { background-color: var(--foundation-foundation-color-orange-light-10); }
+.surface--background-primary-system03-2-rest { background-color: var(--foundation-foundation-color-orange-light-40); }
+.surface--background-primary-system03-2-hovered { background-color: var(--foundation-foundation-color-orange-light-60); }
+.surface--background-primary-system03-2-pressed { background-color: var(--foundation-foundation-color-orange-light-20); }
+.surface--background-primary-system03-2-selected { background-color: var(--foundation-foundation-color-orange-light-50); }
+.surface--background-primary-system03-2-disabled { background-color: var(--foundation-foundation-color-orange-light-0); }
+
+/* Secondary System01 */
+.surface--background-secondary-system01-1-rest { background-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--background-secondary-system01-1-hovered { background-color: var(--foundation-foundation-color-grey-light-88); }
+.surface--background-secondary-system01-1-pressed { background-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--background-secondary-system01-1-selected { background-color: var(--foundation-foundation-color-grey-light-84); }
+.surface--background-secondary-system01-1-disabled { background-color: var(--foundation-foundation-color-grey-light-98); }
+.surface--background-secondary-system01-2-rest { background-color: var(--foundation-foundation-color-grey-light-92); }
+.surface--background-secondary-system01-2-hovered { background-color: var(--foundation-foundation-color-grey-light-84); }
+.surface--background-secondary-system01-2-pressed { background-color: var(--foundation-foundation-color-grey-light-76); }
+.surface--background-secondary-system01-2-selected { background-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--background-secondary-system01-2-disabled { background-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--background-secondary-system01-3-rest { background-color: var(--foundation-foundation-color-grey-light-88); }
+.surface--background-secondary-system01-3-hovered { background-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--background-secondary-system01-3-pressed { background-color: var(--foundation-foundation-color-grey-light-72); }
+.surface--background-secondary-system01-3-selected { background-color: var(--foundation-foundation-color-grey-light-76); }
+.surface--background-secondary-system01-3-disabled { background-color: var(--foundation-foundation-color-grey-light-94); }
+.surface--background-secondary-system01-inverse-rest { background-color: var(--foundation-foundation-color-grey-light-100); }
+
+/* Secondary System02 */
+.surface--background-secondary-system02-1-rest { background-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--background-secondary-system02-1-hovered { background-color: var(--foundation-foundation-color-grey-light-88); }
+.surface--background-secondary-system02-1-pressed { background-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--background-secondary-system02-1-selected { background-color: var(--foundation-foundation-color-grey-light-84); }
+.surface--background-secondary-system02-1-disabled { background-color: var(--foundation-foundation-color-grey-light-98); }
+.surface--background-secondary-system02-2-rest { background-color: var(--foundation-foundation-color-grey-light-92); }
+.surface--background-secondary-system02-2-hovered { background-color: var(--foundation-foundation-color-grey-light-84); }
+.surface--background-secondary-system02-2-pressed { background-color: var(--foundation-foundation-color-grey-light-76); }
+.surface--background-secondary-system02-2-selected { background-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--background-secondary-system02-2-disabled { background-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--background-secondary-system02-3-rest { background-color: var(--foundation-foundation-color-grey-light-88); }
+.surface--background-secondary-system02-3-hovered { background-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--background-secondary-system02-3-pressed { background-color: var(--foundation-foundation-color-grey-light-72); }
+.surface--background-secondary-system02-3-selected { background-color: var(--foundation-foundation-color-grey-light-76); }
+.surface--background-secondary-system02-3-disabled { background-color: var(--foundation-foundation-color-grey-light-94); }
+.surface--background-secondary-system02-inverse-rest { background-color: var(--foundation-foundation-color-grey-light-100); }
+
+/* Secondary System03 */
+.surface--background-secondary-system03-1-rest { background-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--background-secondary-system03-1-hovered { background-color: var(--foundation-foundation-color-grey-light-88); }
+.surface--background-secondary-system03-1-pressed { background-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--background-secondary-system03-1-selected { background-color: var(--foundation-foundation-color-grey-light-84); }
+.surface--background-secondary-system03-1-disabled { background-color: var(--foundation-foundation-color-grey-light-98); }
+.surface--background-secondary-system03-2-rest { background-color: var(--foundation-foundation-color-grey-light-92); }
+.surface--background-secondary-system03-2-hovered { background-color: var(--foundation-foundation-color-grey-light-84); }
+.surface--background-secondary-system03-2-pressed { background-color: var(--foundation-foundation-color-grey-light-76); }
+.surface--background-secondary-system03-2-selected { background-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--background-secondary-system03-2-disabled { background-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--background-secondary-system03-3-rest { background-color: var(--foundation-foundation-color-grey-light-88); }
+.surface--background-secondary-system03-3-hovered { background-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--background-secondary-system03-3-pressed { background-color: var(--foundation-foundation-color-grey-light-72); }
+.surface--background-secondary-system03-3-selected { background-color: var(--foundation-foundation-color-grey-light-76); }
+.surface--background-secondary-system03-3-disabled { background-color: var(--foundation-foundation-color-grey-light-94); }
+.surface--background-secondary-system03-inverse-rest { background-color: var(--foundation-foundation-color-grey-light-100); }
+
+/* CTA System01 - Classic & Compact (Green CTA for contrast with Blue primary) */
+.surface--background-cta-system01-1-rest { background-color: var(--foundation-foundation-color-green-light-40); }
+.surface--background-cta-system01-1-hovered { background-color: var(--foundation-foundation-color-green-light-60); }
+.surface--background-cta-system01-1-pressed { background-color: var(--foundation-foundation-color-green-light-20); }
+.surface--background-cta-system01-1-disabled { background-color: var(--foundation-foundation-color-green-light-10); }
+.surface--background-cta-system01-2-rest { background-color: var(--foundation-foundation-color-green-light-30); }
+.surface--background-cta-system01-2-hovered { background-color: var(--foundation-foundation-color-green-light-50); }
+.surface--background-cta-system01-2-pressed { background-color: var(--foundation-foundation-color-green-light-10); }
+.surface--background-cta-system01-2-disabled { background-color: var(--foundation-foundation-color-green-light-0); }
+
+/* CTA System02 - Modern & Spacious (Purple CTA for contrast with Green primary) */
+.surface--background-cta-system02-1-rest { background-color: var(--foundation-foundation-color-purple-light-40); }
+.surface--background-cta-system02-1-hovered { background-color: var(--foundation-foundation-color-purple-light-60); }
+.surface--background-cta-system02-1-pressed { background-color: var(--foundation-foundation-color-purple-light-20); }
+.surface--background-cta-system02-1-disabled { background-color: var(--foundation-foundation-color-purple-light-10); }
+.surface--background-cta-system02-2-rest { background-color: var(--foundation-foundation-color-purple-light-30); }
+.surface--background-cta-system02-2-hovered { background-color: var(--foundation-foundation-color-purple-light-50); }
+.surface--background-cta-system02-2-pressed { background-color: var(--foundation-foundation-color-purple-light-10); }
+.surface--background-cta-system02-2-disabled { background-color: var(--foundation-foundation-color-purple-light-0); }
+
+/* CTA System03 - Playful & Dynamic (Blue CTA for contrast with Orange primary) */
+.surface--background-cta-system03-1-rest { background-color: var(--foundation-foundation-color-blue-light-40); }
+.surface--background-cta-system03-1-hovered { background-color: var(--foundation-foundation-color-blue-light-60); }
+.surface--background-cta-system03-1-pressed { background-color: var(--foundation-foundation-color-blue-light-20); }
+.surface--background-cta-system03-1-disabled { background-color: var(--foundation-foundation-color-blue-light-10); }
+.surface--background-cta-system03-2-rest { background-color: var(--foundation-foundation-color-blue-light-30); }
+.surface--background-cta-system03-2-hovered { background-color: var(--foundation-foundation-color-blue-light-50); }
+.surface--background-cta-system03-2-pressed { background-color: var(--foundation-foundation-color-blue-light-10); }
+.surface--background-cta-system03-2-disabled { background-color: var(--foundation-foundation-color-blue-light-0); }
+
+/* Status 색상 (시스템 공통) */
+.surface--background-error { background-color: var(--foundation-foundation-color-red-light-40); }
+.surface--background-warning { background-color: var(--foundation-foundation-color-yellow-light-40); }
+.surface--background-success { background-color: var(--foundation-foundation-color-green-light-40); }
+.surface--background-info { background-color: var(--foundation-foundation-color-blue-light-40); }
+.surface--background-focused { background-color: var(--foundation-foundation-color-blue-light-60); }
+
+/* ================================================================================================
+ * 전경색/텍스트색 (시스템별 토큰 매핑)
+ * ================================================================================================ */
+
+/* Primary System01 - Classic & Compact (GitHub Blue) */
+.surface--foreground-primary-system01-1-rest { color: var(--foundation-foundation-color-blue-light-50); }
+.surface--foreground-primary-system01-1-hovered { color: var(--foundation-foundation-color-blue-light-70); }
+.surface--foreground-primary-system01-1-pressed { color: var(--foundation-foundation-color-blue-light-30); }
+.surface--foreground-primary-system01-1-selected { color: var(--foundation-foundation-color-blue-light-60); }
+.surface--foreground-primary-system01-1-disabled { color: var(--foundation-foundation-color-blue-light-10); }
+.surface--foreground-primary-system01-oncolor { color: var(--foundation-foundation-color-grey-light-100); }
+
+/* Primary System02 - Modern & Spacious (Green) */
+.surface--foreground-primary-system02-1-rest { color: var(--foundation-foundation-color-green-light-50); }
+.surface--foreground-primary-system02-1-hovered { color: var(--foundation-foundation-color-green-light-70); }
+.surface--foreground-primary-system02-1-pressed { color: var(--foundation-foundation-color-green-light-30); }
+.surface--foreground-primary-system02-1-selected { color: var(--foundation-foundation-color-green-light-60); }
+.surface--foreground-primary-system02-1-disabled { color: var(--foundation-foundation-color-green-light-10); }
+.surface--foreground-primary-system02-oncolor { color: var(--foundation-foundation-color-grey-light-100); }
+
+/* Primary System03 - Playful & Dynamic (Orange) */
+.surface--foreground-primary-system03-1-rest { color: var(--foundation-foundation-color-orange-light-50); }
+.surface--foreground-primary-system03-1-hovered { color: var(--foundation-foundation-color-orange-light-70); }
+.surface--foreground-primary-system03-1-pressed { color: var(--foundation-foundation-color-orange-light-30); }
+.surface--foreground-primary-system03-1-selected { color: var(--foundation-foundation-color-orange-light-60); }
+.surface--foreground-primary-system03-1-disabled { color: var(--foundation-foundation-color-orange-light-10); }
+.surface--foreground-primary-system03-oncolor { color: var(--foundation-foundation-color-grey-light-100); }
+
+/* Secondary System01 */
+.surface--foreground-secondary-system01-1-rest { color: var(--foundation-foundation-color-grey-light-20); }
+.surface--foreground-secondary-system01-1-hovered { color: var(--foundation-foundation-color-grey-light-50); }
+.surface--foreground-secondary-system01-1-pressed { color: var(--foundation-foundation-color-grey-light-70); }
+.surface--foreground-secondary-system01-1-selected { color: var(--foundation-foundation-color-grey-light-60); }
+.surface--foreground-secondary-system01-1-disabled { color: var(--foundation-foundation-color-grey-light-80); }
+.surface--foreground-secondary-system01-2-rest { color: var(--foundation-foundation-color-grey-light-40); }
+.surface--foreground-secondary-system01-2-hovered { color: var(--foundation-foundation-color-grey-light-70); }
+.surface--foreground-secondary-system01-2-pressed { color: var(--foundation-foundation-color-grey-light-90); }
+.surface--foreground-secondary-system01-2-selected { color: var(--foundation-foundation-color-grey-light-80); }
+.surface--foreground-secondary-system01-2-disabled { color: var(--foundation-foundation-color-grey-light-90); }
+.surface--foreground-secondary-system01-3-rest { color: var(--foundation-foundation-color-grey-light-60); }
+.surface--foreground-secondary-system01-3-hovered { color: var(--foundation-foundation-color-grey-light-90); }
+.surface--foreground-secondary-system01-3-pressed { color: var(--foundation-foundation-color-grey-light-100); }
+.surface--foreground-secondary-system01-3-selected { color: var(--foundation-foundation-color-grey-light-94); }
+.surface--foreground-secondary-system01-3-disabled { color: var(--foundation-foundation-color-grey-light-70); }
+.surface--foreground-secondary-system01-inverse-rest { color: var(--foundation-foundation-color-grey-light-0); }
+.surface--foreground-secondary-system01-oncolor { color: var(--foundation-foundation-color-grey-light-100); }
+
+/* Secondary System02 */
+.surface--foreground-secondary-system02-1-rest { color: var(--foundation-foundation-color-grey-light-20); }
+.surface--foreground-secondary-system02-1-hovered { color: var(--foundation-foundation-color-grey-light-50); }
+.surface--foreground-secondary-system02-1-pressed { color: var(--foundation-foundation-color-grey-light-70); }
+.surface--foreground-secondary-system02-1-selected { color: var(--foundation-foundation-color-grey-light-60); }
+.surface--foreground-secondary-system02-1-disabled { color: var(--foundation-foundation-color-grey-light-80); }
+.surface--foreground-secondary-system02-2-rest { color: var(--foundation-foundation-color-grey-light-40); }
+.surface--foreground-secondary-system02-2-hovered { color: var(--foundation-foundation-color-grey-light-70); }
+.surface--foreground-secondary-system02-2-pressed { color: var(--foundation-foundation-color-grey-light-90); }
+.surface--foreground-secondary-system02-2-selected { color: var(--foundation-foundation-color-grey-light-80); }
+.surface--foreground-secondary-system02-2-disabled { color: var(--foundation-foundation-color-grey-light-90); }
+.surface--foreground-secondary-system02-3-rest { color: var(--foundation-foundation-color-grey-light-60); }
+.surface--foreground-secondary-system02-3-hovered { color: var(--foundation-foundation-color-grey-light-90); }
+.surface--foreground-secondary-system02-3-pressed { color: var(--foundation-foundation-color-grey-light-100); }
+.surface--foreground-secondary-system02-3-selected { color: var(--foundation-foundation-color-grey-light-94); }
+.surface--foreground-secondary-system02-3-disabled { color: var(--foundation-foundation-color-grey-light-70); }
+.surface--foreground-secondary-system02-inverse-rest { color: var(--foundation-foundation-color-grey-light-0); }
+.surface--foreground-secondary-system02-oncolor { color: var(--foundation-foundation-color-grey-light-100); }
+
+/* Secondary System03 */
+.surface--foreground-secondary-system03-1-rest { color: var(--foundation-foundation-color-grey-light-20); }
+.surface--foreground-secondary-system03-1-hovered { color: var(--foundation-foundation-color-grey-light-50); }
+.surface--foreground-secondary-system03-1-pressed { color: var(--foundation-foundation-color-grey-light-70); }
+.surface--foreground-secondary-system03-1-selected { color: var(--foundation-foundation-color-grey-light-60); }
+.surface--foreground-secondary-system03-1-disabled { color: var(--foundation-foundation-color-grey-light-80); }
+.surface--foreground-secondary-system03-2-rest { color: var(--foundation-foundation-color-grey-light-40); }
+.surface--foreground-secondary-system03-2-hovered { color: var(--foundation-foundation-color-grey-light-70); }
+.surface--foreground-secondary-system03-2-pressed { color: var(--foundation-foundation-color-grey-light-90); }
+.surface--foreground-secondary-system03-2-selected { color: var(--foundation-foundation-color-grey-light-80); }
+.surface--foreground-secondary-system03-2-disabled { color: var(--foundation-foundation-color-grey-light-90); }
+.surface--foreground-secondary-system03-3-rest { color: var(--foundation-foundation-color-grey-light-60); }
+.surface--foreground-secondary-system03-3-hovered { color: var(--foundation-foundation-color-grey-light-90); }
+.surface--foreground-secondary-system03-3-pressed { color: var(--foundation-foundation-color-grey-light-100); }
+.surface--foreground-secondary-system03-3-selected { color: var(--foundation-foundation-color-grey-light-94); }
+.surface--foreground-secondary-system03-3-disabled { color: var(--foundation-foundation-color-grey-light-70); }
+.surface--foreground-secondary-system03-inverse-rest { color: var(--foundation-foundation-color-grey-light-0); }
+.surface--foreground-secondary-system03-oncolor { color: var(--foundation-foundation-color-grey-light-100); }
+
+/* CTA System01 */
+.surface--foreground-cta-system01-1-rest { color: var(--foundation-foundation-color-green-light-60); }
+.surface--foreground-cta-system01-1-hovered { color: var(--foundation-foundation-color-green-light-80); }
+.surface--foreground-cta-system01-1-pressed { color: var(--foundation-foundation-color-green-light-40); }
+.surface--foreground-cta-system01-1-selected { color: var(--foundation-foundation-color-green-light-70); }
+.surface--foreground-cta-system01-1-disabled { color: var(--foundation-foundation-color-green-light-30); }
+.surface--foreground-cta-system01-2-rest { color: var(--foundation-foundation-color-green-light-80); }
+.surface--foreground-cta-system01-2-hovered { color: var(--foundation-foundation-color-green-light-100); }
+.surface--foreground-cta-system01-2-pressed { color: var(--foundation-foundation-color-green-light-60); }
+.surface--foreground-cta-system01-2-selected { color: var(--foundation-foundation-color-green-light-90); }
+.surface--foreground-cta-system01-2-disabled { color: var(--foundation-foundation-color-green-light-50); }
+.surface--foreground-cta-system01-oncolor { color: var(--foundation-foundation-color-grey-light-100); }
+
+/* CTA System02 */
+.surface--foreground-cta-system02-1-rest { color: var(--foundation-foundation-color-orange-light-60); }
+.surface--foreground-cta-system02-1-hovered { color: var(--foundation-foundation-color-orange-light-80); }
+.surface--foreground-cta-system02-1-pressed { color: var(--foundation-foundation-color-orange-light-40); }
+.surface--foreground-cta-system02-1-selected { color: var(--foundation-foundation-color-orange-light-70); }
+.surface--foreground-cta-system02-1-disabled { color: var(--foundation-foundation-color-orange-light-30); }
+.surface--foreground-cta-system02-2-rest { color: var(--foundation-foundation-color-orange-light-80); }
+.surface--foreground-cta-system02-2-hovered { color: var(--foundation-foundation-color-orange-light-100); }
+.surface--foreground-cta-system02-2-pressed { color: var(--foundation-foundation-color-orange-light-60); }
+.surface--foreground-cta-system02-2-selected { color: var(--foundation-foundation-color-orange-light-90); }
+.surface--foreground-cta-system02-2-disabled { color: var(--foundation-foundation-color-orange-light-50); }
+.surface--foreground-cta-system02-oncolor { color: var(--foundation-foundation-color-grey-light-100); }
+
+/* CTA System03 */
+.surface--foreground-cta-system03-1-rest { color: var(--foundation-foundation-color-green-light-60); }
+.surface--foreground-cta-system03-1-hovered { color: var(--foundation-foundation-color-green-light-80); }
+.surface--foreground-cta-system03-1-pressed { color: var(--foundation-foundation-color-green-light-40); }
+.surface--foreground-cta-system03-1-selected { color: var(--foundation-foundation-color-green-light-70); }
+.surface--foreground-cta-system03-1-disabled { color: var(--foundation-foundation-color-green-light-30); }
+.surface--foreground-cta-system03-2-rest { color: var(--foundation-foundation-color-green-light-80); }
+.surface--foreground-cta-system03-2-hovered { color: var(--foundation-foundation-color-green-light-100); }
+.surface--foreground-cta-system03-2-pressed { color: var(--foundation-foundation-color-green-light-60); }
+.surface--foreground-cta-system03-2-selected { color: var(--foundation-foundation-color-green-light-90); }
+.surface--foreground-cta-system03-2-disabled { color: var(--foundation-foundation-color-green-light-50); }
+.surface--foreground-cta-system03-oncolor { color: var(--foundation-foundation-color-grey-light-100); }
+
+/* ================================================================================================
+ * 테두리 색상 (시스템별 토큰 매핑)
+ * ================================================================================================ */
+
+/* Primary System01 */
+.surface--border-color-primary-system01-1-rest { border-color: var(--foundation-foundation-color-blue-light-60); }
+.surface--border-color-primary-system01-1-hovered { border-color: var(--foundation-foundation-color-blue-light-80); }
+.surface--border-color-primary-system01-1-pressed { border-color: var(--foundation-foundation-color-blue-light-40); }
+.surface--border-color-primary-system01-1-disabled { border-color: var(--foundation-foundation-color-blue-light-30); }
+
+/* Primary System02 */
+.surface--border-color-primary-system02-1-rest { border-color: var(--foundation-foundation-color-green-light-60); }
+.surface--border-color-primary-system02-1-hovered { border-color: var(--foundation-foundation-color-green-light-80); }
+.surface--border-color-primary-system02-1-pressed { border-color: var(--foundation-foundation-color-green-light-40); }
+.surface--border-color-primary-system02-1-disabled { border-color: var(--foundation-foundation-color-green-light-30); }
+
+/* Primary System03 */
+.surface--border-color-primary-system03-1-rest { border-color: var(--foundation-foundation-color-blue-light-60); }
+.surface--border-color-primary-system03-1-hovered { border-color: var(--foundation-foundation-color-blue-light-80); }
+.surface--border-color-primary-system03-1-pressed { border-color: var(--foundation-foundation-color-blue-light-40); }
+.surface--border-color-primary-system03-1-disabled { border-color: var(--foundation-foundation-color-blue-light-30); }
+
+/* Secondary System01 */
+.surface--border-color-secondary-system01-1-rest { border-color: var(--foundation-foundation-color-grey-light-60); }
+.surface--border-color-secondary-system01-1-hovered { border-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--border-color-secondary-system01-1-pressed { border-color: var(--foundation-foundation-color-grey-light-90); }
+.surface--border-color-secondary-system01-1-disabled { border-color: var(--foundation-foundation-color-grey-light-50); }
+.surface--border-color-secondary-system01-2-rest { border-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--border-color-secondary-system01-2-hovered { border-color: var(--foundation-foundation-color-grey-light-90); }
+.surface--border-color-secondary-system01-2-pressed { border-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--border-color-secondary-system01-2-disabled { border-color: var(--foundation-foundation-color-grey-light-70); }
+.surface--border-color-secondary-system01-3-rest { border-color: var(--foundation-foundation-color-grey-light-100); }
+.surface--border-color-secondary-system01-3-hovered { border-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--border-color-secondary-system01-3-pressed { border-color: var(--foundation-foundation-color-grey-light-94); }
+.surface--border-color-secondary-system01-3-disabled { border-color: var(--foundation-foundation-color-grey-light-90); }
+.surface--border-color-secondary-system01-inverse-rest { border-color: var(--foundation-foundation-color-grey-light-0); }
+
+/* Secondary System02 */
+.surface--border-color-secondary-system02-1-rest { border-color: var(--foundation-foundation-color-grey-light-60); }
+.surface--border-color-secondary-system02-1-hovered { border-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--border-color-secondary-system02-1-pressed { border-color: var(--foundation-foundation-color-grey-light-90); }
+.surface--border-color-secondary-system02-1-disabled { border-color: var(--foundation-foundation-color-grey-light-50); }
+.surface--border-color-secondary-system02-2-rest { border-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--border-color-secondary-system02-2-hovered { border-color: var(--foundation-foundation-color-grey-light-90); }
+.surface--border-color-secondary-system02-2-pressed { border-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--border-color-secondary-system02-2-disabled { border-color: var(--foundation-foundation-color-grey-light-70); }
+.surface--border-color-secondary-system02-3-rest { border-color: var(--foundation-foundation-color-grey-light-100); }
+.surface--border-color-secondary-system02-3-hovered { border-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--border-color-secondary-system02-3-pressed { border-color: var(--foundation-foundation-color-grey-light-94); }
+.surface--border-color-secondary-system02-3-disabled { border-color: var(--foundation-foundation-color-grey-light-90); }
+.surface--border-color-secondary-system02-inverse-rest { border-color: var(--foundation-foundation-color-grey-light-0); }
+
+/* Secondary System03 */
+.surface--border-color-secondary-system03-1-rest { border-color: var(--foundation-foundation-color-grey-light-60); }
+.surface--border-color-secondary-system03-1-hovered { border-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--border-color-secondary-system03-1-pressed { border-color: var(--foundation-foundation-color-grey-light-90); }
+.surface--border-color-secondary-system03-1-disabled { border-color: var(--foundation-foundation-color-grey-light-50); }
+.surface--border-color-secondary-system03-2-rest { border-color: var(--foundation-foundation-color-grey-light-80); }
+.surface--border-color-secondary-system03-2-hovered { border-color: var(--foundation-foundation-color-grey-light-90); }
+.surface--border-color-secondary-system03-2-pressed { border-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--border-color-secondary-system03-2-disabled { border-color: var(--foundation-foundation-color-grey-light-70); }
+.surface--border-color-secondary-system03-3-rest { border-color: var(--foundation-foundation-color-grey-light-100); }
+.surface--border-color-secondary-system03-3-hovered { border-color: var(--foundation-foundation-color-grey-light-96); }
+.surface--border-color-secondary-system03-3-pressed { border-color: var(--foundation-foundation-color-grey-light-94); }
+.surface--border-color-secondary-system03-3-disabled { border-color: var(--foundation-foundation-color-grey-light-90); }
+.surface--border-color-secondary-system03-inverse-rest { border-color: var(--foundation-foundation-color-grey-light-0); }
+
+/* CTA System01 */
+.surface--border-color-cta-system01-1-rest { border-color: var(--foundation-foundation-color-green-light-60); }
+.surface--border-color-cta-system01-1-hovered { border-color: var(--foundation-foundation-color-green-light-80); }
+.surface--border-color-cta-system01-1-pressed { border-color: var(--foundation-foundation-color-green-light-40); }
+.surface--border-color-cta-system01-1-disabled { border-color: var(--foundation-foundation-color-green-light-30); }
+.surface--border-color-cta-system01-2-rest { border-color: var(--foundation-foundation-color-green-light-80); }
+.surface--border-color-cta-system01-2-hovered { border-color: var(--foundation-foundation-color-green-light-100); }
+.surface--border-color-cta-system01-2-pressed { border-color: var(--foundation-foundation-color-green-light-60); }
+.surface--border-color-cta-system01-2-disabled { border-color: var(--foundation-foundation-color-green-light-50); }
+
+/* CTA System02 */
+.surface--border-color-cta-system02-1-rest { border-color: var(--foundation-foundation-color-orange-light-60); }
+.surface--border-color-cta-system02-1-hovered { border-color: var(--foundation-foundation-color-orange-light-80); }
+.surface--border-color-cta-system02-1-pressed { border-color: var(--foundation-foundation-color-orange-light-40); }
+.surface--border-color-cta-system02-1-disabled { border-color: var(--foundation-foundation-color-orange-light-30); }
+.surface--border-color-cta-system02-2-rest { border-color: var(--foundation-foundation-color-orange-light-80); }
+.surface--border-color-cta-system02-2-hovered { border-color: var(--foundation-foundation-color-orange-light-100); }
+.surface--border-color-cta-system02-2-pressed { border-color: var(--foundation-foundation-color-orange-light-60); }
+.surface--border-color-cta-system02-2-disabled { border-color: var(--foundation-foundation-color-orange-light-50); }
+
+/* CTA System03 */
+.surface--border-color-cta-system03-1-rest { border-color: var(--foundation-foundation-color-green-light-60); }
+.surface--border-color-cta-system03-1-hovered { border-color: var(--foundation-foundation-color-green-light-80); }
+.surface--border-color-cta-system03-1-pressed { border-color: var(--foundation-foundation-color-green-light-40); }
+.surface--border-color-cta-system03-1-disabled { border-color: var(--foundation-foundation-color-green-light-30); }
+.surface--border-color-cta-system03-2-rest { border-color: var(--foundation-foundation-color-green-light-80); }
+.surface--border-color-cta-system03-2-hovered { border-color: var(--foundation-foundation-color-green-light-100); }
+.surface--border-color-cta-system03-2-pressed { border-color: var(--foundation-foundation-color-green-light-60); }
+.surface--border-color-cta-system03-2-disabled { border-color: var(--foundation-foundation-color-green-light-50); }
+
+/* ================================================================================================
+ * 기존 스타일들 (변경 없음)
+ * ================================================================================================ */
+
+/* 테두리 두께 (파운데이션 토큰만) */
+.surface--border-width-thin { border-width: var(--foundation-foundation-strokewidth-10); }
+.surface--border-width-medium { border-width: var(--foundation-foundation-strokewidth-20); }
+.surface--border-width-thick { border-width: var(--foundation-foundation-strokewidth-30); }
+.surface--border-width-thicker { border-width: var(--foundation-foundation-strokewidth-40); }
+.surface--border-width-button { border-width: var(--foundation-foundation-strokewidth-20); }
+.surface--border-width-card { border-width: var(--foundation-foundation-strokewidth-10); }
+.surface--border-width-input-default { border-width: var(--foundation-foundation-strokewidth-10); }
+.surface--border-width-input-focused { border-width: var(--foundation-foundation-strokewidth-20); }
+.surface--border-width-divider { border-width: var(--foundation-foundation-strokewidth-10); }
+
+/* 테두리 스타일 */
+.surface--border-style-solid { border-style: solid; }
+.surface--border-style-dashed { border-style: dashed; }
+.surface--border-style-dotted { border-style: dotted; }
+.surface--border-style-none { border-style: none; }
+
+/* 반지름 (파운데이션 토큰만) - 하나의 속성으로 통일 */
+/* Global radius */
+.surface--border-radius-none { border-radius: var(--foundation-foundation-radius-0); }
+.surface--border-radius-sm { border-radius: var(--foundation-foundation-radius-40); }
+.surface--border-radius-md { border-radius: var(--foundation-foundation-radius-80); }
+.surface--border-radius-lg { border-radius: var(--foundation-foundation-radius-120); }
+.surface--border-radius-xl { border-radius: var(--foundation-foundation-radius-160); }
+.surface--border-radius-circular { border-radius: var(--foundation-foundation-radius-1000); }
+.surface--border-radius-pill { border-radius: var(--foundation-foundation-radius-1000); }
+
+/* Component specific radius */
+.surface--border-radius-button-sm { border-radius: var(--foundation-foundation-radius-40); }
+.surface--border-radius-button-md { border-radius: var(--foundation-foundation-radius-60); }
+.surface--border-radius-button-lg { border-radius: var(--foundation-foundation-radius-80); }
+.surface--border-radius-card { border-radius: var(--foundation-foundation-radius-120); }
+.surface--border-radius-input { border-radius: var(--foundation-foundation-radius-60); }
+.surface--border-radius-badge-default { border-radius: var(--foundation-foundation-radius-40); }
+.surface--border-radius-badge-pill { border-radius: var(--foundation-foundation-radius-1000); }
+.surface--border-radius-avatar { border-radius: var(--foundation-foundation-radius-1000); }
+.surface--border-radius-popover { border-radius: var(--foundation-foundation-radius-80); }
+.surface--border-radius-modal { border-radius: var(--foundation-foundation-radius-100); }
+
+/* 그림자, 오버레이 등 기존 스타일들은 동일하게 유지... */ 

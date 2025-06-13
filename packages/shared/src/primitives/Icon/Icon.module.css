@@ -1,0 +1,80 @@
+.icon {
+  display: inline-block !important;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* 사이즈 토큰 기반 - semantic.json과 일치하도록 수정 */
+.icon--size-xs {
+  width: var(--foundation-foundation-size-120) !important;  /* 12px */
+  height: var(--foundation-foundation-size-120) !important;
+}
+
+.icon--size-sm {
+  width: var(--foundation-foundation-size-160) !important;  /* 16px */
+  height: var(--foundation-foundation-size-160) !important;
+}
+
+.icon--size-md {
+  width: var(--foundation-foundation-size-200) !important;  /* 20px */
+  height: var(--foundation-foundation-size-200) !important;
+}
+
+.icon--size-lg {
+  width: var(--foundation-foundation-size-240) !important;  /* 24px */
+  height: var(--foundation-foundation-size-240) !important;
+}
+
+.icon--size-xl {
+  width: var(--foundation-foundation-size-280) !important;  /* 28px */
+  height: var(--foundation-foundation-size-280) !important;
+}
+
+.icon--size-xxl {
+  width: var(--foundation-foundation-size-320) !important;  /* 32px */
+  height: var(--foundation-foundation-size-320) !important;
+}
+
+.icon--size-xxxl {
+  width: var(--foundation-foundation-size-360) !important;  /* 36px */
+  height: var(--foundation-foundation-size-360) !important;
+}
+
+/* ================================================================================================
+ * 시스템별 색상 체계 (기본 색상만, 상태별 색상 제거)
+ * ================================================================================================ */
+
+/* Primary Colors */
+.icon--color-primary-system01 { color: var(--foundation-foundation-color-blue-light-50) !important; }    /* Classic & Compact - Blue */
+.icon--color-primary-system02 { color: var(--foundation-foundation-color-green-light-50) !important; }   /* Modern & Spacious - Green */
+.icon--color-primary-system03 { color: var(--foundation-foundation-color-orange-light-50) !important; }  /* Playful & Dynamic - Orange */
+
+/* Secondary Colors */
+.icon--color-secondary-system01-1 { color: var(--foundation-foundation-color-grey-light-20) !important; }
+.icon--color-secondary-system01-2 { color: var(--foundation-foundation-color-grey-light-40) !important; }
+.icon--color-secondary-system01-3 { color: var(--foundation-foundation-color-grey-light-60) !important; }
+.icon--color-secondary-system02-1 { color: var(--foundation-foundation-color-grey-light-20) !important; }
+.icon--color-secondary-system02-2 { color: var(--foundation-foundation-color-grey-light-40) !important; }
+.icon--color-secondary-system02-3 { color: var(--foundation-foundation-color-grey-light-60) !important; }
+.icon--color-secondary-system03-1 { color: var(--foundation-foundation-color-grey-light-20) !important; }
+.icon--color-secondary-system03-2 { color: var(--foundation-foundation-color-grey-light-40) !important; }
+.icon--color-secondary-system03-3 { color: var(--foundation-foundation-color-grey-light-60) !important; }
+
+/* CTA Colors */
+.icon--color-cta-system01 { color: var(--foundation-foundation-color-green-light-60) !important; }   /* Green CTA for Blue primary */
+.icon--color-cta-system02 { color: var(--foundation-foundation-color-purple-light-60) !important; }  /* Purple CTA for Green primary */
+.icon--color-cta-system03 { color: var(--foundation-foundation-color-blue-light-60) !important; }    /* Blue CTA for Orange primary */
+
+/* Status Colors (시스템 공통) */
+.icon--color-status-error { color: var(--foundation-foundation-color-red-light-40) !important; }
+.icon--color-status-warning { color: var(--foundation-foundation-color-orange-light-50) !important; }
+.icon--color-status-success { color: var(--foundation-foundation-color-green-light-40) !important; }
+.icon--color-status-info { color: var(--foundation-foundation-color-blue-light-40) !important; }
+.icon--color-status-focused { color: var(--foundation-foundation-color-grey-light-40) !important; }
+
+/* OnColor (배경 위의 아이콘) */
+.icon--color-oncolor { color: var(--foundation-foundation-color-grey-light-100) !important; }
+
+/* 유틸리티 색상들 */
+.icon--color-disabled { color: var(--foundation-foundation-color-grey-light-80) !important; }
+.icon--color-transparent { color: transparent !important; } 
