@@ -6,10 +6,5 @@
   "env": {
     "NODE_VERSION": "18.17.0",
     "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
-  },
-  "functions": {
-    "packages/storybook/storybook-static/**": {
-      "includeFiles": "packages/storybook/storybook-static/**"
-    }
   }
 } 
