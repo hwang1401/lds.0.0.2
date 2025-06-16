@@ -45,4 +45,9 @@ export * from './primitives';
 export * from './utils';
 
 // Hooks
-export * from './hooks'; 
+export * from './hooks';
+
+// Theme (removed - using pure CSS approach)
+// export { ThemeProvider } from './providers/ThemeProvider';
+// export { useTheme } from './hooks/useTheme';
+// export type { Theme, ThemeContextValue } from './hooks/useTheme'; 

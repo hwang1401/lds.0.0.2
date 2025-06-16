@@ -1,5 +1,5 @@
 import React from 'react';
-import { Surface, Frame, Sizing, IconName } from 'lumir-shared';
+import { Surface, Frame, Sizing, IconName } from '@lumir/shared';
 import { Badge, BadgeProps } from '../Badge';
 import { Button, ButtonProps } from '../Button';
 import { TextDisplay, TextDisplayProps } from '../TextDisplay';
@@ -145,6 +145,7 @@ export interface CardProps {
 }
 
 export const Card: React.FC<CardProps> = ({
+  // 🚨🚨🚨 실시간 테스트: 이 주석이 콘솔에 보이면 로컬 파일 참조 중! 🚨🚨🚨
   variant = "filled",
   title,
   badge,
@@ -191,6 +192,9 @@ export const Card: React.FC<CardProps> = ({
   buttonIsFullWidth = false,
   buttonIsSelected = false,
 }) => {
+  // 🚨 실시간 테스트 로그
+  console.log('🚨🚨🚨 Card 컴포넌트 로컬 파일에서 실행 중! 🚨🚨🚨');
+
   const handleClick = () => {
     if (onClick) {
       onClick();

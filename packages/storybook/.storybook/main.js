@@ -29,13 +29,15 @@ const config = {
   // ],
   
   viteFinal: async (config) => {
-    // npm 패키지 기반으로 변경 - alias 제거
-    // config.resolve.alias = {
-    //   ...config.resolve.alias,
-    //   '@lumir/shared': path.resolve(__dirname, '../../shared/src/index.ts'),
-    //   '@lumir/system-01': path.resolve(__dirname, '../../system-01/src/index.ts'),
-    //   '@lumir/system-02': path.resolve(__dirname, '../../system-02/src/index.ts'),
-    // };
+    // 🚀 실시간 개발을 위한 소스 파일 직접 참조
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@lumir/shared': path.resolve(__dirname, '../../shared/src/index.ts'),
+      '@lumir/system-01': path.resolve(__dirname, '../../system-01/src/index.ts'),
+      '@lumir/system-02': path.resolve(__dirname, '../../system-02/src/index.ts'),
+      // Legacy alias for backward compatibility
+      'lumir-shared': path.resolve(__dirname, '../../shared/src/index.ts'),
+    };
     
     // TypeScript 해결 강화
     config.resolve.extensions = [
@@ -43,25 +45,27 @@ const config = {
       ...(config.resolve.extensions || [])
     ];
     
-    // npm 패키지 해결 문제 수정
+    // CSS 모듈 처리 추가
+    config.css = {
+      ...config.css,
+      modules: {
+        localsConvention: 'camelCase',
+      },
+    };
+    
+    // 실시간 개발을 위한 최적화 설정
     config.optimizeDeps = {
       ...config.optimizeDeps,
       include: [
-        'lumir-shared',
-        'lumir-system-01', 
-        'lumir-system-02',
         'react',
         'react-dom'
       ],
+      exclude: [
+        '@lumir/shared',
+        '@lumir/system-01', 
+        '@lumir/system-02'
+      ],
       force: true
-    };
-    
-    // CommonJS 패키지 처리
-    config.build = {
-      ...config.build,
-      commonjsOptions: {
-        include: [/lumir-/, /node_modules/]
-      }
     };
     
     return config;

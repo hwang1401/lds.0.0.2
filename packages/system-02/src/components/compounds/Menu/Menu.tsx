@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, Text, Icon, IconName } from 'lumir-shared';
+import { Surface, Frame, Sizing, Text, Icon, IconName } from '@lumir/shared';
 import { Button } from '../Button/Button';
 
 type MenuSize = 'md' | 'lg' | 'xlg';

@@ -1,12 +1,12 @@
 import React from 'react';
 
-// 🔧 CSS 변수를 포함한 스타일 시트 가져오기 (npm 패키지 기반)
-import '@lumir/shared/dist/css/foundation-tokens.css';   // 1️⃣ Foundation 토큰 정의
-import '@lumir/shared/dist/styles.css';                  // 2️⃣ Primitives CSS
-import '@lumir/system-01/dist/css/tokens.css';           // 3️⃣ System-01 CSS
-import '@lumir/system-02/dist/css/tokens.css';           // 4️⃣ System-02 CSS
+// 🔧 실시간 개발을 위한 소스 파일 직접 참조
+import '../../shared/dist/css/foundation-tokens.css';   // 1️⃣ Foundation 토큰 정의
+import '../../shared/dist/styles.css';                  // 2️⃣ Primitives CSS
+import '../../system-01/dist/css/tokens.css';           // 3️⃣ System-01 CSS
+import '../../system-02/dist/css/tokens.css';           // 4️⃣ System-02 CSS
 
-console.log('✅ Storybook CSS 로드 완료 - npm 패키지 기반');
+console.log('✅ Storybook CSS 로드 완료 - 소스 파일 직접 참조');
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
@@ -99,18 +99,14 @@ const preview = {
     (Story, context) => {
       const theme = context.globals.theme || 'light';
       
-      // HTML 문서에 테마 클래스 적용
+      // HTML 문서에 data-theme 속성 적용 (Surface.module.css와 일치)
       React.useEffect(() => {
         const htmlElement = document.documentElement;
         const bodyElement = document.body;
         
-        // 기존 테마 클래스 제거
-        htmlElement.classList.remove('light', 'dark');
-        bodyElement.classList.remove('light', 'dark');
-        
-        // 새 테마 클래스 추가
-        htmlElement.classList.add(theme);
-        bodyElement.classList.add(theme);
+        // data-theme 속성 설정
+        htmlElement.setAttribute('data-theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
         
         // 배경색도 테마에 맞게 설정
         if (theme === 'dark') {
@@ -122,7 +118,11 @@ const preview = {
         }
       }, [theme]);
       
-      return React.createElement('div', { className: theme }, React.createElement(Story));
+      return React.createElement(
+        'div',
+        { 'data-theme': theme },
+        React.createElement(Story)
+      );
     },
   ],
 };

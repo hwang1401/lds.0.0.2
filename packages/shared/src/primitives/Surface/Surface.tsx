@@ -137,16 +137,10 @@ export type BorderWidthToken =
   | 'thin' | 'medium' | 'thick' | 'thicker' 
   | 'button' | 'card' | 'input-default' | 'input-focused' | 'divider';
 
-// 그림자 타입들
+// 그림자 타입들 (Foundation 토큰 기반)
 export type ShadowToken = 
-  // Interaction shadows
-  | 'interaction-button-rest' | 'interaction-button-hovered' | 'interaction-button-pressed' | 'interaction-button-disabled'
-  | 'interaction-card-rest' | 'interaction-card-hovered' | 'interaction-card-pressed'
-  | 'interaction-input-rest' | 'interaction-input-focused' | 'interaction-input-error'
-  // Surface shadows
-  | 'surface-overlay' | 'surface-dropdown' | 'surface-modal' | 'surface-tooltip' | 'surface-toast' | 'surface-sidebar'
-  // Feedback shadows
-  | 'feedback-error' | 'feedback-success' | 'feedback-warning' | 'feedback-info';
+  // Foundation shadow levels
+  | '0' | '10' | '20' | '30' | '40' | '50';
 
 // 오버레이 타입들
 export type OverlayToken = 'light' | 'medium' | 'heavy';

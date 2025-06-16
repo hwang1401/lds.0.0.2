@@ -34,9 +34,9 @@ export const useTransition = (
     onTransitionEnd,
   } = options;
 
-  const [isVisible, setIsVisible] = useState(show);
-  const [shouldRender, setShouldRender] = useState(show);
-  const timeoutRef = useRef<number>();
+  const [isVisible, setIsVisible] = useState<boolean>(show);
+  const [shouldRender, setShouldRender] = useState<boolean>(show);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   // 시멘틱 토큰 매핑
   const getDurationValue = (): string => {
