@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, Icon } from 'lumir-shared';
+import { Surface, Frame, Sizing, Icon } from '@lumir/shared';
 import { Label } from '../Label';
 
 export interface CheckboxProps {

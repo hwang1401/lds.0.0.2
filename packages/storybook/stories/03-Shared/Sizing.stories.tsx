@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Sizing, Text, Frame, Surface, Icon } from 'lumir-shared';
-import type { HeightValue } from 'lumir-shared';
+import { Sizing, Text, Frame, Surface, Icon } from '@lumir/shared';
+import type { HeightValue } from '@lumir/shared';
 
 const meta: Meta<typeof Sizing> = {
   title: 'Shared/Primitives/Sizing',

@@ -1,8 +1,10 @@
+import React from 'react';
+
 // 🔧 CSS 변수를 포함한 스타일 시트 가져오기 (npm 패키지 기반)
-import 'lumir-shared/dist/css/foundation-tokens.css';   // 1️⃣ Foundation 토큰 정의
-import 'lumir-shared/dist/styles.css';                  // 2️⃣ Primitives CSS
-import 'lumir-system-01/dist/css/tokens.css';           // 3️⃣ System-01 CSS
-import 'lumir-system-02/dist/css/tokens.css';           // 4️⃣ System-02 CSS
+import '@lumir/shared/dist/css/foundation-tokens.css';   // 1️⃣ Foundation 토큰 정의
+import '@lumir/shared/dist/styles.css';                  // 2️⃣ Primitives CSS
+import '@lumir/system-01/dist/css/tokens.css';           // 3️⃣ System-01 CSS
+import '@lumir/system-02/dist/css/tokens.css';           // 4️⃣ System-02 CSS
 
 console.log('✅ Storybook CSS 로드 완료 - npm 패키지 기반');
 
@@ -67,6 +69,19 @@ const preview = {
     },
   },
   globalTypes: {
+    theme: {
+      description: 'Theme Selection',
+      defaultValue: 'light',
+      toolbar: {
+        title: 'Theme',
+        icon: 'paintbrush',
+        items: [
+          { value: 'light', title: '🌞 Light Mode', left: '🌞' },
+          { value: 'dark', title: '🌙 Dark Mode', left: '🌙' },
+        ],
+        dynamicTitle: true,
+      },
+    },
     system: {
       description: 'Design System Selection',
       defaultValue: 'system-01',
@@ -80,6 +95,36 @@ const preview = {
       },
     },
   },
+  decorators: [
+    (Story, context) => {
+      const theme = context.globals.theme || 'light';
+      
+      // HTML 문서에 테마 클래스 적용
+      React.useEffect(() => {
+        const htmlElement = document.documentElement;
+        const bodyElement = document.body;
+        
+        // 기존 테마 클래스 제거
+        htmlElement.classList.remove('light', 'dark');
+        bodyElement.classList.remove('light', 'dark');
+        
+        // 새 테마 클래스 추가
+        htmlElement.classList.add(theme);
+        bodyElement.classList.add(theme);
+        
+        // 배경색도 테마에 맞게 설정
+        if (theme === 'dark') {
+          bodyElement.style.backgroundColor = 'var(--foundation-foundation-color-grey-dark-100, #000000)';
+          bodyElement.style.color = 'var(--foundation-foundation-color-grey-dark-0, #FFFFFF)';
+        } else {
+          bodyElement.style.backgroundColor = 'var(--foundation-foundation-color-grey-light-100, #FFFFFF)';
+          bodyElement.style.color = 'var(--foundation-foundation-color-grey-light-0, #000000)';
+        }
+      }, [theme]);
+      
+      return React.createElement('div', { className: theme }, React.createElement(Story));
+    },
+  ],
 };
 
 export default preview; 

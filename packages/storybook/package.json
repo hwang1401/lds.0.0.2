@@ -8,9 +8,9 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "lumir-shared": "^1.0.4",
-    "lumir-system-01": "^1.0.5",
-    "lumir-system-02": "^1.0.5",
+    "@lumir/shared": "workspace:*",
+    "@lumir/system-01": "workspace:*",
+    "@lumir/system-02": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -22,4 +22,4 @@
     "storybook": "^8.0.0",
     "vite": "^5.0.0"
   }
-} 
+}

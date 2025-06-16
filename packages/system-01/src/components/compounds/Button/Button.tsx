@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Frame, Surface, BackgroundToken, StrokeToken, ForegroundToken, Sizing, HeightValue, Text, Icon, IconName } from 'lumir-shared';
+import { Frame, Surface, BackgroundToken, StrokeToken, ForegroundToken, Sizing, HeightValue, Text, Icon, IconName } from '@lumir/shared';
 
 export interface ButtonProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> {
   /**

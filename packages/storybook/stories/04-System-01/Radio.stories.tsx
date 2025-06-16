@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Radio } from 'lumir-system-01';
-import { Frame, Text } from 'lumir-shared';
+import { Radio } from '@lumir/system-01';
+import { Frame, Text } from '@lumir/shared';
 
 const meta: Meta<typeof Radio> = {
   title: 'System-01/Compounds/SelectionControls/Radio',

@@ -1,5 +1,8 @@
-// System-01: Clean & Efficient Design System
+// System-02: Modern & Friendly Design System
 // 모든 컴포넌트 export
+
+// 🎨 프리미티브 CSS 스타일 import (컴파운드 컴포넌트에서 프리미티브 사용 시 필요)
+import '@lumir/shared/dist/styles.css';
 
 // Compounds 컴포넌트들
 export * from './components/compounds';

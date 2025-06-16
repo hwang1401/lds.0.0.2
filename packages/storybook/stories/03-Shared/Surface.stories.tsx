@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Surface, Text, Frame } from 'lumir-shared';
-import type { BackgroundToken, ForegroundToken, StrokeToken, RadiusToken, BorderWidthToken, ShadowToken, OverlayToken } from 'lumir-shared';
+import { Surface, Text, Frame } from '@lumir/shared';
+import type { BackgroundToken, ForegroundToken, StrokeToken, RadiusToken, BorderWidthToken, ShadowToken, OverlayToken } from '@lumir/shared';
 
 const meta: Meta<typeof Surface> = {
   title: 'Shared/Primitives/Surface',

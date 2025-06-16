@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Label } from 'lumir-system-01';
-import { Frame, Surface, Text } from 'lumir-shared';
+import { Label } from '@lumir/system-01';
+import { Frame, Surface, Text } from '@lumir/shared';
 
 const meta: Meta<typeof Label> = {
   title: 'System-01/Compounds/Label',

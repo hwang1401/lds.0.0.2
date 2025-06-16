@@ -1,5 +1,5 @@
 import React from 'react';
-import { Surface, Frame, Text, Asterisk } from 'lumir-shared';
+import { Surface, Frame, Text, Asterisk } from '@lumir/shared';
 
 export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   /**

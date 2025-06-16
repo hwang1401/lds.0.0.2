@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextDisplay } from 'lumir-system-01';
-import { Surface, Frame, Text } from 'lumir-shared';
+import { TextDisplay } from '@lumir/system-01';
+import { Surface, Frame, Text } from '@lumir/shared';  
 
 const meta: Meta<typeof TextDisplay> = {
   title: 'System-01/Compounds/TextDisplay',

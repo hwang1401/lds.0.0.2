@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, Text, type TextProps, Icon, type IconColor } from 'lumir-shared';
+import { Surface, Frame, Sizing, Text, type TextProps, Icon, type IconColor } from '@lumir/shared';
 
 export interface ChipProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'color'> {
   /**

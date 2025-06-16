@@ -1,5 +1,5 @@
 import React from 'react';
-import { Surface, BackgroundToken, ForegroundToken, StrokeToken, RadiusToken, BorderWidthToken, Frame, Text, Icon, IconName } from 'lumir-shared';
+import { Surface, BackgroundToken, ForegroundToken, StrokeToken, RadiusToken, BorderWidthToken, Frame, Text, Icon, IconName } from '@lumir/shared';
 
 type SpacingValue = 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
 type RadiusValue = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Surface, Frame, Text } from 'lumir-shared';
+import { Surface, Frame, Text } from '@lumir/shared';
 import { TabItemProps, TabState } from './types';
 import { useTabContext } from './Tab';
 

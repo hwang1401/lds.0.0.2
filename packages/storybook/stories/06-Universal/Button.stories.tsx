@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button as System01Button } from 'lumir-system-01';
-import { Button as System02Button } from 'lumir-system-02';
-import { Text, Frame } from 'lumir-shared';
+import { Button as System01Button } from '@lumir/system-01';
+import { Button as System02Button } from '@lumir/system-02';
+import { Text, Frame } from '@lumir/shared';
 
 // 시스템별 Button 컴포넌트 매핑
 const ButtonComponents = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Surface, Frame } from 'lumir-shared';
+import { Surface, Frame } from '@lumir/shared';
 import { TabPanelProps } from './types';
 import { useTabContext } from './Tab';
 

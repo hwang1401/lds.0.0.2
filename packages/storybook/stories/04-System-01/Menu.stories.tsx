@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { MenuHeader } from 'lumir-system-01';
-import { Frame, Surface, Text } from 'lumir-shared';
+import { MenuHeader } from '@lumir/system-01';
+import { Frame, Surface, Text } from '@lumir/shared';
 
 const meta: Meta<typeof MenuHeader> = {
   title: 'System-01/Compounds/MenuHeader',

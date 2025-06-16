@@ -1,5 +1,5 @@
 {
-  "name": "lumir-system-02",
+  "name": "@lumir/system-02",
   "version": "1.0.5",
   "type": "module",
   "description": "Lumir Design System 01 - Clean & Efficient",
@@ -48,7 +48,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "lumir-shared": "^1.0.4",
+    "@lumir/shared": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

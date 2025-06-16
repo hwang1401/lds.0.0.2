@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Link } from 'lumir-system-01';
-import { Frame, Text } from 'lumir-shared';
+import { Link } from '@lumir/system-01';
+import { Frame, Text } from '@lumir/shared';
 
 const meta: Meta<typeof Link> = {
   title: 'System-01/Compounds/Link',
