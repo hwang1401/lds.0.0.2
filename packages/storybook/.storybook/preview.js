@@ -1,14 +1,10 @@
 // 🔧 CSS 변수를 포함한 스타일 시트 가져오기 (npm 패키지 기반)
-try {
-  require('lumir-shared/dist/css/foundation-tokens.css');   // 1️⃣ Foundation 토큰 정의
-  require('lumir-shared/dist/styles.css');                  // 2️⃣ Primitives CSS
-  require('lumir-system-01/dist/css/tokens.css');           // 3️⃣ System-01 CSS
-  require('lumir-system-02/dist/css/tokens.css');           // 4️⃣ System-02 CSS
-  console.log('✅ Storybook CSS 로드 완료 - npm 패키지 기반');
-} catch (error) {
-  console.warn('⚠️ CSS 파일 로드 실패:', error.message);
-  // Fallback: 기본 스타일만 사용
-}
+import 'lumir-shared/dist/css/foundation-tokens.css';   // 1️⃣ Foundation 토큰 정의
+import 'lumir-shared/dist/styles.css';                  // 2️⃣ Primitives CSS
+import 'lumir-system-01/dist/css/tokens.css';           // 3️⃣ System-01 CSS
+import 'lumir-system-02/dist/css/tokens.css';           // 4️⃣ System-02 CSS
+
+console.log('✅ Storybook CSS 로드 완료 - npm 패키지 기반');
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
