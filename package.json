@@ -13,7 +13,7 @@
     "build:systems": "cd packages/system-01 && npm run build && cd ../system-02 && npm run build",
     "build:components": "echo 'Components built'",
     "storybook": "cd packages/storybook && npm run storybook",
-    "build-storybook": "cd packages/storybook && npm run build-storybook",
+    "build-storybook": "npm run build && cd packages/storybook && npm run build-storybook",
     "clean": "turbo clean && rm -rf node_modules packages/*/node_modules",
     "fresh": "npm run clean && npm install",
     "deploy": "npm run build-storybook",
