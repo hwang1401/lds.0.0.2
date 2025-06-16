@@ -743,7 +743,7 @@ export const CompoundComponentExample: Story = {
           borderWidth="thin"
           borderStyle="solid"
           borderColor="secondary-system01-2-rest"
-          boxShadow="interaction-card-rest"
+          boxShadow="30"
         >
           <Frame height="400px" display="flex" direction="column">
             {/* 헤더 */}

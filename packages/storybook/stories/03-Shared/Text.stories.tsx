@@ -708,7 +708,7 @@ export const CompoundExample: Story = {
           <Text variant="heading-3" weight="medium">아티클 카드 패턴</Text>
         </Surface>
         
-        <Surface background="secondary-system01-1-rest" borderRadius="card" borderWidth="thin" borderStyle="solid" borderColor="secondary-system01-2-rest" boxShadow="interaction-card-rest">
+        <Surface background="secondary-system01-1-rest" borderRadius="card" borderWidth="thin" borderStyle="solid" borderColor="secondary-system01-2-rest" boxShadow="30">
           <Frame padding="lg" direction="column" gap="md" maxWidth="400px">
             {/* Category Badge */}
             <Surface background="primary-system01-1-rest" borderRadius="badge-default">
@@ -811,7 +811,7 @@ export const CompoundExample: Story = {
         
         <Frame display="flex" direction="column" gap="sm">
           {/* Success Toast */}
-          <Surface background="success" borderRadius="md" boxShadow="interaction-card-rest">
+          <Surface background="success" borderRadius="md" boxShadow="30">
             <Frame padding="md" direction="row" align="center" gap="sm" maxWidth="400px">
               <Text variant="body-2" weight="medium">✓</Text>
               <Frame direction="column" gap="xs">
@@ -826,7 +826,7 @@ export const CompoundExample: Story = {
           </Surface>
           
           {/* Error Toast */}
-          <Surface background="error" borderRadius="md" boxShadow="interaction-card-rest">
+          <Surface background="error" borderRadius="md" boxShadow="30">
             <Frame padding="md" direction="row" align="center" gap="sm" maxWidth="400px">
               <Text variant="body-2" weight="bold">!</Text>
               <Frame direction="column" gap="xs">

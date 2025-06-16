@@ -264,7 +264,16 @@ export const Surface = forwardRef<HTMLElement, SurfaceProps>(({
     
     // 그림자
     if (boxShadow && boxShadow !== 'none') {
-      classes.push(styles[`surface--shadow-${boxShadow}`] || '');
+      const shadowClass = styles[`surface--shadow-${boxShadow}`];
+      classes.push(shadowClass || '');
+      
+      // 🚨 디버깅: 그림자 클래스 확인
+      console.log('🚨 Surface Shadow Debug:', {
+        boxShadow,
+        shadowClass,
+        shadowClassExists: !!shadowClass,
+        allShadowClasses: Object.keys(styles).filter(key => key.includes('shadow'))
+      });
     }
     
     // 오버레이

@@ -944,7 +944,7 @@ export const CompoundComponentExample: Story = {
             borderWidth="thin"
             borderStyle="solid"
             borderColor="secondary-system01-2-rest"
-            boxShadow="interaction-card-rest"
+            boxShadow="30"
           >
             <Frame display="flex" direction="column">
               {/* 16:9 비율 고정 썸네일 */}
@@ -973,7 +973,7 @@ export const CompoundComponentExample: Story = {
             borderWidth="thin"
             borderStyle="solid"
             borderColor="secondary-system01-2-rest"
-            boxShadow="interaction-card-rest"
+            boxShadow="30"
           >
             <Frame padding="lg" display="flex" gap="md" align="center">
               {/* 정사각형 아바타 */}
@@ -1004,7 +1004,7 @@ export const CompoundComponentExample: Story = {
             borderWidth="thin"
             borderStyle="solid"
             borderColor="secondary-system01-2-rest"
-            boxShadow="interaction-card-rest"
+            boxShadow="30"
           >
             <Frame padding="md" display="flex" direction="column" gap="sm">
               <Text variant="body-2" weight="medium">이미지 갤러리</Text>
@@ -1045,7 +1045,7 @@ export const CompoundComponentExample: Story = {
             borderWidth="thin"
             borderStyle="solid"
             borderColor="secondary-system01-2-rest"
-            boxShadow="interaction-card-rest"
+            boxShadow="30"
           >
             <Frame display="flex" direction="column">
               {/* 시멘틱 높이 토큰 사용 */}
@@ -1080,7 +1080,7 @@ export const CompoundComponentExample: Story = {
             borderWidth="thin"
             borderStyle="solid"
             borderColor="secondary-system01-2-rest"
-            boxShadow="interaction-card-rest"
+            boxShadow="30"
           >
             <Frame padding="md" display="flex" direction="column" gap="sm">
               <Text variant="body-2" weight="medium">아이콘 버튼 그리드</Text>
@@ -1127,7 +1127,7 @@ export const CompoundComponentExample: Story = {
             borderWidth="thin"
             borderStyle="solid"
             borderColor="secondary-system01-2-rest"
-            boxShadow="interaction-card-rest"
+            boxShadow="30"
           >
             <Frame padding="md" display="flex" direction="column" gap="sm">
               <Text variant="body-2" weight="medium">차트 컨테이너</Text>

@@ -83,9 +83,7 @@ Surface는 시각적 표면 속성만을 담당하는 순수한 프리미티브�
       control: 'select',
       options: [
         'none',
-        'interaction-button-rest', 'interaction-button-hovered', 'interaction-card-rest',
-        'surface-dropdown', 'surface-modal', 'surface-tooltip',
-        'feedback-success', 'feedback-error', 'feedback-warning'
+        '0', '10', '20', '30', '40', '50'
       ] as (ShadowToken | 'none')[],
     },
     overlay: {
@@ -464,15 +462,18 @@ export const BoxShadows: Story = {
   render: () => (
     <Frame display="flex" direction="column" gap="xl" padding="xl">
       
-      {/* Interaction Shadows */}
+      {/* Foundation Shadows - 단계별 진한 그림자 */}
       <Frame display="flex" direction="column" gap="md">
-        <Text variant="heading-3" weight="medium">Interaction Shadows</Text>
+        <Text variant="heading-3" weight="medium">Foundation Shadows (단계별)</Text>
         <Frame display="flex" gap="xl" wrap="wrap">
           {[
-            'interaction-button-rest',
-            'interaction-button-hovered',
-            'interaction-card-rest'
-          ].map((shadow) => (
+            { shadow: '0', label: 'None (0)' },
+            { shadow: '10', label: 'Light (10)' },
+            { shadow: '20', label: 'Medium (20)' },
+            { shadow: '30', label: 'Strong (30)' },
+            { shadow: '40', label: 'Heavy (40)' },
+            { shadow: '50', label: 'Strongest (50)' }
+          ].map(({ shadow, label }) => (
             <Surface 
               key={shadow} 
               background="secondary-system01-1-rest" 
@@ -480,57 +481,64 @@ export const BoxShadows: Story = {
               boxShadow={shadow as ShadowToken}
             >
               <Frame padding="lg" minWidth="140px">
-                <Text variant="caption-1" textAlign="center">{shadow}</Text>
+                <Text variant="caption-1" textAlign="center">{label}</Text>
               </Frame>
             </Surface>
           ))}
         </Frame>
       </Frame>
 
-      {/* Surface Shadows */}
+      {/* 사용 예시 - 버튼 */}
       <Frame display="flex" direction="column" gap="md">
-        <Text variant="heading-3" weight="medium">Surface Shadows</Text>
+        <Text variant="heading-3" weight="medium">Button Shadow 예시</Text>
         <Frame display="flex" gap="xl" wrap="wrap">
-          {[
-            'surface-dropdown',
-            'surface-modal',
-            'surface-tooltip',
-            'surface-toast'
-          ].map((shadow) => (
-            <Surface 
-              key={shadow} 
-              background="secondary-system01-1-rest" 
-              borderRadius="md"
-              boxShadow={shadow as ShadowToken}
-            >
-              <Frame padding="lg" minWidth="140px">
-                <Text variant="caption-1" textAlign="center">{shadow}</Text>
-              </Frame>
-            </Surface>
-          ))}
+          <Surface 
+            background="primary-system01-1-rest" 
+            foreground="primary-system01-oncolor"
+            borderRadius="button-md"
+            boxShadow="20"
+          >
+            <Frame padding="md" minWidth="120px" display="flex" justify="center">
+              <Text variant="label-1" weight="medium">Button (20)</Text>
+            </Frame>
+          </Surface>
+          
+          <Surface 
+            background="cta-system01-1-rest" 
+            foreground="cta-system01-oncolor"
+            borderRadius="button-md"
+            boxShadow="30"
+          >
+            <Frame padding="md" minWidth="120px" display="flex" justify="center">
+              <Text variant="label-1" weight="medium">CTA (30)</Text>
+            </Frame>
+          </Surface>
         </Frame>
       </Frame>
 
-      {/* Feedback Shadows */}
+      {/* 사용 예시 - 카드 */}
       <Frame display="flex" direction="column" gap="md">
-        <Text variant="heading-3" weight="medium">Feedback Shadows</Text>
+        <Text variant="heading-3" weight="medium">Card Shadow 예시</Text>
         <Frame display="flex" gap="xl" wrap="wrap">
-          {[
-            'feedback-success',
-            'feedback-warning',
-            'feedback-error'
-          ].map((shadow) => (
-            <Surface 
-              key={shadow} 
-              background="secondary-system01-1-rest" 
-              borderRadius="md"
-              boxShadow={shadow as ShadowToken}
-            >
-              <Frame padding="lg" minWidth="140px">
-                <Text variant="caption-1" textAlign="center">{shadow}</Text>
-              </Frame>
-            </Surface>
-          ))}
+          <Surface 
+            background="secondary-system01-1-rest" 
+            borderRadius="card"
+            boxShadow="30"
+          >
+            <Frame padding="lg" minWidth="140px">
+              <Text variant="caption-1" textAlign="center">Card (30)</Text>
+            </Frame>
+          </Surface>
+          
+          <Surface 
+            background="secondary-system01-1-rest" 
+            borderRadius="card"
+            boxShadow="40"
+          >
+            <Frame padding="lg" minWidth="140px">
+              <Text variant="caption-1" textAlign="center">Modal (40)</Text>
+            </Frame>
+          </Surface>
         </Frame>
       </Frame>
     </Frame>
@@ -594,7 +602,7 @@ export const CompoundComponentExample: Story = {
             background="primary-system01-1-rest"
             foreground="primary-system01-oncolor"
             borderRadius="button-md"
-            boxShadow="interaction-button-rest"
+            boxShadow="20"
           >
             <Frame paddingY="md" paddingX="lg" display="flex" justify="center" align="center">
               <Text variant="label-1" weight="medium">Primary Button</Text>
@@ -609,7 +617,7 @@ export const CompoundComponentExample: Story = {
             borderWidth="button"
             borderStyle="solid"
             borderRadius="button-md"
-            boxShadow="interaction-button-rest"
+            boxShadow="20"
           >
             <Frame paddingY="md" paddingX="lg" display="flex" justify="center" align="center">
               <Text variant="label-1" weight="medium">Secondary Button</Text>
@@ -621,7 +629,7 @@ export const CompoundComponentExample: Story = {
             background="success"
             foreground="primary-system01-oncolor"
             borderRadius="button-md"
-            boxShadow="feedback-success"
+            boxShadow="30"
           >
             <Frame paddingY="md" paddingX="lg" display="flex" justify="center" align="center">
               <Text variant="label-1" weight="medium">Success Button</Text>
@@ -639,7 +647,7 @@ export const CompoundComponentExample: Story = {
           <Surface 
             background="secondary-system01-1-rest"
             borderRadius="card"
-            boxShadow="interaction-card-rest"
+            boxShadow="30"
           >
             <Frame padding="lg" display="flex" direction="column" gap="md" minWidth="200px">
               <Text variant="heading-1" weight="medium">Card Title</Text>
@@ -664,7 +672,7 @@ export const CompoundComponentExample: Story = {
             background="success"
             foreground="primary-system01-oncolor"
             borderRadius="card"
-            boxShadow="feedback-success"
+            boxShadow="40"
           >
             <Frame padding="lg" display="flex" direction="column" gap="sm" minWidth="200px">
               <Text variant="label-1" weight="bold">✓ Success</Text>
@@ -699,7 +707,7 @@ export const CompoundComponentExample: Story = {
             borderWidth="input-focused"
             borderStyle="solid"
             borderRadius="input"
-            boxShadow="interaction-input-focused"
+            boxShadow="20"
           >
             <Frame paddingY="md" paddingX="lg">
               <Text variant="body-2">Focused input state</Text>

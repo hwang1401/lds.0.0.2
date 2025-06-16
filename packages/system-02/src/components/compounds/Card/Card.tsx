@@ -203,7 +203,7 @@ export const Card: React.FC<CardProps> = ({
           borderColor: "secondary-system02-2-rest" as const,
           borderWidth: "thin" as const,
           borderStyle: "solid" as const,
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" as const, // 직접 shadow 값 사용
+          boxShadow: "20" as const, // Foundation shadow 토큰 사용
         };
       case 'outlined':
         return {
@@ -227,12 +227,14 @@ export const Card: React.FC<CardProps> = ({
           borderColor: "secondary-system02-2-rest" as const,
           borderWidth: "thin" as const,
           borderStyle: "solid" as const,
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" as const, // 직접 shadow 값 사용
+          boxShadow: "20" as const, // 더 자연스러운 그림자를 위해 20 사용
         };
     }
   };
 
   const cardStyles = getCardStyles();
+
+
 
   return (
     <Sizing width={width} minWidth={minWidth} maxWidth={maxWidth} className={className}>
@@ -242,10 +244,8 @@ export const Card: React.FC<CardProps> = ({
         borderColor={cardStyles.borderColor}
         borderWidth={cardStyles.borderWidth}
         borderStyle={cardStyles.borderStyle}
+        boxShadow={cardStyles.boxShadow} // Surface의 boxShadow prop 사용
         onClick={handleClick}
-        style={{
-          boxShadow: cardStyles.boxShadow
-        }}
       >
         {/* 피그마 정확한 구조: 24px 패딩, 29px 간격 (transparent일 때는 패딩 제거) */}
         <Frame display="flex" direction="column" gap="xxl" padding={variant === 'transparent' ? undefined : "lg"}>
