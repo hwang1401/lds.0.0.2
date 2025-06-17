@@ -28,8 +28,7 @@
     "deploy": "pnpm run storybook:build",
     "release": "changeset publish",
     
-    "validate:colors": "cd packages/shared && pnpm run validate:colors",
-    "report:colors": "cd packages/shared && pnpm run report:colors",
+    "evaluate:colors": "cd packages/shared && pnpm run evaluate:colors",
     "validate:all": "cd packages/shared && pnpm run validate:all",
     
     "typecheck": "cd packages/shared && tsc --noEmit"
