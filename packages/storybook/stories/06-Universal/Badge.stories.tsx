@@ -17,7 +17,7 @@ const UniversalBadge = ({ system, ...props }: any) => {
 };
 
 const meta: Meta<typeof UniversalBadge> = {
-  title: 'Universal/Badge',
+  title: 'Components/Badge',
   component: UniversalBadge,
   parameters: {
     layout: 'centered',

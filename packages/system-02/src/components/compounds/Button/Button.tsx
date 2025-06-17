@@ -182,10 +182,10 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
         return 'primary-system02-1-rest';
       }
       if (colorScheme === 'secondary') {
-        if (currentState === 'disabled') return 'secondary-system02-1-disabled';
-        if (currentState === 'pressed') return 'secondary-system02-1-pressed';
-        if (currentState === 'hovered') return 'secondary-system02-1-hovered';
-        return 'secondary-system02-1-rest';
+        if (currentState === 'disabled') return 'secondary-system02-2-disabled';
+        if (currentState === 'pressed') return 'secondary-system02-2-pressed';
+        if (currentState === 'hovered') return 'secondary-system02-2-hovered';
+        return 'secondary-system02-2-rest';
       }
       if (colorScheme === 'cta') {
         if (currentState === 'disabled') return 'cta-system02-1-disabled';
@@ -362,7 +362,7 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
       ref={ref}
       background={getBackgroundColor()}
       foreground={getForegroundColor()}
-      borderRadius="lg"  // System-02: md → lg (더 둥근 모서리)
+      borderRadius="xl"  // System-02: md → lg (더 둥근 모서리)
       borderWidth={borderProps.borderWidth}
       borderColor={borderProps.borderColor}
       borderStyle={borderProps.borderWidth ? 'solid' : 'none'}

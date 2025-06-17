@@ -137,18 +137,18 @@ export const OptionList = forwardRef<HTMLDivElement, OptionListProps>(({
   // 상태에 따른 배경색 결정
   const getBackgroundColor = () => {
     const actualState = getActualState();
-    if (actualState === 'disabled') return 'secondary-system01-1-disabled';
-    if (actualState === 'pressed') return 'secondary-system01-1-pressed';
-    if (actualState === 'hovered') return 'secondary-system01-1-hovered';
-    if (actualState === 'selected') return 'secondary-system01-1-selected';
-    return 'secondary-system01-1-rest';
+    if (actualState === 'disabled') return 'secondary-system02-1-disabled';
+    if (actualState === 'pressed') return 'secondary-system02-1-pressed';
+    if (actualState === 'hovered') return 'secondary-system02-1-hovered';
+    if (actualState === 'selected') return 'secondary-system02-1-selected';
+    return 'secondary-system02-1-rest';
   };
 
   // 상태에 따른 텍스트 색상 결정
   const getForegroundColor = () => {
     const actualState = getActualState();
-    if (actualState === 'disabled') return 'secondary-system01-1-disabled';
-    return 'secondary-system01-1-rest';
+    if (actualState === 'disabled') return 'secondary-system02-1-disabled';
+    return 'secondary-system02-1-rest';
   };
 
   // 이벤트 핸들러들
@@ -222,7 +222,7 @@ export const OptionList = forwardRef<HTMLDivElement, OptionListProps>(({
     if (state === 'focused') {
       return {
         borderWidth: 'thin' as const,
-        borderColor: 'primary-system01-1-rest' as const,
+        borderColor: 'primary-system02-1-rest' as const,
         borderStyle: 'solid' as const
       };
     }
@@ -281,7 +281,7 @@ export const OptionList = forwardRef<HTMLDivElement, OptionListProps>(({
       ref={ref}
       background={getBackgroundColor()}
       foreground={getForegroundColor()}
-      borderRadius="sm"
+      borderRadius="xl"
       {...borderProps}
       style={{
         cursor: disabled ? 'not-allowed' : 'pointer',

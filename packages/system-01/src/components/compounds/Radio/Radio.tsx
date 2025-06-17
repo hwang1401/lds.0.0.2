@@ -118,13 +118,13 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
       const state = getCurrentState();
       switch (state) {
         case 'disabled':
-          return 'secondary-system01-1-disabled';
+          return 'secondary-system01-2-disabled';
         case 'pressed':
-          return 'secondary-system01-1-pressed';
+          return 'secondary-system01-2-pressed';
         case 'hovered':
-          return 'secondary-system01-1-hovered';
+          return 'secondary-system01-2-hovered';
         default:
-          return 'secondary-system01-1-rest';
+          return 'secondary-system01-2-rest';
       }
     };
 
@@ -133,9 +133,9 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
       const state = getCurrentState();
       switch (state) {
         case 'disabled':
-          return 'secondary-system01-1-disabled';
+          return 'secondary-system01-3-disabled';
         case 'pressed':
-          return 'secondary-system01-1-pressed';
+          return 'secondary-system01-2-pressed';
         case 'hovered':
           return 'secondary-system01-1-hovered';
         default:
@@ -167,7 +167,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
           <Icon
             name="LineIconsCheckmarkCheckmarkIcon"
             size="xs"
-            color="secondary-system01-1"
+            color="primary-system01"
           />
         );
       }

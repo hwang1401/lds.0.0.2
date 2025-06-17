@@ -17,7 +17,7 @@ const UniversalCheckbox = ({ system, ...props }: any) => {
 };
 
 const meta: Meta<typeof UniversalCheckbox> = {
-  title: 'Universal/Checkbox',
+  title: 'Components/Checkbox',
   component: UniversalCheckbox,
   parameters: {
     layout: 'centered',

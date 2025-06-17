@@ -108,17 +108,17 @@ export const MenuHeader = forwardRef<HTMLDivElement, MenuHeaderProps>(({
   const getBackgroundColor = () => {
     if (actualState === 'disabled') return undefined; // 비활성화시 배경색 없음
     if (actualState === 'selected') return undefined; // 선택된 상태에서 배경색 없음
-    if (actualState === 'pressed') return 'secondary-system01-1-pressed';
-    if (actualState === 'hovered') return 'secondary-system01-1-hovered';
+    if (actualState === 'pressed') return 'secondary-system02-1-pressed';
+    if (actualState === 'hovered') return 'secondary-system02-1-hovered';
     if (actualState === 'focused') return undefined; // 포커스시 배경색 없음
     return undefined; // 기본 상태도 배경색 없음
   };
 
   // 상태별 전경색
   const getForegroundColor = () => {
-    if (actualState === 'disabled') return 'secondary-system01-1-disabled';
-    if (actualState === 'selected') return 'primary-system01-1-rest';
-    return 'secondary-system01-1-rest';
+    if (actualState === 'disabled') return 'secondary-system02-1-disabled';
+    if (actualState === 'selected') return 'primary-system02-1-rest';
+    return 'secondary-system02-1-rest';
   };
 
   // 포커스 상태 보더 색상
@@ -173,7 +173,7 @@ export const MenuHeader = forwardRef<HTMLDivElement, MenuHeaderProps>(({
       ref={ref}
       background={getBackgroundColor()}
       foreground={getForegroundColor()}
-      borderRadius="md"
+      borderRadius="xl"
       {...getBorderProps()}
       style={{
         cursor: disabled ? 'not-allowed' : 'pointer',

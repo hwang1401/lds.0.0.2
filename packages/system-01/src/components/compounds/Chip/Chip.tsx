@@ -112,9 +112,9 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
       return 'primary-system01-1-rest';
     }
     if (disabled) return 'secondary-system01-1-disabled';
-    if (actualState === 'pressed') return 'secondary-system01-1-pressed';
-    if (actualState === 'hovered') return 'secondary-system01-1-hovered';
-    return 'secondary-system01-1-rest';
+    if (actualState === 'pressed') return 'secondary-system01-2-pressed';
+    if (actualState === 'hovered') return 'secondary-system01-2-hovered';
+    return 'secondary-system01-2-rest';
   };
 
   // 테두리 색상 결정
@@ -135,7 +135,7 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
 
   // 전경색 결정
   const getForegroundColor = () => {
-    if (disabled) return 'secondary-system01-1-disabled';
+    if (disabled) return 'secondary-system01-3-disabled';
     
     if (variant === 'outlined') {
       if (selected) {

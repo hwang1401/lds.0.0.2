@@ -158,14 +158,14 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
     }
   };
 
-  // 크기별 패딩 결정
+  // 크기별 패딩 결정 (System-01: 타이트하지만 기능성 유지)
   const getPadding = () => {
     switch (size) {
       case 'xs': return 'xs';
       case 'sm': return 'xs';
       case 'md': return 'sm';
-      case 'lg': return 'md';
-      case 'xl': return 'lg';
+      case 'lg': return 'sm'; // System-01: 타이트한 느낌으로 조정
+      case 'xl': return 'md'; // System-01: 타이트한 느낌으로 조정
       default: return 'sm';
     }
   };
@@ -182,10 +182,10 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
         return 'primary-system01-1-rest';
       }
       if (colorScheme === 'secondary') {
-        if (currentState === 'disabled') return 'secondary-system01-1-disabled';
-        if (currentState === 'pressed') return 'secondary-system01-1-pressed';
-        if (currentState === 'hovered') return 'secondary-system01-1-hovered';
-        return 'secondary-system01-1-rest';
+        if (currentState === 'disabled') return 'secondary-system01-2-disabled';
+        if (currentState === 'pressed') return 'secondary-system01-2-pressed';
+        if (currentState === 'hovered') return 'secondary-system01-2-hovered';
+        return 'secondary-system01-2-rest';
       }
       if (colorScheme === 'cta') {
         if (currentState === 'disabled') return 'cta-system01-1-disabled';
@@ -368,7 +368,7 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
       ref={ref}
       background={getBackgroundColor()}
       foreground={getForegroundColor()}
-      borderRadius="md"
+      borderRadius="sm"
       borderWidth={borderProps.borderWidth}
       borderColor={borderProps.borderColor}
       borderStyle={borderProps.borderWidth ? 'solid' : 'none'}
@@ -393,7 +393,7 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
           direction="row"
           align="center"
           justify="center"
-          gap="sm"
+          gap="xs"
           fill
           padding={getPadding()}
         >

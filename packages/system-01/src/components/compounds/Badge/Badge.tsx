@@ -78,10 +78,10 @@ export const Badge: React.FC<BadgeProps> = ({
     if (style === 'filled') {
       switch (color) {
         case 'primary': return 'primary-system01-1-rest';
-        case 'secondary': return 'secondary-system01-1-rest';
+        case 'secondary': return 'secondary-system01-2-rest';
         case 'cta': return 'cta-system01-1-rest';
-        case 'error': return 'error';
-        case 'warning': return 'warning';
+        case 'error': return 'error-1-rest';
+        case 'warning': return 'warning-1-rest';
         default: return 'primary-system01-1-rest';
       }
     }
@@ -95,8 +95,8 @@ export const Badge: React.FC<BadgeProps> = ({
         case 'primary': return 'primary-system01-1-rest';
         case 'secondary': return 'secondary-system01-1-rest';
         case 'cta': return 'cta-system01-1-rest';
-        case 'error': return 'error';
-        case 'warning': return 'warning';
+        case 'error': return 'error-1-rest';
+        case 'warning': return 'warning-1-rest';
         default: return 'primary-system01-1-rest';
       }
     }
@@ -115,8 +115,9 @@ export const Badge: React.FC<BadgeProps> = ({
           // primary, cta filled일 때는 oncolor 사용
           return 'primary-system01-oncolor';
         case 'error': 
+          return 'error-oncolor'; // error 배경에 oncolor 적용
         case 'warning': 
-          return 'secondary-system01-oncolor';
+          return 'warning-oncolor'; // warning 배경에 oncolor 적용
         case 'secondary': return 'secondary-system01-2-rest';
         default: return 'primary-system01-oncolor';
       }
@@ -126,16 +127,16 @@ export const Badge: React.FC<BadgeProps> = ({
         case 'primary': return 'primary-system01-1-rest';
         case 'secondary': return 'secondary-system01-1-rest';
         case 'cta': return 'cta-system01-1-rest';
-        case 'error': return 'error';
-        case 'warning': return 'warning';
+        case 'error': return 'error-1-rest';
+        case 'warning': return 'warning-1-rest';
         default: return 'secondary-system01-1-rest';
       }
     }
   };
 
-  // 형태별 border radius 매핑
+  // 형태별 border radius 매핑 (System-01: 직각에 가까운 모서리)
   const getBorderRadius = (type: BadgeType): RadiusToken => {
-    return type === 'circle' ? 'circular' : 'badge-default';
+    return type === 'circle' ? 'circular' : 'sm'; // System-01 가이드라인: sm 사용
   };
 
   // 크기별 아이콘 크기 매핑
@@ -154,6 +155,10 @@ export const Badge: React.FC<BadgeProps> = ({
         return 'oncolor';
       case 'secondary-system01-oncolor':
         return 'oncolor';
+      case 'error-oncolor':
+        return 'oncolor';
+      case 'warning-oncolor':
+        return 'oncolor';
       case 'primary-system01-1-rest':
         return 'primary-system01';
       case 'secondary-system01-1-rest':
@@ -164,6 +169,10 @@ export const Badge: React.FC<BadgeProps> = ({
         return 'disabled';
       case 'cta-system01-1-rest':
         return 'cta-system01';
+      case 'error-1-rest':
+        return 'status-error';
+      case 'warning-1-rest':
+        return 'status-warning';
       case 'error':
         return 'status-error';
       case 'warning':

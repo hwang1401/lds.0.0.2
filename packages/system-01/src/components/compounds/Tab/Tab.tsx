@@ -42,47 +42,47 @@ interface TabPanelProps {
   children: React.ReactNode;
 }
 
+// 메인 Tab 컴포넌트
 const Tab = ({ children, defaultSelectedId, size = 'lg', showBorder = true }: TabProps) => {
   const [selectedId, setSelectedId] = useState(defaultSelectedId);
 
+  const contextValue: TabContextType = {
+    selectedId,
+    setSelectedId,
+    size,
+    showBorder,
+  };
+
   return (
-    <TabContext.Provider value={{ selectedId, setSelectedId, size, showBorder }}>
-      <Surface>{children}</Surface>
+    <TabContext.Provider value={contextValue}>
+      <Frame display="flex" direction="column" gap="none">
+        {children}
+      </Frame>
     </TabContext.Provider>
   );
 };
 
+// TabList 컴포넌트
 const TabList = ({ children }: TabListProps) => {
-  const { showBorder } = useTabContext();
-  
   return (
-    <Surface
-      borderWidth={showBorder ? "thin" : undefined}
-      borderColor={showBorder ? "secondary-system01-2-rest" : undefined}
-      borderStyle={showBorder ? "solid" : undefined}
-      style={{
-        borderTop: 'none',
-        borderLeft: 'none', 
-        borderRight: 'none'
-      }}
-    >
-      <Frame 
-        display="flex"
-        direction="row" 
-        gap="none"
-      >
-        {children}
-      </Frame>
-    </Surface>
+    <Frame display="flex" direction="row" gap="none" align="flex-start">
+      {children}
+    </Frame>
   );
 };
 
-const TabItem = ({ id, children, icon, iconPosition = 'before', disabled = false }: TabItemProps) => {
-  const { selectedId, setSelectedId, size, showBorder } = useTabContext();
-  const [isHovered, setIsHovered] = useState(false);
-  const [isPressed, setIsPressed] = useState(false);
-
+// TabItem 컴포넌트
+const TabItem = ({ 
+  id, 
+  children, 
+  icon, 
+  iconPosition = 'before', 
+  disabled = false 
+}: TabItemProps) => {
+  const { selectedId, setSelectedId, size = 'lg', showBorder = true } = useTabContext();
+  
   const isSelected = selectedId === id;
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
     if (!disabled) {
@@ -90,104 +90,18 @@ const TabItem = ({ id, children, icon, iconPosition = 'before', disabled = false
     }
   };
 
-  // 마우스 이벤트 핸들러들
-  const handleMouseEnter = () => {
-    if (!disabled) {
-      setIsHovered(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setIsPressed(false);
-  };
-
-  const handleMouseDown = () => {
-    if (!disabled) {
-      setIsPressed(true);
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsPressed(false);
-  };
-
-  // 현재 상태 결정
-  const getCurrentState = (): 'rest' | 'hovered' | 'pressed' | 'disabled' => {
-    if (disabled) return 'disabled';
-    if (isPressed) return 'pressed';
-    if (isHovered) return 'hovered';
-    return 'rest';
-  };
-
   // 아이콘 색상 결정
   const getIconColor = () => {
     if (disabled) return 'secondary-system01-1';
     if (isSelected) return 'primary-system01';
-    return 'secondary-system01-3';
-  };
-
-  // 텍스트 variant 결정
-  const getTextVariant = () => {
-    return size === 'lg' ? 'body-1' : 'body-2';
-  };
-
-  // 텍스트 weight 결정
-  const getTextWeight = () => {
-    return isSelected ? 'bold' : 'regular';
-  };
-
-  // 아이콘 크기 결정
-  const getIconSize = () => {
-    return size === 'lg' ? 'lg' : 'md';
-  };
-
-  const renderContent = () => {
-    const textElement = (
-      <Text 
-        variant={getTextVariant()}
-        weight={getTextWeight()}
-      >
-        {children}
-      </Text>
-    );
-
-    if (!icon) {
-      return textElement;
-    }
-
-    const iconElement = (
-      <Icon
-        name={icon}
-        size={getIconSize()}
-        color={getIconColor()}
-      />
-    );
-
-    // iconPosition에 따른 순서 결정
-    if (iconPosition === 'after') {
-      return (
-        <>
-          {textElement}
-          {iconElement}
-        </>
-      );
-    } else {
-      // 'before' 및 'above' 모두 아이콘이 먼저
-      return (
-        <>
-          {iconElement}
-          {textElement}
-        </>
-      );
-    }
+    return 'secondary-system01-1';
   };
 
   // Surface에 적용할 색상 결정
   const getSurfaceColors = () => {
     if (disabled) {
       return {
-        foreground: 'secondary-system01-1-rest' as const,
+        foreground: 'secondary-system01-1-disabled' as const,
         background: undefined
       };
     }
@@ -195,68 +109,120 @@ const TabItem = ({ id, children, icon, iconPosition = 'before', disabled = false
     if (isSelected) {
       return {
         foreground: 'primary-system01-1-rest' as const,
-        background: isHovered ? ('secondary-system01-1-rest' as const) : undefined
+        background: isHovered ? ('secondary-system01-2-hovered' as const) : undefined
       };
     }
     
     return {
-      foreground: 'secondary-system01-3-rest' as const,
-      background: isHovered ? ('secondary-system01-1-rest' as const) : undefined
+      foreground: 'secondary-system01-1-rest' as const,
+      background: isHovered ? ('secondary-system01-2-hovered' as const) : undefined
     };
   };
 
   const surfaceColors = getSurfaceColors();
 
+  // 크기별 설정
+  const getSizeConfig = () => {
+    if (size === 'md') {
+      return {
+        padding: 'md' as const,
+        textVariant: 'body-2' as const,
+        iconSize: 'xs' as const,
+        minHeight: '40px'
+      };
+    }
+    return {
+      padding: 'lg' as const,
+      textVariant: 'body-1' as const,
+      iconSize: 'sm' as const,
+      minHeight: '48px'
+    };
+  };
+
+  const config = getSizeConfig();
+
   return (
-    <Surface
-      foreground={surfaceColors.foreground}
-      background={surfaceColors.background}
-      borderWidth={isSelected && showBorder ? "thin" : undefined}
-      borderColor={isSelected && showBorder ? "primary-system01-1-rest" : undefined}
-      borderStyle={isSelected && showBorder ? "solid" : undefined}
-      style={isSelected && showBorder ? {
-        borderTop: 'none',
-        borderLeft: 'none',
-        borderRight: 'none'
-      } : undefined}
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-    >
-      <Frame 
-        display="flex" 
-        direction={iconPosition === 'above' ? 'column' : 'row'}
-        align="center"
-        justify="center"
-        gap="xs"
-        padding="sm"
+    <Sizing minHeight={config.minHeight}>
+      <Surface
+        background={surfaceColors.background}
+        foreground={surfaceColors.foreground}
+        borderRadius="none"
+        borderWidth={isSelected && showBorder ? "medium" : undefined}
+        borderColor={isSelected && showBorder ? "primary-system01-1-rest" as const : undefined}
+        borderStyle={isSelected && showBorder ? "solid" : undefined}
+        style={{
+          ...(isSelected && showBorder ? {
+            borderTop: 'none',
+            borderLeft: 'none',
+            borderRight: 'none'
+          } : {}),
+          cursor: disabled ? "not-allowed" : "pointer"
+        }}
+        onClick={handleClick}
+        onMouseEnter={() => !disabled && setIsHovered(true)}
+        onMouseLeave={() => !disabled && setIsHovered(false)}
       >
-        {renderContent()}
-      </Frame>
-    </Surface>
+        <Frame
+          display="flex"
+          direction={iconPosition === 'above' ? 'column' : 'row'}
+          align="center"
+          justify="center"
+          gap={iconPosition === 'above' ? 'xs' : 'sm'}
+          padding={config.padding}
+        >
+          {icon && (iconPosition === 'before' || iconPosition === 'above') && (
+            <Icon
+              name={icon}
+              size={config.iconSize}
+              color={getIconColor()}
+            />
+          )}
+          
+          <Text
+            variant={config.textVariant}
+            weight={isSelected ? 'bold' : 'regular'}
+          >
+            {children}
+          </Text>
+          
+          {icon && iconPosition === 'after' && (
+            <Icon
+              name={icon}
+              size={config.iconSize}
+              color={getIconColor()}
+            />
+          )}
+        </Frame>
+      </Surface>
+    </Sizing>
   );
 };
 
+// TabPanel 컴포넌트
 const TabPanel = ({ id, children }: TabPanelProps) => {
   const { selectedId } = useTabContext();
-
+  
   if (selectedId !== id) {
     return null;
   }
 
   return (
-    <Surface>
-      <Frame display="flex" direction="column" padding="lg" gap="md">
-        {children}
-      </Frame>
-    </Surface>
+    <Frame padding="lg">
+      {children}
+    </Frame>
   );
 };
 
-Tab.List = TabList;
-Tab.Item = TabItem;
-Tab.Panel = TabPanel;
+// 복합 컴포넌트로 export
+const TabCompound = Tab as typeof Tab & {
+  List: typeof TabList;
+  Item: typeof TabItem;
+  Panel: typeof TabPanel;
+};
 
-export default Tab;
+TabCompound.List = TabList;
+TabCompound.Item = TabItem;
+TabCompound.Panel = TabPanel;
+
+export default TabCompound;
+export { TabProps, TabListProps, TabItemProps, TabPanelProps };

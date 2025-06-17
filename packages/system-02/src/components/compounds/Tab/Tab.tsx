@@ -58,7 +58,7 @@ const TabList = ({ children }: TabListProps) => {
   return (
     <Surface
       borderWidth={showBorder ? "thin" : undefined}
-      borderColor={showBorder ? "secondary-system01-2-rest" : undefined}
+      borderColor={showBorder ? "secondary-system02-2-rest" : undefined}
       borderStyle={showBorder ? "solid" : undefined}
       style={{
         borderTop: 'none',
@@ -122,9 +122,9 @@ const TabItem = ({ id, children, icon, iconPosition = 'before', disabled = false
 
   // 아이콘 색상 결정
   const getIconColor = () => {
-    if (disabled) return 'secondary-system01-1';
+    if (disabled) return 'secondary-system02-1';
     if (isSelected) return 'primary-system02';
-    return 'secondary-system01-1';
+    return 'secondary-system02-1';
   };
 
   // 텍스트 variant 결정
@@ -187,21 +187,21 @@ const TabItem = ({ id, children, icon, iconPosition = 'before', disabled = false
   const getSurfaceColors = () => {
     if (disabled) {
       return {
-        foreground: 'secondary-system01-1-rest' as const,
+        foreground: 'secondary-system02-1-disabled' as const,
         background: undefined
       };
     }
     
     if (isSelected) {
       return {
-        foreground: 'primary-system01-1-rest' as const,
-        background: isHovered ? ('secondary-system01-1-rest' as const) : undefined
+        foreground: 'primary-system02-1-rest' as const,
+        background: isHovered ? ('secondary-system02-2-hovered' as const) : undefined
       };
     }
     
     return {
-      foreground: 'secondary-system01-3-rest' as const,
-      background: isHovered ? ('secondary-system01-1-rest' as const) : undefined
+      foreground: 'secondary-system02-1-rest' as const,
+      background: isHovered ? ('secondary-system02-2-hovered' as const) : undefined
     };
   };
 
@@ -211,8 +211,8 @@ const TabItem = ({ id, children, icon, iconPosition = 'before', disabled = false
     <Surface
       foreground={surfaceColors.foreground}
       background={surfaceColors.background}
-      borderWidth={isSelected && showBorder ? "thin" : undefined}
-      borderColor={isSelected && showBorder ? "primary-system01-1-rest" : undefined}
+      borderWidth={isSelected && showBorder ? "medium" : undefined}
+      borderColor={isSelected && showBorder ? "primary-system02-1-rest" as const : undefined}
       borderStyle={isSelected && showBorder ? "solid" : undefined}
       style={isSelected && showBorder ? {
         borderTop: 'none',

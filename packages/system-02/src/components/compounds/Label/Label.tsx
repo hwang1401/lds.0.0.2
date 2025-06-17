@@ -83,7 +83,7 @@ export const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
 
     // 색상 결정 (피그마 기준)
     const getTextColor = () => {
-      return disabled ? 'secondary-system01-1-disabled' : 'secondary-system01-1-rest';
+      return disabled ? 'secondary-system02-1-disabled' : 'secondary-system02-1-rest';
     };
 
     // 상태 결정

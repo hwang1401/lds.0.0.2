@@ -99,46 +99,55 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
   const config = sizeConfig[size];
   const actualState = getActualState();
 
-  // 배경색 결정
-  const getBackgroundColor = () => {
-    if (variant === 'outlined') {
-      return undefined; // outlined는 투명 배경
-    }
-    // filled variant
-    if (selected) {
-      if (disabled) return 'primary-system02-1-disabled';
-      if (actualState === 'pressed') return 'primary-system02-1-pressed';
-      if (actualState === 'hovered') return 'primary-system02-1-hovered';
-      return 'primary-system02-1-rest';
-    }
-    if (disabled) return 'secondary-system01-1-disabled';
-    if (actualState === 'pressed') return 'secondary-system01-1-pressed';
-    if (actualState === 'hovered') return 'secondary-system01-1-hovered';
-    return 'secondary-system01-1-rest';
+  // 아이콘 색상 결정
+  const getIconColor = () => {
+    if (disabled) return 'secondary-system02-1';
+    return 'secondary-system02-1';
   };
 
-  // 테두리 색상 결정
-  const getBorderColor = () => {
-    if (variant === 'filled') return undefined; // filled는 테두리 없음
-    
-    // outlined variant
-    if (disabled) return 'secondary-system01-2-disabled';
-    if (selected) return 'primary-system02-1-rest';
-    return 'secondary-system01-1-rest';
+  // 배경색 결정
+  const getBackgroundColor = () => {
+    if (variant === 'filled') {
+      // Filled variant 색상 로직
+      if (disabled) return 'secondary-system02-2-disabled';
+      if (selected) {
+        if (actualState === 'pressed') return 'primary-system02-1-pressed';
+        if (actualState === 'hovered') return 'primary-system02-1-hovered';
+        return 'primary-system02-1-rest';
+      }
+      if (actualState === 'pressed') return 'secondary-system02-1-pressed';
+      if (actualState === 'hovered') return 'secondary-system02-1-hovered';
+      return 'secondary-system02-1-rest';
+    } else {
+      // Ghost variant 색상 로직  
+      if (disabled) return 'secondary-system02-1-disabled';
+      if (selected) return 'primary-system02-1-rest';
+      return 'secondary-system02-2-rest';
+    }
   };
+
+      // 테두리 색상 결정
+    const getBorderColor = () => {
+      if (variant === 'filled') return undefined; // filled는 테두리 없음
+      
+      // outlined variant
+      if (disabled) return 'secondary-system02-2-disabled';
+      if (selected) return 'primary-system02-1-rest';
+      return 'secondary-system02-1-rest';
+    };
 
   // 전경색 결정
   const getForegroundColor = () => {
-    if (disabled) return 'secondary-system01-1-disabled';
+    if (disabled) return 'secondary-system02-1-disabled';
     
     if (variant === 'outlined') {
       if (selected) return 'primary-system02-1-rest';
-      return 'secondary-system01-2-rest';
+      return 'secondary-system02-2-rest';
     }
     
     // filled variant
     if (selected) return 'primary-system02-oncolor'; // primary 배경에서 잘 보이도록 onColor 사용
-    return 'secondary-system01-2-rest';
+    return 'secondary-system02-2-rest';
   };
 
   // 이벤트 핸들러
@@ -212,11 +221,11 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
         padding={config.padding}
         fill
       >
-        <Text
-          variant={config.variant}
-          color={undefined} // Surface의 foreground 상속
-          style={{
-            overflow: 'hidden',
+                  <Text
+            variant={config.variant}
+            color={undefined} // Surface의 foreground 상속
+            style={{
+              overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
             flex: 1,
@@ -227,7 +236,7 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
         
         {removable && (
           <Surface
-            borderRadius="sm"
+            borderRadius="xl"
             onClick={handleRemoveClick}
             style={{
               cursor: disabled ? 'not-allowed' : 'pointer',
@@ -243,10 +252,10 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
               }}
             >
               <Icon
-                name="LineIconsCloseCloseIcon"
-                size={config.iconSize}
-                color={undefined} // Surface의 foreground 상속
-              />
+                                  name="LineIconsCloseCloseIcon"
+                  size={config.iconSize}
+                  color="secondary-system02-1"
+                />
             </Frame>
           </Surface>
         )}

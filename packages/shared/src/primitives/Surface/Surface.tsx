@@ -39,7 +39,12 @@ export type BackgroundToken =
   | 'cta-system03-1-rest' | 'cta-system03-1-hovered' | 'cta-system03-1-pressed' | 'cta-system03-1-disabled'
   | 'cta-system03-2-rest' | 'cta-system03-2-hovered' | 'cta-system03-2-pressed' | 'cta-system03-2-disabled'
   
-  // Status background (시스템 공통)
+  // Status background (시스템 공통) - 계층적 시스템
+  | 'error-1-rest' | 'error-1-hovered' | 'error-1-pressed' | 'error-1-selected' | 'error-1-disabled'
+  | 'error-2-rest' | 'error-2-hovered' | 'error-2-pressed' | 'error-2-selected' | 'error-2-disabled'
+  | 'warning-1-rest' | 'warning-1-hovered' | 'warning-1-pressed' | 'warning-1-selected' | 'warning-1-disabled'
+  | 'warning-2-rest' | 'warning-2-hovered' | 'warning-2-pressed' | 'warning-2-selected' | 'warning-2-disabled'
+  // Status background (기존 호환성)
   | 'error' | 'warning' | 'success' | 'info' | 'focused';
 
 // 시스템 + 위계 + 상태 기반 전경색 타입들  
@@ -83,7 +88,12 @@ export type ForegroundToken =
   | 'cta-system03-2-rest' | 'cta-system03-2-hovered' | 'cta-system03-2-pressed' | 'cta-system03-2-selected' | 'cta-system03-2-disabled'
   | 'cta-system03-oncolor'
   
-  // Status foreground (시스템 공통)
+  // Status foreground (시스템 공통) - 계층적 시스템
+  | 'error-1-rest' | 'error-1-hovered' | 'error-1-pressed' | 'error-1-selected' | 'error-1-disabled'
+  | 'error-oncolor'
+  | 'warning-1-rest' | 'warning-1-hovered' | 'warning-1-pressed' | 'warning-1-selected' | 'warning-1-disabled'
+  | 'warning-oncolor'
+  // Status foreground (기존 호환성)
   | 'error' | 'warning' | 'success' | 'info' | 'focused';
 
 // 시스템 + 위계 + 상태 기반 테두리색 타입들
@@ -121,7 +131,10 @@ export type StrokeToken =
   | 'cta-system03-1-rest' | 'cta-system03-1-hovered' | 'cta-system03-1-pressed' | 'cta-system03-1-disabled'
   | 'cta-system03-2-rest' | 'cta-system03-2-hovered' | 'cta-system03-2-pressed' | 'cta-system03-2-disabled'
   
-  // Status stroke (시스템 공통)
+  // Status stroke (시스템 공통) - 계층적 시스템
+  | 'error-1-rest' | 'error-1-hovered' | 'error-1-pressed' | 'error-1-disabled'
+  | 'warning-1-rest' | 'warning-1-hovered' | 'warning-1-pressed' | 'warning-1-disabled'
+  // Status stroke (기존 호환성)
   | 'error' | 'warning' | 'success' | 'info' | 'focused';
 
 // 시멘틱 토큰 기반 반지름 타입들

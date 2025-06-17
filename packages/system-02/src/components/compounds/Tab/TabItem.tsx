@@ -54,7 +54,7 @@ export const TabItem = ({
   return (
     <Surface
       role="tab"
-      borderRadius="md"
+      borderRadius="xl"
       {...borderProps}
       style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
       onClick={!disabled ? handleClick : undefined}

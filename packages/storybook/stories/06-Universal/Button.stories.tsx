@@ -17,7 +17,7 @@ const UniversalButton = ({ system, ...props }: any) => {
 };
 
 const meta: Meta<typeof UniversalButton> = {
-  title: 'Universal/Button',
+  title: 'Components/Button',
   component: UniversalButton,
   parameters: {
     layout: 'centered',

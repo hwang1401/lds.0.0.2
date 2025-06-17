@@ -133,9 +133,9 @@ export const Badge: React.FC<BadgeProps> = ({
     }
   };
 
-  // 형태별 border radius 매핑
+  // 형태별 border radius 매핑 (System-02: 더 둥근 모서리)
   const getBorderRadius = (type: BadgeType): RadiusToken => {
-    return type === 'circle' ? 'circular' : 'badge-default';
+    return type === 'circle' ? 'circular' : 'xl'; // System-02 가이드라인: xl 사용 (더 친근한 느낌)
   };
 
   // 크기별 아이콘 크기 매핑

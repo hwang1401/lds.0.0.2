@@ -69,7 +69,7 @@ const UniversalCard = ({ system, ...props }: any) => {
 };
 
 const meta: Meta<typeof UniversalCard> = {
-  title: 'Universal/Card',
+  title: 'Components/Card',
   component: UniversalCard,
   tags: ['autodocs'],
   parameters: {

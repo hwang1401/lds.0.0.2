@@ -345,7 +345,7 @@ export const ComboBox = forwardRef<HTMLDivElement, ComboBoxProps>(({
         {isOpen && (
           <Surface
             background="secondary-system01-1-rest"
-            borderRadius="md"
+            borderRadius="xl"
             borderColor="secondary-system01-1-rest"
             borderWidth="thin"
             borderStyle="solid"

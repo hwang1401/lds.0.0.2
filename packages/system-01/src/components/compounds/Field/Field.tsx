@@ -209,19 +209,19 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
 
   // 텍스트 색상 결정 (Surface foreground용)
   const getTextColor = () => {
-    if (error) return 'error';
+    if (error) return 'error-1-rest';
     
     if (variant === 'transparent') {
       const state = getCurrentState();
       switch (state) {
         case 'disabled':
-          return 'secondary-system01-1-disabled';
+          return 'secondary-system01-2-disabled';
         case 'hovered':
-          return 'secondary-system01-1-hovered';
+          return 'secondary-system01-2-hovered';
         case 'pressed':
-          return 'secondary-system01-1-pressed';
+          return 'secondary-system01-2-pressed';
         default:
-          return 'secondary-system01-1-rest';
+          return 'secondary-system01-2-rest';
       }
     }
     
@@ -302,7 +302,7 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
     if (error) {
       return {
         borderWidth: 'thin' as const,
-        borderColor: 'error' as const
+        borderColor: 'error-1-rest' as const
       };
     }
     
@@ -388,7 +388,7 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
         borderWidth={borderProps.borderWidth}
         borderColor={borderProps.borderColor}
         borderStyle={borderProps.borderWidth ? 'solid' : 'none'}
-        borderRadius="md"
+                  borderRadius="sm"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onClick={onClick}
@@ -462,7 +462,7 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
     // 헬퍼 텍스트 색상 결정 (연한 secondary 색상 사용)
     const getHelperTextColor = () => {
       if (disabled) return 'secondary-system01-3-disabled';
-      if (error) return 'error';
+      if (error) return 'error-1-rest';
       return 'secondary-system01-3-rest'; // 기본 텍스트보다 연한 색상
     };
 

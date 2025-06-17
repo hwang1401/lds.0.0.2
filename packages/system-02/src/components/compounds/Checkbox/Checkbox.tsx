@@ -105,42 +105,39 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       setIsPressed(false);
     };
 
-    // 체크박스 배경색 결정
+    // 배경색 결정
     const getBackgroundColor = () => {
-      if (checked || indeterminate) {
-        if (disabled) return 'primary-system02-1-disabled';
-        if (isPressed) return 'primary-system02-1-pressed';
-        if (isHovered) return 'primary-system02-1-hovered';
-        return 'primary-system02-1-rest'; // 체크된 상태는 primary 색상 사용
+      if (!checked && !indeterminate) {
+        // 체크되지 않은 상태는 투명 배경
+        if (disabled) return 'secondary-system02-1-disabled';
+        if (isPressed) return 'secondary-system02-1-pressed';
+        if (isHovered) return 'secondary-system02-1-hovered';
+        return 'secondary-system02-1-rest'; // 체크되지 않은 상태는 secondary 색상 사용
       }
-      if (disabled) return 'secondary-system01-1-disabled';
-      if (isPressed) return 'secondary-system01-1-pressed';
-      if (isHovered) return 'secondary-system01-1-hovered';
-      return 'secondary-system01-1-rest'; // 체크되지 않은 상태는 secondary 색상 사용
+      
+      // 체크된 상태는 primary 색상 
+      if (disabled) return 'primary-system02-1-disabled';
+      if (isPressed) return 'primary-system02-1-pressed';
+      if (isHovered) return 'primary-system02-1-hovered';
+      return 'primary-system02-1-rest';
     };
 
-    // 체크박스 테두리 색상 결정
+    // 테두리 색상 결정
     const getBorderColor = () => {
-      if (checked || indeterminate) {
-        if (disabled) return 'primary-system02-1-disabled';
-        return 'primary-system02-1-rest';
-      }
-      if (disabled) return 'secondary-system01-2-disabled'; // disabled일 때만 연한 색
-      return 'secondary-system01-1-rest'; // 기본 상태는 더 진한 색
+      if (disabled) return 'secondary-system02-2-disabled'; // disabled일 때만 연한 색
+      return 'secondary-system02-1-rest'; // 기본 상태는 더 진한 색
     };
 
-    // 전경색 결정
-    const getForegroundColor = () => {
-      if (checked || indeterminate) {
-        return 'primary-system02-oncolor'; // 체크된 상태에서 아이콘 색상
-      }
-      return 'secondary-system01-1-rest';
+    // 체크마크 아이콘 색상 결정
+    const getIconColor = () => {
+      if (checked || indeterminate) return 'primary-system02-oncolor';
+      return 'secondary-system02-1';
     };
 
     const renderCheckIcon = () => {
       if (indeterminate) {
         return (
-          <Surface background="primary-system02-1-rest" borderRadius="sm">
+          <Surface background="primary-system02-1-rest" borderRadius="xl">
             <Sizing style={{ width: '8px', height: '2px' }} />
           </Surface>
         );
@@ -151,7 +148,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           <Icon
             name="LineIconsCheckmarkCheckmarkIcon"
             size="xs"
-            color="oncolor"
+            color={checked || indeterminate ? "primary-system02" : "secondary-system02-1"}
           />
         );
       }
@@ -197,8 +194,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         {/* Custom checkbox visual */}
         <Surface
           background={getBackgroundColor()}
-          foreground={getForegroundColor()}
-          borderRadius="sm"
+                      foreground={checked || indeterminate ? "primary-system02-oncolor" : "secondary-system02-1-rest"}
+          borderRadius="xl"
           borderWidth="thin"
           borderStyle="solid"
           borderColor={getBorderColor()}

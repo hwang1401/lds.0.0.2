@@ -173,7 +173,7 @@ export const MenuHeader = forwardRef<HTMLDivElement, MenuHeaderProps>(({
       ref={ref}
       background={getBackgroundColor()}
       foreground={getForegroundColor()}
-      borderRadius="md"
+      borderRadius="sm"
       {...getBorderProps()}
       style={{
         cursor: disabled ? 'not-allowed' : 'pointer',

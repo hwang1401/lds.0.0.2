@@ -281,7 +281,7 @@ export const OptionList = forwardRef<HTMLDivElement, OptionListProps>(({
       ref={ref}
       background={getBackgroundColor()}
       foreground={getForegroundColor()}
-      borderRadius="md"
+      borderRadius="sm"
       {...borderProps}
       style={{
         cursor: disabled ? 'not-allowed' : 'pointer',
