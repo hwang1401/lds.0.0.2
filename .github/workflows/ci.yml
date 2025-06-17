@@ -20,6 +20,25 @@ jobs:
       with:
         node-version: 18
     
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8.15.0
+    
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+    
+    - name: Setup pnpm cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+    
     - name: Check directory structure
       run: |
         pwd
@@ -49,18 +68,11 @@ jobs:
     #     ls -la dist/
     #     ls -la dist/css/ || echo "No CSS directory found"
     
-    - name: Install storybook dependencies
-      run: |
-        cd packages/storybook
-        pwd
-        ls -la
-        echo "Installing npm packages..."
-        npm install --no-workspaces --verbose
-        echo "Checking installed packages..."
-        ls -la node_modules/lumir-* || echo "No lumir packages found"
+    - name: Install dependencies
+      run: pnpm install
+    
+    - name: Build all packages
+      run: pnpm run build
     
     - name: Build Storybook
-      run: |
-        cd packages/storybook
-        echo "Building storybook with npm packages..."
-        npm run build-storybook 
+      run: pnpm run storybook:build 
