@@ -68,19 +68,19 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@storybook/addon-essentials':
-        specifier: ^8.0.0
+        specifier: ^8.6.14
         version: 8.6.14(@types/react@19.1.8)(storybook@8.6.14)
       '@storybook/addon-links':
-        specifier: ^8.0.0
+        specifier: ^8.6.14
         version: 8.6.14(react@18.3.1)(storybook@8.6.14)
       '@storybook/react':
-        specifier: ^8.0.0
+        specifier: ^8.6.14
         version: 8.6.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.6.14)(typescript@5.8.3)
       '@storybook/react-vite':
-        specifier: ^8.0.0
+        specifier: ^8.6.14
         version: 8.6.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.43.0)(storybook@8.6.14)(typescript@5.8.3)(vite@5.4.19)
       storybook:
-        specifier: ^8.0.0
+        specifier: ^8.6.14
         version: 8.6.14
       vite:
         specifier: ^5.0.0

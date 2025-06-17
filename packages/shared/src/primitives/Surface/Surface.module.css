@@ -34,11 +34,11 @@
 :global([data-theme="light"]) .surface--background-primary-system01-1-disabled { background-color: var(--foundation-foundation-color-blue-light-10); }
 
 /* Dark Mode */
-:global([data-theme="dark"]) .surface--background-primary-system01-1-rest { background-color: var(--foundation-foundation-color-blue-dark-50); }
-:global([data-theme="dark"]) .surface--background-primary-system01-1-hovered { background-color: var(--foundation-foundation-color-blue-dark-70); }
-:global([data-theme="dark"]) .surface--background-primary-system01-1-pressed { background-color: var(--foundation-foundation-color-blue-dark-30); }
-:global([data-theme="dark"]) .surface--background-primary-system01-1-selected { background-color: var(--foundation-foundation-color-blue-dark-60); }
-:global([data-theme="dark"]) .surface--background-primary-system01-1-disabled { background-color: var(--foundation-foundation-color-blue-dark-40); }
+:global([data-theme="dark"]) .surface--background-primary-system01-1-rest { background-color: var(--foundation-foundation-color-blue-dark-70); }
+:global([data-theme="dark"]) .surface--background-primary-system01-1-hovered { background-color: var(--foundation-foundation-color-blue-dark-60); }
+:global([data-theme="dark"]) .surface--background-primary-system01-1-pressed { background-color: var(--foundation-foundation-color-blue-dark-40); }
+:global([data-theme="dark"]) .surface--background-primary-system01-1-selected { background-color: var(--foundation-foundation-color-blue-dark-50); }
+:global([data-theme="dark"]) .surface--background-primary-system01-1-disabled { background-color: var(--foundation-foundation-color-blue-dark-30); }
 
 :global([data-theme="light"]) .surface--background-primary-system01-2-rest { background-color: var(--foundation-foundation-color-blue-light-40); }
 :global([data-theme="light"]) .surface--background-primary-system01-2-hovered { background-color: var(--foundation-foundation-color-blue-light-60); }

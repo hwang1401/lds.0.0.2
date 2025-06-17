@@ -1,17 +1,17 @@
 // 🔧 CSS 변수를 포함한 스타일 시트 가져오기 (npm 패키지 기반)
-import 'lumir-shared/dist/css/foundation-tokens.css';   // 1️⃣ Foundation 토큰 정의
-import 'lumir-shared/dist/styles.css';                  // 2️⃣ Primitives CSS
-import 'lumir-system-01/dist/css/tokens.css';           // 3️⃣ System-01 CSS
-import 'lumir-system-02/dist/css/tokens.css';           // 4️⃣ System-02 CSS
+import '@lumir/shared/dist/css/foundation-tokens.css';   // 1️⃣ Foundation 토큰 정의
+import '@lumir/shared/dist/styles.css';                  // 2️⃣ Primitives CSS
+import '@lumir/system-01/dist/css/tokens.css';           // 3️⃣ System-01 CSS
+import '@lumir/system-02/dist/css/tokens.css';           // 4️⃣ System-02 CSS
 
 console.log('✅ Storybook CSS 로드 완료 - npm 패키지 기반');
 
 // 실제 디자인 시스템 컴포넌트를 사용한 시스템 선택기
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Button as System01Button } from 'lumir-system-01';
-import { Button as System02Button } from 'lumir-system-02';
-import { Text, Frame } from 'lumir-shared';
+import { Button as System01Button } from '@lumir/system-01';
+import { Button as System02Button } from '@lumir/system-02';
+import { Text, Frame } from '@lumir/shared';
 
 const SystemSelectorComponent = () => {
   const [selectedSystem, setSelectedSystem] = useState('system-01');
