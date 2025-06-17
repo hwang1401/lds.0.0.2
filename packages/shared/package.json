@@ -52,9 +52,8 @@
     "build:watch": "concurrently \"pnpm run build:tokens -- --watch\" \"pnpm run build:components -- --watch\"",
     "foundation:changed": "echo 'Foundation 토큰 변경 감지됨. 모든 시스템 리빌드 트리거...' && pnpm run trigger-all-systems",
     "trigger-all-systems": "pnpm run build && pnpm run --filter=\"@lumir/system-*\" build:tokens",
-    "validate:colors": "node scripts/validate-colors.cjs",
-    "report:colors": "node scripts/generate-color-report.cjs",
-    "validate:all": "pnpm run validate:colors && pnpm run report:colors",
+    "evaluate:colors": "node scripts/color-evaluation-system.cjs",
+    "validate:all": "pnpm run evaluate:colors",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
