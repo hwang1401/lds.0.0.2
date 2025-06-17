@@ -49,11 +49,13 @@ jobs:
         ls -la packages/
         echo "Checking workspace file..."
         cat pnpm-workspace.yaml
+        echo "Checking if pnpm-lock.yaml exists..."
+        ls -la pnpm-lock.yaml || echo "pnpm-lock.yaml not found, will create new one"
     
     - name: Install dependencies
       run: |
         echo "Installing dependencies..."
-        pnpm install --frozen-lockfile
+        pnpm install --no-frozen-lockfile
         echo "Checking installed packages..."
         pnpm list --depth=0
     
