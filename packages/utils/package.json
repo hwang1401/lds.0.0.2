@@ -1,0 +1,10 @@
+{
+  "name": "@lumir/utils",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Common utilities for Lumir Design System",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {}
+} 

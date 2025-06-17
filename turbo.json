@@ -3,13 +3,33 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "storybook-static/**"]
+      "outputs": ["dist/**"],
+      "inputs": ["src/**", "package.json", "tsconfig.json", "rollup.config.js", "semantic.json", "foundation.json"]
+    },
+    "build:tokens": {
+      "outputs": ["dist/css/**", "dist/js/**", "dist/scss/**"],
+      "inputs": ["semantic.json", "../shared/foundation.json"]
+    },
+    "build:components": {
+      "dependsOn": ["build:tokens"],
+      "outputs": ["dist/**"],
+      "inputs": ["src/**", "tsconfig.json", "rollup.config.js"]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
+    "build:watch": {
+      "cache": false,
+      "persistent": true
+    },
     "storybook": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "storybook:dev": {
+      "dependsOn": ["^build"],
       "cache": false,
       "persistent": true
     },
@@ -17,8 +37,19 @@
       "dependsOn": ["^build"],
       "outputs": ["storybook-static/**"]
     },
+    "typecheck": {
+      "inputs": ["src/**", "tsconfig.json"]
+    },
+    "lint": {
+      "inputs": ["src/**", ".eslintrc.*", "package.json"]
+    },
+    "test": {
+      "inputs": ["src/**", "test/**", "*.test.*", "*.spec.*"]
+    },
     "clean": {
       "cache": false
     }
-  }
+  },
+  "globalDependencies": ["**/.env*"],
+  "globalEnv": ["NODE_ENV"]
 } 

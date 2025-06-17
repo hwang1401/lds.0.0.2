@@ -43,8 +43,8 @@
   "scripts": {
     "build:tokens": "node scripts/build-tokens.js",
     "build:components": "rollup -c",
-    "build": "npm run build:tokens && npm run build:components",
-    "build:watch": "concurrently \"npm run build:tokens\" \"npm run build:components -- --watch\"",
+    "build": "pnpm run build:tokens && pnpm run build:components",
+    "build:watch": "concurrently \"pnpm run build:tokens\" \"pnpm run build:components -- --watch\"",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -60,11 +60,10 @@
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^11.0.0",
-    "chokidar": "^3.5.3",
-    "concurrently": "^7.6.0",
     "rollup": "^3.19.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "typescript": "^4.9.5"
+    "concurrently": "^7.6.0",
+    "typescript": "^5.0.0"
   },
   "author": "",
   "license": "ISC",

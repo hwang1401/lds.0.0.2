@@ -7,8 +7,8 @@
     "storybook:dev": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build",
     "build": "storybook build",
-    "preview": "storybook build && npx http-server storybook-static -p 6007",
-    "check:deps": "echo '🔍 Checking dependencies...' && npm ls @storybook/react",
+    "preview": "storybook build && pnpm dlx http-server storybook-static -p 6007",
+    "check:deps": "echo '🔍 Checking dependencies...' && pnpm ls @storybook/react",
     "clean": "rm -rf storybook-static .storybook-out"
   },
   "dependencies": {

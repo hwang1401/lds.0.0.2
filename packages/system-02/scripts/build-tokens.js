@@ -5,6 +5,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+console.log('🔧 Building tokens for system-02...');
+
 // 필요한 디렉토리 생성
 const directories = ['dist', 'dist/css', 'dist/js', 'dist/scss', 'dist/icons'];
 directories.forEach(dir => {
@@ -87,31 +89,27 @@ function generateCssVariables(tokens) {
 }
 
 // 빌드 실행
-function buildTokens() {
-  try {
-    // 모든 토큰 병합
-    const allTokens = { ...foundationTokens, ...semanticTokens };
-    const resolvedTokens = resolveReferences(semanticTokens, allTokens);
-    
-    // CSS 생성
-    const cssVars = generateCssVariables(resolvedTokens);
-    const cssContent = `:root {\n${cssVars.join('\n')}\n}`;
-    fs.writeFileSync(path.resolve(__dirname, '../dist/css/tokens.css'), cssContent);
-    
-    // JS 생성
-    const jsContent = `export const tokens = ${JSON.stringify(resolvedTokens, null, 2)};`;
-    fs.writeFileSync(path.resolve(__dirname, '../dist/js/tokens.js'), jsContent);
-    
-    // SCSS 생성
-    const scssVars = cssVars.map(v => v.replace('--', '$').replace(': ', ': '));
-    const scssContent = scssVars.join('\n');
-    fs.writeFileSync(path.resolve(__dirname, '../dist/scss/_tokens.scss'), scssContent);
-    
-    console.log('✅ 토큰 빌드 완료');
-  } catch (error) {
-    console.error('❌ 토큰 빌드 실패:', error.message);
-    process.exit(1);
-  }
-}
-
-buildTokens(); 
+try {
+  // 모든 토큰 병합
+  const allTokens = { ...foundationTokens, ...semanticTokens };
+  const resolvedTokens = resolveReferences(semanticTokens, allTokens);
+  
+  // CSS 생성
+  const cssVars = generateCssVariables(resolvedTokens);
+  const cssContent = `:root {\n${cssVars.join('\n')}\n}`;
+  fs.writeFileSync(path.resolve(__dirname, '../dist/css/tokens.css'), cssContent);
+  
+  // JS 생성
+  const jsContent = `export const tokens = ${JSON.stringify(resolvedTokens, null, 2)};`;
+  fs.writeFileSync(path.resolve(__dirname, '../dist/js/tokens.js'), jsContent);
+  
+  // SCSS 생성
+  const scssVars = cssVars.map(v => v.replace('--', '$').replace(': ', ': '));
+  const scssContent = scssVars.join('\n');
+  fs.writeFileSync(path.resolve(__dirname, '../dist/scss/_tokens.scss'), scssContent);
+  
+  console.log('✅ system-02 토큰 빌드 완료');
+} catch (error) {
+  console.error('❌ system-02 토큰 빌드 실패:', error.message);
+  process.exit(1);
+} 

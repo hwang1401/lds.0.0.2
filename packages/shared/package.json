@@ -1,6 +1,7 @@
 {
   "name": "@lumir/shared",
   "version": "1.0.4",
+  "type": "module",
   "description": "Lumir Design System Foundation & Primitives",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -47,10 +48,10 @@
   "scripts": {
     "build:tokens": "node scripts/build-foundation-tokens.js",
     "build:components": "rollup -c",
-    "build": "npm run build:tokens && npm run build:components",
-    "build:watch": "concurrently \"npm run build:tokens -- --watch\" \"npm run build:components -- --watch\"",
-    "foundation:changed": "echo 'Foundation 토큰 변경 감지됨. 모든 시스템 리빌드 트리거...' && npm run trigger-all-systems",
-    "trigger-all-systems": "npm run build && pnpm run --filter=\"@lumir/system-*\" build:tokens",
+    "build": "pnpm run build:tokens && pnpm run build:components",
+    "build:watch": "concurrently \"pnpm run build:tokens -- --watch\" \"pnpm run build:components -- --watch\"",
+    "foundation:changed": "echo 'Foundation 토큰 변경 감지됨. 모든 시스템 리빌드 트리거...' && pnpm run trigger-all-systems",
+    "trigger-all-systems": "pnpm run build && pnpm run --filter=\"@lumir/system-*\" build:tokens",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
@@ -62,10 +63,10 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^11.0.0",
     "rollup": "^3.19.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "typescript": "^4.9.5",
-    "concurrently": "^7.6.0"
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "concurrently": "^7.6.0",
+    "chokidar": "^3.5.3"
   },
   "dependencies": {
     "react": "^18.2.0",
