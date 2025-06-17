@@ -55,7 +55,7 @@ jobs:
     - name: Install dependencies
       run: |
         echo "Installing dependencies..."
-        pnpm install --no-frozen-lockfile
+        pnpm install --frozen-lockfile
         echo "Checking installed packages..."
         pnpm list --depth=0
     
