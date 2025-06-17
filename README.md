@@ -73,156 +73,71 @@ lumir-design-system/
 - `lumir-design-components@2.0.9`: React 컴포넌트 라이브러리
 - `lumir-design-tokens@3.0.1`: 디자인 토큰 시스템
 
-## 🚀 빠른 시작 (2분 완성)
-
-### 1. 설치
+## 🚀 빠른 시작
 
 ```bash
-npm install lumir-design-components lumir-design-tokens
+# 1. 의존성 설치
+pnpm install
+
+# 2. 스토리북 실행 (shared 자동 빌드 포함)
+npm run storybook
 ```
 
-### 2. 기본 설정 (단 2줄!)
+브라우저에서 http://localhost:6006 이 자동으로 열립니다.
 
-```jsx
-// App.js
-import 'lumir-design-tokens/dist/css/tokens.css';
-import 'lumir-design-components/dist/styles.css';
+## 📦 프로젝트 구조
 
-function App() {
-  return (
-    // global.css 없이도 완전한 애플리케이션!
-    <Box minHeight="100vh" backgroundColor="secondary-1">
-      <Stack direction="column" spacing="xl" padding="lg">
-        <Text variant="title-1" color="primary-foreground-1" align="center">
-          Welcome to LDS
-        </Text>
-        <Stack direction="row" spacing="md" justify="center">
-          <Button variant="filled" colorScheme="primary">
-            시작하기
-          </Button>
-          <Button variant="outlined" colorScheme="secondary">
-            문서 보기
-          </Button>
-        </Stack>
-      </Stack>
-    </Box>
-  );
-}
+```
+lumir-design-system/
+├── packages/
+│   ├── shared/          # 🌟 Foundation + Primitives
+│   ├── system-01/       # 🎨 Clean & Efficient (파란색)
+│   ├── system-02/       # 🌿 Modern & Friendly (초록색)
+│   └── storybook/       # 📚 문서화
+└── docs/                # 📋 설계 문서
 ```
 
-### 3. 완전한 반응형 랜딩 페이지 (프리미티브만으로!)
+## 🛠️ 주요 명령어
 
-```jsx
-import { Box, Stack, Text, Button, Icon } from 'lumir-design-components';
+```bash
+# 개발
+npm run storybook              # 스토리북 실행
+npm run dev:shared             # shared 패키지 watch 모드
 
-function LandingPage() {
-  return (
-    <Box minHeight="100vh" backgroundColor="secondary-1">
-      {/* 헤더 */}
-      <Box backgroundColor="secondary-2" borderBottomWidth="thin" borderBottomColor="secondary-stroke-1">
-        <Box maxWidth="1200px" marginX="auto" paddingX="lg" paddingY="md">
-          <Stack direction="row" justify="space-between" align="center">
-            <Text variant="heading-2" color="primary-foreground-1">LDS</Text>
-            <Stack direction="row" spacing="md">
-              <Button variant="transparent" colorScheme="secondary">문서</Button>
-              <Button variant="filled" colorScheme="primary">시작하기</Button>
-            </Stack>
-          </Stack>
-        </Box>
-      </Box>
+# 빌드
+npm run build                  # 전체 빌드
+npm run build:shared           # shared만 빌드
 
-      {/* 히어로 섹션 */}
-      <Box paddingY="xxxl">
-        <Box maxWidth="800px" marginX="auto" paddingX="lg">
-          <Stack direction="column" spacing="xl" align="center">
-            <Text variant="title-1" color="primary-foreground-1" align="center">
-              Global CSS 없이 완전한 디자인
-            </Text>
-            <Text variant="body-1" color="secondary-foreground-1" align="center">
-              프리미티브 컴포넌트만으로 모든 레이아웃을 구성하는 혁신적인 디자인 시스템
-            </Text>
-            <Stack direction="row" spacing="md">
-              <Button 
-                variant="filled" 
-                colorScheme="primary" 
-                size="lg"
-                leftIcon="heart"
-              >
-                시작하기
-              </Button>
-              <Button variant="outlined" colorScheme="secondary" size="lg">
-                문서 보기
-              </Button>
-            </Stack>
-          </Stack>
-        </Box>
-      </Box>
-
-      {/* 특징 섹션 - 완전 반응형 그리드 */}
-      <Box paddingY="xxl" backgroundColor="secondary-2">
-        <Box maxWidth="1200px" marginX="auto" paddingX="lg">
-          <Stack direction="column" spacing="xl">
-            <Text variant="heading-1" color="primary-foreground-1" align="center">
-              주요 특징
-            </Text>
-            {/* 자동 반응형 그리드 */}
-            <Stack direction="row" spacing="lg" wrap="wrap">
-              <Box 
-                padding="lg" 
-                backgroundColor="secondary-1" 
-                borderRadius="lg"
-                minWidth="300px"
-                basis="calc(33.333% - 1rem)"
-                grow={1}
-              >
-                <Stack direction="column" spacing="md">
-                  <Icon name="code" type="line" size="lg" color="primary-foreground-1" />
-                  <Text variant="heading-3">Zero Global CSS</Text>
-                  <Text variant="body-2" color="secondary-foreground-1">
-                    global.css 없이도 완전한 웹 애플리케이션 구현
-                  </Text>
-                </Stack>
-              </Box>
-              <Box 
-                padding="lg" 
-                backgroundColor="secondary-1" 
-                borderRadius="lg"
-                minWidth="300px"
-                basis="calc(33.333% - 1rem)"
-                grow={1}
-              >
-                <Stack direction="column" spacing="md">
-                  <Icon name="layers" type="line" size="lg" color="primary-foreground-1" />
-                  <Text variant="heading-3">프리미티브 아키텍처</Text>
-                  <Text variant="body-2" color="secondary-foreground-1">
-                    Box, Stack으로 모든 레이아웃 구성
-                  </Text>
-                </Stack>
-              </Box>
-              <Box 
-                padding="lg" 
-                backgroundColor="secondary-1" 
-                borderRadius="lg"
-                minWidth="300px"
-                basis="calc(33.333% - 1rem)"
-                grow={1}
-              >
-                <Stack direction="column" spacing="md">
-                  <Icon name="color-palette" type="line" size="lg" color="primary-foreground-1" />
-                  <Text variant="heading-3">시멘틱 토큰</Text>
-                  <Text variant="body-2" color="secondary-foreground-1">
-                    1,306개 CSS 변수로 완전한 일관성
-                  </Text>
-                </Stack>
-              </Box>
-          </Stack>
-          </Stack>
-        </Box>
-      </Box>
-    </Box>
-  );
-}
+# 관리
+npm run clean                  # 정리
+npm run fresh:install          # 완전 재설치
 ```
+
+## ⚠️ 중요 사항
+
+1. **의존성 설치**: 반드시 루트에서 `pnpm install`
+2. **shared 패키지**: 스토리북 실행 전 빌드 필요 (자동화됨)
+3. **패키지 매니저**: pnpm workspace 사용 (npm/npx 혼용)
+
+## 📚 상세 가이드
+
+- [개발 가이드](./docs/DEVELOPMENT_GUIDE.md) - 설치, 실행, 문제해결
+- [아키텍처 가이드](./docs/LUMIR_DESIGN_SYSTEM_ARCHITECTURE.md) - 전체 구조 분석
+
+## 🔧 문제 해결
+
+스토리북이 로딩되지 않으면:
+
+```bash
+npm run build:shared
+npm run storybook
+```
+
+기타 문제는 [개발 가이드](./docs/DEVELOPMENT_GUIDE.md)의 문제 해결 섹션을 참조하세요.
+
+---
+
+💡 **신규 개발자**: `pnpm install → npm run storybook` 이면 끝!
 
 ## 🎨 컴포넌트 제작 방법
 
@@ -459,7 +374,7 @@ const HomePage: NextPage = () => {
                     rightIcon="plus"
                   >
                     증가
-      </Button>
+                  </Button>
                 </Stack>
               </Stack>
             </Box>

@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "storybook": "npx storybook@8.6.14 dev -p 6006",
-    "build-storybook": "npx storybook@8.6.14 build",
-    "build": "npx storybook@8.6.14 build"
+    "storybook": "storybook dev -p 6006",
+    "storybook:dev": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build",
+    "build": "storybook build",
+    "preview": "storybook build && npx http-server storybook-static -p 6007",
+    "check:deps": "echo '🔍 Checking dependencies...' && npm ls @storybook/react",
+    "clean": "rm -rf storybook-static .storybook-out"
   },
   "dependencies": {
     "@lumir/shared": "workspace:*",
@@ -15,11 +19,11 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.6.14",
-    "@storybook/addon-links": "^8.6.14",
-    "@storybook/react": "^8.6.14",
-    "@storybook/react-vite": "^8.6.14",
-    "storybook": "^8.6.14",
+    "@storybook/addon-essentials": "8.6.14",
+    "@storybook/addon-links": "8.6.14",
+    "@storybook/react": "8.6.14",
+    "@storybook/react-vite": "8.6.14",
+    "storybook": "8.6.14",
     "vite": "^5.0.0"
   }
 }

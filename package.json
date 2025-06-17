@@ -12,10 +12,17 @@
     "build:shared": "cd packages/shared && npm run build",
     "build:systems": "cd packages/system-01 && npm run build && cd ../system-02 && npm run build",
     "build:components": "echo 'Components built'",
-    "storybook": "cd packages/storybook && npm run storybook",
-    "build-storybook": "npm run build && cd packages/storybook && npm run build-storybook",
-    "clean": "turbo clean && rm -rf node_modules packages/*/node_modules",
-    "fresh": "npm run clean && npm install",
+    
+    "storybook": "npm run ensure:shared && cd packages/storybook && npm run storybook",
+    "storybook:build": "npm run ensure:shared && cd packages/storybook && npm run build-storybook",
+    
+    "ensure:shared": "echo '🔧 Ensuring shared package is built...' && cd packages/shared && npm run build",
+    "dev:shared": "cd packages/shared && npm run build:watch",
+    
+    "fresh:install": "npm run clean && pnpm install && npm run build:shared",
+    "clean": "turbo clean && rm -rf node_modules packages/*/node_modules packages/*/package-lock.json",
+    "clean:deps": "rm -rf node_modules packages/*/node_modules packages/*/.turbo && pnpm store prune",
+    
     "deploy": "npm run build-storybook",
     "release": "changeset publish"
   },
