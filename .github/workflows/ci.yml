@@ -11,19 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
     
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: 18
+        node-version: 20
+        registry-url: 'https://registry.npmjs.org'
     
     - name: Setup pnpm
-      uses: pnpm/action-setup@v2
+      uses: pnpm/action-setup@v3
       with:
         version: 8.15.0
+        run_install: false
     
     - name: Get pnpm store directory
       id: pnpm-cache
@@ -32,7 +34,7 @@ jobs:
         echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
     
     - name: Setup pnpm cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
         key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -43,36 +45,57 @@ jobs:
       run: |
         pwd
         ls -la
+        echo "Checking packages directory..."
         ls -la packages/
-    
-    # npm 패키지 기반으로 전환 - system 패키지 빌드 불필요
-    # - name: Build system packages
-    #   run: |
-    #     echo "Building system-01..."
-    #     cd packages/system-01
-    #     pwd
-    #     ls -la
-    #     npm install --no-workspaces
-    #     npm run build
-    #     echo "Checking system-01 build output..."
-    #     ls -la dist/
-    #     ls -la dist/css/ || echo "No CSS directory found"
-    #     
-    #     echo "Building system-02..."
-    #     cd ../system-02
-    #     pwd
-    #     ls -la
-    #     npm install --no-workspaces
-    #     npm run build
-    #     echo "Checking system-02 build output..."
-    #     ls -la dist/
-    #     ls -la dist/css/ || echo "No CSS directory found"
+        echo "Checking workspace file..."
+        cat pnpm-workspace.yaml
     
     - name: Install dependencies
-      run: pnpm install
+      run: |
+        echo "Installing dependencies..."
+        pnpm install --frozen-lockfile
+        echo "Checking installed packages..."
+        pnpm list --depth=0
     
-    - name: Build all packages
-      run: pnpm run build
+    - name: Verify semantic.json files
+      run: |
+        echo "Checking semantic.json files..."
+        ls -la packages/system-01/semantic.json || echo "Missing semantic.json in system-01"
+        ls -la packages/system-02/semantic.json || echo "Missing semantic.json in system-02"
+        ls -la packages/shared/foundation.json || echo "Missing foundation.json in shared"
+    
+    - name: Build shared package
+      run: |
+        echo "Building shared package..."
+        cd packages/shared
+        pnpm run build:tokens
+        pnpm run build:components
+        echo "Checking shared build output..."
+        ls -la dist/
+    
+    - name: Build system packages
+      run: |
+        echo "Building system-01..."
+        cd packages/system-01
+        pnpm run build:tokens
+        pnpm run build:components
+        echo "Checking system-01 build output..."
+        ls -la dist/
+        
+        echo "Building system-02..."
+        cd ../system-02
+        pnpm run build:tokens
+        pnpm run build:components
+        echo "Checking system-02 build output..."
+        ls -la dist/
     
     - name: Build Storybook
-      run: pnpm run storybook:build 
+      run: |
+        echo "Building Storybook..."
+        cd packages/storybook
+        echo "Checking storybook dependencies..."
+        pnpm list --depth=0
+        echo "Building storybook..."
+        pnpm run build-storybook
+        echo "Checking storybook build output..."
+        ls -la storybook-static/ 
