@@ -57,6 +57,11 @@ pnpm run build                  # 전체 빌드 (shared → systems → storyboo
 pnpm run build:shared           # shared 패키지만 빌드
 pnpm run build:systems          # system 패키지들만 빌드
 
+# 색상 접근성 검증
+pnpm run validate:colors        # 색상 대비 검증
+pnpm run report:colors          # 자동 보고서 생성
+pnpm run validate:all           # 검증 + 보고서 통합 실행
+
 # 관리
 pnpm run clean                  # node_modules 정리
 pnpm run fresh:install          # 완전 재설치
@@ -108,6 +113,7 @@ function App() {
 - **📖 [컴포넌트 문서](https://lumir-design-system.vercel.app)**: 스토리북에서 모든 컴포넌트 확인
 - **🔧 [개발 가이드](./docs/DEVELOPMENT_GUIDE.md)**: 설치, 실행, 문제해결
 - **🏗️ [아키텍처 가이드](./docs/LUMIR_DESIGN_SYSTEM_ARCHITECTURE.md)**: 설계 원칙 및 구조
+- **🎨 [색상 검증 보고서](./docs/COLOR_VALIDATION_REPORT.md)**: 자동 생성되는 접근성 검증 결과
 
 ## ⚠️ 중요 사항
 

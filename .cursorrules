@@ -1,0 +1,301 @@
+# Lumir Design System - Cursor Rules
+
+## 🎯 시스템 개요
+Lumir 디자인 시스템은 5가지 시스템 테마(System-01~05)를 지원하는 모노레포 구조입니다.
+- System-01: Professional & Clean (GitHub, 백오피스)
+- System-02: Friendly & Bright (커머스, 소비자 대상)  
+- System-03: Modern & Software (Discord, Slack)
+- System-04: Aerospace Control (위성 컨트롤, 미션 크리티컬)
+- System-05: Aerospace Dashboard (우주 항공 대시보드)
+
+## 🚫 절대 금지 사항
+
+### 1. 컴포넌트 구조 변경 금지
+- 기존 프리미티브 컴포넌트의 props 인터페이스 수정 금지
+- 새로운 props 추가 금지
+- 컴포넌트 옵션이나 구성 자체 변경 금지
+
+### 2. 하드코딩된 값 사용 금지
+```typescript
+// ❌ 절대 금지
+const styles = {
+  backgroundColor: '#1976d2',
+  padding: '16px',
+  fontSize: '14px'
+}
+
+// ✅ 올바른 방법
+const styles = {
+  backgroundColor: 'var(--foundation-foundation-color-blue-dark-50)',
+  padding: 'var(--foundation-foundation-spacing-100-vertical)',
+  fontSize: 'var(--foundation-foundation-font-fontsize-140)'
+}
+```
+
+## ✅ 필수 준수 사항
+
+### 1. Foundation 토큰 사용 규칙
+**모든 CSS 값은 반드시 foundation-tokens.css의 토큰을 사용해야 합니다.**
+
+#### 토큰 카테고리:
+- `--foundation-foundation-color-*`: 색상
+- `--foundation-foundation-spacing-*`: 간격
+- `--foundation-foundation-font-*`: 폰트
+- `--foundation-foundation-shadow-*`: 그림자
+- `--foundation-foundation-border-*`: 테두리
+
+#### 검증 방법:
+```typescript
+// 컴포넌트 작성 시 다음을 확인:
+// 1. CSS 모듈에서 var(--foundation-*) 토큰만 사용
+// 2. 하드코딩된 색상값(#, rgb, hsl) 사용 금지
+// 3. 하드코딩된 크기값(px, rem, em) 사용 금지
+```
+
+### 2. 시스템 내부 일관성 규칙
+**같은 시스템 내의 모든 컴포넌트는 동일한 스타일 속성값을 사용해야 합니다.**
+
+```typescript
+// 예시: System-01의 모든 컴포넌트
+const system01Tokens = {
+  borderRadius: 'var(--foundation-foundation-border-radius-sm)',
+  spacing: 'var(--foundation-foundation-spacing-md)',
+  shadow: 'var(--foundation-foundation-shadow-sm)'
+}
+```
+
+### 3. 접근성 기준 (WCAG 2.1 AA)
+
+#### 색상 대비 검증:
+```typescript
+// 자동 검증 항목:
+// - 일반 텍스트: 4.5:1 이상
+// - 대형 텍스트: 3:1 이상  
+// - UI 컴포넌트: 3:1 이상
+// - 포커스 인디케이터: 3:1 이상
+```
+
+#### 키보드 접근성:
+```typescript
+// 필수 구현 사항:
+// - 모든 인터랙티브 요소에 키보드 접근 가능
+// - 포커스 스타일 명시 (최소 2px 두께)
+// - Tab 순서 논리적 구성
+
+// 포커스 스타일 템플릿:
+const focusStyle = {
+  outline: '2px solid var(--foundation-foundation-color-blue-light-40)',
+  outlineOffset: '2px'
+}
+```
+
+#### 터치 타겟 크기:
+```typescript
+// 최소 크기 기준:
+const touchTarget = {
+  minHeight: '44px', // 터치 타겟
+  minWidth: '44px',
+  // 또는
+  minHeight: '24px', // 마우스 타겟
+  minWidth: '24px'
+}
+```
+
+## 🔍 컴포넌트 작성 시 자동 검증 체크리스트
+
+### 파일 구조 검증:
+```
+컴포넌트명/
+├── ComponentName.tsx          ✅ 컴포넌트 파일
+├── ComponentName.module.css   ✅ CSS 모듈
+├── index.ts                   ✅ export 파일
+└── ComponentName.stories.tsx  ✅ 스토리북 (선택)
+```
+
+### TypeScript 컴포넌트 검증:
+```typescript
+// 1. Props 인터페이스 확인
+interface ComponentProps {
+  // 기존 프리미티브 props만 사용
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+  // 새로운 props 추가 금지
+}
+
+// 2. forwardRef 사용 (인터랙티브 컴포넌트)
+const Component = forwardRef<HTMLElement, ComponentProps>((props, ref) => {
+  // 구현
+});
+
+// 3. displayName 설정
+Component.displayName = 'ComponentName';
+```
+
+### CSS 모듈 검증:
+```css
+/* 1. Foundation 토큰만 사용 */
+.component {
+  background-color: var(--foundation-foundation-color-*);
+  padding: var(--foundation-foundation-spacing-*);
+  /* 하드코딩 값 사용 금지 */
+}
+
+/* 2. 포커스 스타일 필수 */
+.component:focus {
+  outline: 2px solid var(--foundation-foundation-color-blue-light-40);
+  outline-offset: 2px;
+}
+
+/* 3. 반응형 고려 */
+@media (max-width: 768px) {
+  .component {
+    /* 모바일 최적화 */
+  }
+}
+```
+
+## 🎨 시스템별 테마 적용 규칙
+
+### 컴포넌트 작성 시:
+```typescript
+// 1. 시스템별 토큰 매핑 확인
+const systemTokens = {
+  'system-01': {
+    primary: 'var(--foundation-foundation-color-blue-*)',
+    radius: 'var(--foundation-foundation-border-radius-sm)'
+  },
+  'system-02': {
+    primary: 'var(--foundation-foundation-color-green-*)',
+    radius: 'var(--foundation-foundation-border-radius-lg)'
+  }
+  // ... 다른 시스템들
+}
+
+// 2. 시스템 내 일관성 확인
+// 같은 시스템의 모든 컴포넌트가 동일한 속성값 사용하는지 검증
+```
+
+## 🧪 품질 검증 자동화
+
+### 빌드 시 자동 검증:
+```bash
+# 1. 접근성 검증
+npm run test:a11y
+
+# 2. 색상 대비 검증  
+npm run test:contrast
+
+# 3. 토큰 사용 검증
+npm run test:tokens
+
+# 4. 타입 검증
+npm run type-check
+```
+
+### Lighthouse 점수 기준:
+- **Accessibility: 95점 이상**
+- **Performance: 90점 이상**
+- **Best Practices: 95점 이상**
+
+## 📝 코드 작성 가이드
+
+### 1. 컴포넌트 생성 시 자동 템플릿:
+```typescript
+import React, { forwardRef } from 'react';
+import styles from './ComponentName.module.css';
+
+interface ComponentNameProps {
+  // 기존 프리미티브 props만 사용
+}
+
+const ComponentName = forwardRef<HTMLElement, ComponentNameProps>(
+  (props, ref) => {
+    return (
+      <div 
+        ref={ref}
+        className={styles.component}
+        {...props}
+      >
+        {/* 구현 */}
+      </div>
+    );
+  }
+);
+
+ComponentName.displayName = 'ComponentName';
+
+export default ComponentName;
+```
+
+### 2. CSS 모듈 템플릿:
+```css
+.component {
+  /* Foundation 토큰만 사용 */
+  background-color: var(--foundation-foundation-color-*);
+  padding: var(--foundation-foundation-spacing-*);
+  
+  /* 접근성 고려 */
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.component:focus {
+  outline: 2px solid var(--foundation-foundation-color-blue-light-40);
+  outline-offset: 2px;
+}
+
+.component:focus:not(:focus-visible) {
+  outline: none;
+}
+```
+
+## 🚨 실시간 검증 알림
+
+### 코드 작성 중 자동 경고:
+1. **하드코딩된 값 감지** → 즉시 경고 및 토큰 제안
+2. **접근성 위반 감지** → 대비율, 포커스 스타일 누락 경고
+3. **시스템 일관성 위반** → 다른 시스템 토큰 사용 시 경고
+4. **Props 인터페이스 변경** → 기존 구조 변경 시 차단
+
+### 정량적 색상 대비 검증:
+**색상 조합 작성 시 자동으로 WCAG 기준 검증:**
+```typescript
+// 색상 조합 검증 결과 예시:
+// ❌ 실패: grey-light-60 + grey-light-0 = 2.92:1 (기준 미달)
+// ✅ 통과: grey-light-100 + blue-light-60 = 6.72:1 (AA 등급)
+// 🎯 최적: grey-light-100 + green-light-60 = 8.38:1 (AAA 등급)
+
+// 자동 개선 제안:
+color: var(--foundation-foundation-color-grey-light-60); // 현재: 2.92:1
+// → 제안: var(--foundation-foundation-color-grey-light-80); // 개선: 4.51:1
+```
+
+### 자동 수정 제안:
+```typescript
+// 감지된 문제: 하드코딩된 색상
+backgroundColor: '#1976d2'
+
+// 자동 제안:
+backgroundColor: 'var(--foundation-foundation-color-blue-dark-50)'
+
+// 감지된 문제: 접근성 기준 미달
+color: var(--foundation-foundation-color-grey-light-60); // 2.92:1
+background: var(--foundation-foundation-color-grey-light-0);
+
+// 자동 제안:
+color: var(--foundation-foundation-color-grey-light-80); // 4.51:1 ✅
+```
+
+## 📋 배포 전 최종 체크리스트
+
+- [ ] Foundation 토큰만 사용 (하드코딩 값 없음)
+- [ ] WCAG 2.1 AA 기준 준수 (색상 대비 4.5:1 이상)
+- [ ] 키보드 접근성 구현 (포커스 스타일 포함)
+- [ ] 터치 타겟 크기 44×44px 이상
+- [ ] 시스템 내부 일관성 확인
+- [ ] TypeScript 타입 에러 없음
+- [ ] 스토리북 스토리 작성 완료
+- [ ] Lighthouse Accessibility 95점 이상
+- [ ] 모든 테스트 통과
+
+**이 규칙들을 위반하는 코드는 자동으로 차단되며, 배포가 불가능합니다.** 

@@ -75,6 +75,14 @@ jobs:
         echo "Checking shared build output..."
         ls -la dist/
     
+    - name: Validate colors and generate report
+      run: |
+        echo "Validating color accessibility..."
+        cd packages/shared
+        pnpm run validate:colors
+        pnpm run report:colors
+        echo "Color validation report updated in docs/COLOR_VALIDATION_REPORT.md"
+    
     - name: Build system packages
       run: |
         echo "Building system-01..."

@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🎨 색상 접근성 검증 중..."
+
+# shared 패키지로 이동하여 색상 검증 실행
+cd packages/shared
+
+# 색상 검증 실행
+if ! pnpm run validate:colors; then
+  echo "❌ 색상 접근성 검증 실패!"
+  echo "접근성 기준을 만족하지 않는 색상 조합이 있습니다."
+  echo "자세한 내용은 다음 명령어로 확인하세요:"
+  echo "  cd packages/shared && pnpm run report:colors"
+  exit 1
+fi
+
+# 보고서 자동 업데이트
+pnpm run report:colors
+
+echo "✅ 색상 접근성 검증 통과!"
+echo "📄 보고서가 업데이트되었습니다: docs/COLOR_VALIDATION_REPORT.md"
+
+# 업데이트된 보고서를 staging에 추가
+cd ../../
+git add docs/COLOR_VALIDATION_REPORT.md
+
+echo "�� 커밋을 계속 진행합니다..." 
