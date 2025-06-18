@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, Text, type TextProps, Icon } from '@lumir/shared';
+import { Surface, Frame, Sizing, Text, type TextProps, Icon } from 'lumir-design-system-shared';
 
 export interface ChipProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'color'> {
   /**
@@ -98,12 +98,6 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
 
   const config = sizeConfig[size];
   const actualState = getActualState();
-
-  // 아이콘 색상 결정
-  const getIconColor = () => {
-    if (disabled) return 'secondary-system02-1';
-    return 'secondary-system02-1';
-  };
 
   // 배경색 결정
   const getBackgroundColor = () => {
@@ -254,7 +248,6 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
               <Icon
                 name="LineIconsCloseCloseIcon"
                 size={config.iconSize}
-                  color="secondary-system02-1"
               />
             </Frame>
           </Surface>

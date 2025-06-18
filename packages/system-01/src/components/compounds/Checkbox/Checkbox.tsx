@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, Icon } from '@lumir/shared';
+import { Surface, BackgroundToken, StrokeToken, ForegroundToken, Frame, Icon, Text, Sizing } from 'lumir-design-system-shared';
 import { Label } from '../Label';
 
 export interface CheckboxProps {
@@ -151,7 +151,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           <Icon
             name="LineIconsCheckmarkCheckmarkIcon"
             size="xs"
-            color="oncolor"
           />
         );
       }

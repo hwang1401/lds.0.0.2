@@ -24,7 +24,7 @@ export type {
 export type { TextProps } from './primitives/Text';
 
 // Icon 관련 타입들 export  
-export type { IconProps, IconName, IconColor, IconSize } from './primitives/Icon';
+export type { IconProps, IconName, IconSize } from './primitives/Icon';
 
 // Sizing 관련 타입들 export
 export type { 

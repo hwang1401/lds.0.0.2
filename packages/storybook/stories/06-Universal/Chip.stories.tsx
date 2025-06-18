@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Chip as System01Chip } from '@lumir/system-01';
-import { Chip as System02Chip } from '@lumir/system-02';
-import { Surface, Frame, Text } from '@lumir/shared';
+import { Chip as System01Chip } from 'lumir-design-system-01';
+import { Chip as System02Chip } from 'lumir-design-system-02';
+import { Surface, Frame, Text } from 'lumir-design-system-shared';
 
 // 시스템별 Chip 컴포넌트 매핑
 const ChipComponents = {

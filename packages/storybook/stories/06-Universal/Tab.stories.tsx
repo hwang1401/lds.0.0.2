@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Surface, Frame, Text } from '@lumir/shared';
+import { Surface, Frame, Text } from 'lumir-design-system-shared';
 
 // System 컴포넌트들을 import
-import { Tab as System01Tab, TabItem } from '@lumir/system-01';
+import { Tab as System01Tab, TabItem } from 'lumir-design-system-01';
 import { Tab as System02Tab } from '@lumir/system-02';
 
 // Universal props 타입

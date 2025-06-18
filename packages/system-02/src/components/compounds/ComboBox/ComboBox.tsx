@@ -1,5 +1,5 @@
 import React, { forwardRef, useState, useRef, useEffect } from 'react';
-import { Surface, Frame, Sizing, Divider } from '@lumir/shared';
+import { Surface, Frame, Sizing, Divider } from 'lumir-design-system-shared';
 import { Field } from '../Field';
 import { OptionList } from '../OptionList';
 import { Chip } from '../Chip';

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Label as System01Label } from '@lumir/system-01';
-import { Label as System02Label } from '@lumir/system-02';
-import { Frame, Surface, Text } from '@lumir/shared';
+import { Label as System01Label } from 'lumir-design-system-01';
+import { Label as System02Label } from 'lumir-design-system-02';
+import { Frame, Surface, Text } from 'lumir-design-system-shared';
 
 // 시스템별 Label 컴포넌트 매핑
 const LabelComponents = {

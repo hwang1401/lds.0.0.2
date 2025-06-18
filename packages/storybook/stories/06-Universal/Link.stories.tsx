@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Link as System01Link } from '@lumir/system-01';
-import { Link as System02Link } from '@lumir/system-02';
-import { Frame, Text } from '@lumir/shared';
+import { Link as System01Link } from 'lumir-design-system-01';
+import { Link as System02Link } from 'lumir-design-system-02';
+import { Frame, Text } from 'lumir-design-system-shared';
 
 // 시스템별 Link 컴포넌트 매핑
 const LinkComponents = {

@@ -1,6 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, HeightValue, Text, Icon, IconName } from '@lumir/shared';
-import { ResponsiveOrSingle } from '@lumir/shared';
+import { Surface, BackgroundToken, ForegroundToken, StrokeToken, Frame, Sizing, HeightValue, Text, Icon, IconName, ResponsiveOrSingle } from 'lumir-design-system-shared';
 import { Label } from '../Label';
 
 export interface FieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
@@ -330,13 +329,6 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
     };
   };
 
-  // 아이콘 색상 결정
-  const getIconColor = () => {
-    if (disabled) return 'disabled';
-    if (error) return 'status-error';
-    return 'secondary-system01-3';
-  };
-
   // 상태별 interactionState 적용 방식 결정
   const shouldApplyInteractionToBox = () => {
     return variant === 'filled' || variant === 'outlined'; // outlined에서도 Box에 적용 (border 색상용)
@@ -416,7 +408,6 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
               <Icon
                 name={leftIcon}
                 size="sm"
-                color={getIconColor()}
               />
             )}
             
@@ -445,7 +436,6 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
               <Icon
                 name={rightIcon}
                 size="sm"
-                color={getIconColor()}
               />
             )}
           </Frame>

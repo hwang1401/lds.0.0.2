@@ -12,9 +12,9 @@
     "clean": "rm -rf storybook-static .storybook-out"
   },
   "dependencies": {
-    "@lumir/shared": "workspace:*",
-    "@lumir/system-01": "workspace:*",
-    "@lumir/system-02": "workspace:*",
+    "lumir-design-system-shared": "workspace:*",
+    "lumir-design-system-01": "workspace:*",
+    "lumir-design-system-02": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

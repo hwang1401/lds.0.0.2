@@ -1,5 +1,5 @@
 import React from 'react';
-import { Surface, Frame, Sizing, IconName } from '@lumir/shared';
+import { Surface, Frame, Sizing, IconName } from 'lumir-design-system-shared';
 import { Badge, BadgeProps } from '../Badge';
 import { Button, ButtonProps } from '../Button';
 import { TextDisplay, TextDisplayProps } from '../TextDisplay';

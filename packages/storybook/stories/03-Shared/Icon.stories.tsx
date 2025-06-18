@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Icon, Text, Frame, Surface } from '@lumir/shared';
-import type { IconName, IconSize, IconColor } from '@lumir/shared';
-import { Field, Badge, Button, TextDisplay } from '@lumir/system-01';
-import * as GeneratedIcons from '@lumir/shared';
+import { Icon, Text, Frame, Surface } from 'lumir-design-system-shared';
+import type { IconName, IconSize } from 'lumir-design-system-shared';
+import { Field, Badge, Button, TextDisplay } from 'lumir-design-system-01';
+import * as GeneratedIcons from 'lumir-design-system-shared';
 
 const meta: Meta<typeof Icon> = {
   title: 'Shared/Primitives/Icon',
@@ -40,35 +40,6 @@ const meta: Meta<typeof Icon> = {
       description: '아이콘 크기 (토큰 기반)',
       control: 'select',
       options: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl'] as IconSize[]
-    },
-    color: {
-      description: '아이콘 색상 (토큰 기반)',
-      control: 'select',
-      options: [
-        'primary-system01',
-        'primary-system02',
-        'primary-system03',
-        'secondary-system01-1',
-        'secondary-system01-2',
-        'secondary-system01-3',
-        'secondary-system02-1',
-        'secondary-system02-2',
-        'secondary-system02-3',
-        'secondary-system03-1',
-        'secondary-system03-2',
-        'secondary-system03-3',
-        'cta-system01',
-        'cta-system02',
-        'cta-system03',
-        'status-error',
-        'status-warning',
-        'status-success',
-        'status-info',
-        'status-focused',
-        'oncolor',
-        'disabled',
-        'transparent'
-      ] as IconColor[]
     }
   },
 } satisfies Meta<typeof Icon>;
@@ -79,8 +50,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     name: 'SearchIcon',
-    size: 'md',
-    color: 'secondary-system01-1'
+    size: 'md'
   },
 };
 
@@ -129,37 +99,38 @@ export const Colors: Story = {
     <Surface background="secondary-system01-1-rest" borderRadius="md">
       <Frame display="flex" direction="column" gap="lg" padding="lg">
         <Text variant="heading-2" weight="medium">아이콘 색상</Text>
+        <Text variant="body-2">아이콘은 현재 CSS에서 색상을 제어합니다. 다양한 상황에서의 아이콘을 확인해보세요.</Text>
         <Frame display="grid" gridTemplateColumns="repeat(4, 1fr)" gap="lg">
           <Frame display="flex" direction="column" gap="sm" align="center">
-            <Icon name="HeartIcon" size="xl" color="primary-system02" />
-            <Text variant="caption-1">Primary</Text>
+            <Icon name="HeartIcon" size="xl" />
+            <Text variant="caption-1">Heart Icon</Text>
           </Frame>
           <Frame display="flex" direction="column" gap="sm" align="center">
-            <Icon name="HeartIcon" size="xl" color="secondary-system02-1" />
-            <Text variant="caption-1">Secondary 1</Text>
+            <Icon name="HeartIcon" size="xl" />
+            <Text variant="caption-1">Heart Icon</Text>
           </Frame>
           <Frame display="flex" direction="column" gap="sm" align="center">
-            <Icon name="HeartIcon" size="xl" color="secondary-system02-2" />
-            <Text variant="caption-1">Secondary 2</Text>
+            <Icon name="HeartIcon" size="xl" />
+            <Text variant="caption-1">Heart Icon</Text>
           </Frame>
           <Frame display="flex" direction="column" gap="sm" align="center">
-            <Icon name="HeartIcon" size="xl" color="cta-system02" />
-            <Text variant="caption-1">CTA</Text>
+            <Icon name="HeartIcon" size="xl" />
+            <Text variant="caption-1">Heart Icon</Text>
           </Frame>
           <Frame display="flex" direction="column" gap="sm" align="center">
-            <Icon name="WarningIcon" size="xl" color="status-warning" />
+            <Icon name="WarningIcon" size="xl" />
             <Text variant="caption-1">Warning</Text>
           </Frame>
           <Frame display="flex" direction="column" gap="sm" align="center">
-            <Icon name="InfoIcon" size="xl" color="status-success" />
+            <Icon name="InfoIcon" size="xl" />
             <Text variant="caption-1">Success</Text>
           </Frame>
           <Frame display="flex" direction="column" gap="sm" align="center">
-            <Icon name="InfoIcon" size="xl" color="status-error" />
+            <Icon name="InfoIcon" size="xl" />
             <Text variant="caption-1">Error</Text>
           </Frame>
           <Frame display="flex" direction="column" gap="sm" align="center">
-            <Icon name="InfoIcon" size="xl" color="status-info" />
+            <Icon name="InfoIcon" size="xl" />
             <Text variant="caption-1">Info</Text>
           </Frame>
         </Frame>
@@ -171,8 +142,7 @@ export const Colors: Story = {
 export const Interactive: Story = {
   args: {
     name: 'SearchIcon',
-    size: 'lg',
-    color: 'secondary-system01-1',
+    size: 'lg'
   },
 };
 
@@ -268,7 +238,6 @@ export const IconGallery: Story = {
                         <Icon 
                           name={iconName} 
                           size="xl" 
-                          color={isCopied ? "oncolor" : "secondary-system01-1"}
                         />
                         <Text 
                           variant="caption-2" 
@@ -296,7 +265,7 @@ export const IconGallery: Story = {
           <Surface background="secondary-system01-1-rest" borderRadius="lg">
             <Frame padding="xl" display="flex" justify="center" align="center" minHeight="200px">
               <Frame display="flex" direction="column" gap="md" align="center">
-                <Icon name="SearchIcon" size="xxl" color="secondary-system01-2" />
+                <Icon name="SearchIcon" size="xxl" />
                 <Text variant="body-1" textAlign="center">
                   "{searchTerm}"에 해당하는 아이콘을 찾을 수 없습니다.
                 </Text>

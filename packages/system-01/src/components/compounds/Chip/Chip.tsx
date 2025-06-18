@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, Text, type TextProps, Icon, type IconColor } from '@lumir/shared';
+import { Surface, BackgroundToken, ForegroundToken, StrokeToken, RadiusToken, BorderWidthToken, Frame, Text, Icon, IconName } from 'lumir-design-system-shared';
 
 export interface ChipProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'color'> {
   /**
@@ -153,19 +153,6 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
     return 'secondary-system01-1-rest'; // secondary 배경에서도 onColor 사용
   };
 
-  // 아이콘 색상 결정 (Icon 컴포넌트용)
-  const getIconColor = (): IconColor | undefined => {
-    if (disabled) return 'disabled';
-    
-    if (variant === 'outlined') {
-      // outlined는 Surface의 foreground 상속
-      return undefined;
-    }
-    
-    // filled variant - onColor 사용
-    return 'oncolor';
-  };
-
   // 이벤트 핸들러
   const handleMouseEnter = () => {
     if (!disabled && (!state || state === 'default')) {
@@ -270,7 +257,6 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
               <Icon
                 name="LineIconsCloseCloseIcon"
                 size={config.iconSize}
-                color={getIconColor()}
               />
             </Frame>
           </Surface>

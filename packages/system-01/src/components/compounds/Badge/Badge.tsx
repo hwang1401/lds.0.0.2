@@ -1,5 +1,5 @@
-import React from 'react';
-import { Surface, BackgroundToken, ForegroundToken, StrokeToken, RadiusToken, BorderWidthToken, Frame, Text, Icon, IconName } from '@lumir/shared';
+import React, { forwardRef, useState } from 'react';
+import { Surface, BackgroundToken, ForegroundToken, StrokeToken, RadiusToken, BorderWidthToken, Frame, Text, Icon, IconName } from 'lumir-design-system-shared';
 
 type SpacingValue = 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
 type RadiusValue = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
@@ -148,44 +148,9 @@ export const Badge: React.FC<BadgeProps> = ({
     }
   };
 
-  // ForegroundToken을 Icon color string으로 변환
-  const getIconColor = (foregroundToken?: ForegroundToken) => {
-    switch (foregroundToken) {
-      case 'primary-system01-oncolor':
-        return 'oncolor';
-      case 'secondary-system01-oncolor':
-        return 'oncolor';
-      case 'error-oncolor':
-        return 'oncolor';
-      case 'warning-oncolor':
-        return 'oncolor';
-      case 'primary-system01-1-rest':
-        return 'primary-system01';
-      case 'secondary-system01-1-rest':
-        return 'secondary-system01-1';
-      case 'secondary-system01-2-rest':
-        return 'secondary-system01-2';
-      case 'secondary-system01-1-disabled':
-        return 'disabled';
-      case 'cta-system01-1-rest':
-        return 'cta-system01';
-      case 'error-1-rest':
-        return 'status-error';
-      case 'warning-1-rest':
-        return 'status-warning';
-      case 'error':
-        return 'status-error';
-      case 'warning':
-        return 'status-warning';
-      default:
-        return 'secondary-system01-1';
-    }
-  };
-
   const backgroundColor = getBackgroundColor();
   const borderColor = getBorderColor();
   const foregroundColor = getForegroundColor();
-  const iconColor = getIconColor(foregroundColor);
   const textVariant = getTextVariant(size);
   const iconSize = getIconSize(size);
   const contentGap = getContentGap(size);
@@ -215,7 +180,6 @@ export const Badge: React.FC<BadgeProps> = ({
           <Icon
             name={iconName}
             size={iconSize}
-            color={iconColor}
           />
         )}
 

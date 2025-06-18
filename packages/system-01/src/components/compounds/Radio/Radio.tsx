@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, Icon } from '@lumir/shared';
+import { Surface, Frame, Sizing, Icon } from 'lumir-design-system-shared';
 import { Label } from '../Label';
 
 export interface RadioProps {
@@ -165,9 +165,8 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
       if (variant === 'checkmark') {
         return (
           <Icon
-            name="LineIconsCheckmarkCheckmarkIcon"
+            name="LineIconsRadioButtonOnIcon"
             size="xs"
-            color="primary-system01"
           />
         );
       }

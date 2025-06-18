@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Text, Surface, Frame } from '@lumir/shared';
+import { Text, Surface, Frame } from 'lumir-design-system-shared';
 
 const meta: Meta<typeof Text> = {
   title: 'Shared/Primitives/Text',

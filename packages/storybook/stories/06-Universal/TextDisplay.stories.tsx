@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Surface, Frame } from '@lumir/shared';
-import type { GeneratedIconName } from '@lumir/shared';
+import { Surface, Frame } from 'lumir-design-system-shared';
+import type { GeneratedIconName } from 'lumir-design-system-shared';
 
 // System 컴포넌트들을 import
-import { TextDisplay as System01TextDisplay } from '@lumir/system-01';
-import { TextDisplay as System02TextDisplay } from '@lumir/system-02';
+import { TextDisplay as System01TextDisplay } from 'lumir-design-system-01';
+import { TextDisplay as System02TextDisplay } from 'lumir-design-system-02';
 
 // 컴포넌트 매핑 객체
 const componentMap = {

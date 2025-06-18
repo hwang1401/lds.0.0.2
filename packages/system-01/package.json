@@ -1,8 +1,8 @@
 {
-  "name": "@lumir/system-01",
+  "name": "lumir-design-system-01",
   "version": "1.0.5",
   "type": "module",
-  "description": "Lumir Design System 01 - Clean & Efficient",
+  "description": "Lumir Design System 01 - Professional & Clean",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/types/index.d.ts",
@@ -25,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/lumir-design-system.git",
+    "url": "https://github.com/your-org/lumir-design-system.git",
     "directory": "packages/system-01"
   },
   "publishConfig": {
@@ -36,9 +36,9 @@
     "design-system",
     "react",
     "typescript",
-    "clean-efficient",
+    "professional-clean",
     "aerospace",
-    "backoffice"
+    "business"
   ],
   "scripts": {
     "build:tokens": "node scripts/build-tokens.js",
@@ -48,7 +48,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@lumir/shared": "workspace:*",
+    "lumir-design-system-shared": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from 'react';
-import { Icon, Frame, Surface, SurfaceProps } from '@lumir/shared';
+import { Icon, Frame, Surface, SurfaceProps } from 'lumir-design-system-shared';
 import { Button } from '../Button';
 
 export type SegmentButtonMode = 'single' | 'multi';

@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Frame, Surface, BackgroundToken, StrokeToken, ForegroundToken, Sizing, HeightValue, Text, Icon, IconName } from '@lumir/shared';
+import { Frame, Surface, BackgroundToken, StrokeToken, ForegroundToken, Sizing, HeightValue, Text, Icon, IconName } from 'lumir-design-system-shared';
 
 export interface ButtonProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> {
   /**
@@ -316,34 +316,6 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
     return { borderWidth: 'thin', borderColor: 'secondary-system02-2-rest' };
   };
 
-  // 아이콘 색상 결정 (IconColor 타입에 맞춰 수정)
-  const getIconColor = () => {
-    const currentState = getCurrentState();
-    
-    // disabled 상태
-    if (currentState === 'disabled') {
-      return 'disabled';
-    }
-    
-    // Icon 컴포넌트의 올바른 color 타입 사용
-    if (variant === 'filled') {
-      if (colorScheme === 'primary') return 'oncolor';
-      if (colorScheme === 'secondary') return 'secondary-system02-2';
-      if (colorScheme === 'cta') return 'oncolor';
-    }
-    if (variant === 'outlined') {
-      if (colorScheme === 'primary') return 'primary-system02';
-      if (colorScheme === 'secondary') return 'secondary-system02-1';
-      if (colorScheme === 'cta') return 'cta-system02';
-    }
-    if (variant === 'transparent') {
-      if (colorScheme === 'primary') return 'primary-system02';
-      if (colorScheme === 'secondary') return 'secondary-system02-1';
-      if (colorScheme === 'cta') return 'cta-system02';
-    }
-    return 'secondary-system02-1';
-  };
-
   // 현재 상태 결정
   const getCurrentState = (): 'rest' | 'hovered' | 'pressed' | 'disabled' => {
     if (disabled || isLoading) return 'disabled';
@@ -396,7 +368,6 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
             <Icon 
               name="LineIconsMenuMenuIcon"
               size={getIconSize()}
-              color={getIconColor()}
               aria-hidden={true}
             />
           )}
@@ -405,7 +376,6 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
             <Icon 
               name={leftIcon} 
               size={getIconSize()}
-              color={getIconColor()}
               aria-hidden={true}
             />
           )}
@@ -424,7 +394,6 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
             <Icon 
               name={rightIcon} 
               size={getIconSize()}
-              color={getIconColor()}
               aria-hidden={true}
             />
           )}

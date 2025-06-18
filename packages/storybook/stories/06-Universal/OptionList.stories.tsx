@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { OptionList as System01OptionList } from '@lumir/system-01';
-import { OptionList as System02OptionList } from '@lumir/system-02';
-import { Frame, Surface, Sizing, Text } from '@lumir/shared';
+import { OptionList as System01OptionList } from 'lumir-design-system-01';
+import { OptionList as System02OptionList } from 'lumir-design-system-02';
+import { Frame, Surface, Sizing, Text } from 'lumir-design-system-shared';
 
 // 시스템별 OptionList 컴포넌트 매핑
 const OptionListComponents = {

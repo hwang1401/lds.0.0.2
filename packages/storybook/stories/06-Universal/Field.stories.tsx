@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Field as System01Field } from '@lumir/system-01';
-import { Field as System02Field } from '@lumir/system-02';
-import { Frame, Text } from '@lumir/shared';
+import { Field as System01Field } from 'lumir-design-system-01';
+import { Field as System02Field } from 'lumir-design-system-02';
+import { Frame, Text } from 'lumir-design-system-shared';
 
 // 시스템별 Field 컴포넌트 매핑
 const FieldComponents = {

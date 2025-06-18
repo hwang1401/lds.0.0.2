@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Sizing, Text, Frame, Surface, Icon } from '@lumir/shared';
-import type { HeightValue } from '@lumir/shared';
+import { Sizing, Text, Frame, Surface, Icon } from 'lumir-design-system-shared';
+import type { HeightValue } from 'lumir-design-system-shared';
 
 const meta: Meta<typeof Sizing> = {
   title: 'Shared/Primitives/Sizing',
@@ -464,7 +464,7 @@ export const ObjectFit: Story = {
       {/* ObjectFit 기본 옵션들 */}
       <Frame display="flex" direction="column" gap="md">
         <Frame display="flex" gap="sm" align="center">
-          <Icon name="LineIconsStarFilledIcon" size="md" color="primary-system01" />
+          <Icon name="LineIconsStarFilledIcon" size="md" />
           <Text variant="heading-3" weight="medium">기본 ObjectFit 옵션들</Text>
         </Frame>
         <Text variant="body-2">정사각형 컨테이너(200×200px)에 가로로 긴 이미지(400×200px)를 넣었을 때의 차이</Text>
@@ -507,7 +507,7 @@ export const ObjectFit: Story = {
       {/* 새로운 직관적인 별칭들 */}
       <Frame display="flex" direction="column" gap="md">
         <Frame display="flex" gap="sm" align="center">
-          <Icon name="LineIconsStarFilledIcon" size="md" color="cta-system01" />
+          <Icon name="LineIconsStarFilledIcon" size="md" />
           <Text variant="heading-3" weight="medium">새로운 직관적인 별칭들</Text>
         </Frame>
         <Text variant="body-2">더 직관적인 이름으로 동일한 효과를 얻을 수 있습니다.</Text>
@@ -536,7 +536,7 @@ export const ObjectFit: Story = {
                 </Frame>
               </Surface>
               <Frame display="flex" gap="xs" align="center">
-                <Icon name={iconName as any} size="sm" color="cta-system01" />
+                <Icon name={iconName as any} size="sm" />
                 <Text variant="caption-1" textAlign="center" weight="medium">{name}</Text>
               </Frame>
               <Surface foreground="cta-system01-1-rest">
@@ -557,7 +557,7 @@ export const ObjectFit: Story = {
       {/* 세로로 긴 컨테이너에 가로로 긴 이미지 */}
       <Frame display="flex" direction="column" gap="md">
         <Frame display="flex" gap="sm" align="center">
-          <Icon name="MaximizeIcon" size="md" color="primary-system01" />
+          <Icon name="MaximizeIcon" size="md" />
           <Text variant="heading-3" weight="medium">극단적인 비율 차이</Text>
         </Frame>
         <Text variant="body-2">세로로 긴 컨테이너(120×300px)에 가로로 긴 이미지(400×200px)를 넣었을 때</Text>
@@ -598,7 +598,7 @@ export const ObjectFit: Story = {
       {/* 실제 사용 예시 - 아바타와 배너 */}
       <Frame display="flex" direction="column" gap="md">
         <Frame display="flex" gap="sm" align="center">
-          <Icon name="BriefcaseIcon" size="md" color="secondary-system01-1" />
+          <Icon name="BriefcaseIcon" size="md" />
           <Text variant="heading-3" weight="medium">실제 사용 예시</Text>
         </Frame>
         <Frame display="flex" gap="xl" wrap="wrap">
@@ -674,14 +674,14 @@ export const ObjectFit: Story = {
       {/* ObjectPosition과 조합 (crop 맥락) */}
       <Frame display="flex" direction="column" gap="lg">
         <Frame display="flex" gap="sm" align="center">
-          <Icon name="CropIcon" size="md" color="cta-system01" /> 
+          <Icon name="CropIcon" size="md" /> 
           <Text variant="heading-3" weight="medium">Crop + Position 조합</Text>
         </Frame>
         
         {/* 원본 이미지 먼저 보여주기 */}
         <Frame display="flex" direction="column" gap="md" align="center">
           <Frame display="flex" gap="xs" align="center">
-            <Icon name="ImageIcon" size="sm" color="secondary-system01-1" />
+            <Icon name="ImageIcon" size="sm" />
             <Text variant="body-2" weight="medium">원본 이미지 (800×600px)</Text>
           </Frame>
           <Frame display="flex" direction="column" gap="sm" align="center">
@@ -713,7 +713,7 @@ export const ObjectFit: Story = {
         {/* crop + position 조합 */}
         <Frame display="flex" direction="column" gap="md">
           <Frame display="flex" gap="xs" align="center">
-            <Icon name="SearchIcon" size="sm" color="secondary-system01-1" />
+            <Icon name="SearchIcon" size="sm" />
             <Text variant="body-2" weight="medium">crop + position 조합 비교</Text>
           </Frame>
           <Frame display="flex" gap="md" wrap="wrap" justify="center">
@@ -765,7 +765,7 @@ export const ObjectFit: Story = {
         {/* 코너 crop Position들 */}
         <Frame display="flex" direction="column" gap="md">
           <Frame display="flex" gap="xs" align="center">
-            <Icon name="LineIconsCornerUpLeftIcon" size="sm" color="secondary-system01-1" />
+            <Icon name="LineIconsCornerUpLeftIcon" size="sm" />
             <Text variant="body-2" weight="medium">코너 crop Position들</Text>
           </Frame>
           <Frame display="flex" gap="md" wrap="wrap" justify="center">
@@ -814,7 +814,7 @@ export const ObjectFit: Story = {
         </Frame>
         
         <Frame display="flex" gap="xs" align="center">
-          <Icon name="InfoIcon" size="sm" color="status-info" />
+          <Icon name="InfoIcon" size="sm" />
           <Surface foreground="secondary-system01-2-rest">
             <Frame padding="xs">
               <Text variant="caption-2" weight="regular">
@@ -824,7 +824,7 @@ export const ObjectFit: Story = {
           </Surface>
         </Frame>
         <Frame display="flex" gap="xs" align="center">
-          <Icon name="LineIconsStarFilledIcon" size="sm" color="cta-system01" />
+          <Icon name="LineIconsStarFilledIcon" size="sm" />
           <Surface foreground="cta-system01-1-rest">
             <Frame padding="xs">
               <Text variant="caption-2" weight="regular">
@@ -930,7 +930,7 @@ export const CompoundComponentExample: Story = {
       {/* 실제 사용 사례: 다양한 Sizing 기능 조합 */}
       <Frame display="flex" direction="column" gap="md">
         <Frame display="flex" gap="sm" align="center">
-          <Icon name="LineIconsStarFilledIcon" size="lg" color="cta-system01" />
+          <Icon name="LineIconsStarFilledIcon" size="lg" />
           <Text variant="heading-3" weight="medium">실제 사용 사례: 다양한 Sizing 기능 조합</Text>
         </Frame>
         <Text variant="body-2">Sizing의 핵심 기능들을 실제 UI 컴포넌트에서 어떻게 활용하는지 보여줍니다</Text>
@@ -1109,7 +1109,7 @@ export const CompoundComponentExample: Story = {
                         direction="column"
                         gap="xs"
                       >
-                        <Icon name={icon as any} size="md" color="oncolor" />
+                        <Icon name={icon as any} size="md" />
                         <Text variant="caption-2" textAlign="center" color="primary-system01-oncolor">{label}</Text>
                       </Frame>
                     </Surface>
@@ -1150,7 +1150,7 @@ export const CompoundComponentExample: Story = {
                     align="center"
                   >
                     <Frame display="flex" direction="column" align="center" gap="xs">
-                      <Icon name="LineIconsBarChart1Icon" size="xxl" color="oncolor" />
+                      <Icon name="LineIconsBarChart1Icon" size="xxl" />
                       <Text variant="caption-1" color="primary-system01-oncolor">차트 영역</Text>
                     </Frame>
                   </Frame>

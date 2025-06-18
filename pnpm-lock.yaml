@@ -57,33 +57,30 @@ importers:
       '@rollup/plugin-typescript':
         specifier: ^11.0.0
         version: 11.1.6(rollup@3.29.5)(typescript@5.8.3)
-      chokidar:
-        specifier: ^3.5.3
-        version: 3.6.0
       concurrently:
         specifier: ^7.6.0
         version: 7.6.0
       rollup:
         specifier: ^3.19.0
         version: 3.29.5
-      rollup-plugin-peer-deps-external:
-        specifier: ^2.2.4
-        version: 2.2.4(rollup@3.29.5)
       rollup-plugin-postcss:
         specifier: ^4.0.2
         version: 4.0.2(postcss@8.5.6)
+      typescript:
+        specifier: ^5.0.0
+        version: 5.8.3
 
   packages/storybook:
     dependencies:
-      '@lumir/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@lumir/system-01':
+      lumir-design-system-01:
         specifier: workspace:*
         version: link:../system-01
-      '@lumir/system-02':
+      lumir-design-system-02:
         specifier: workspace:*
         version: link:../system-02
+      lumir-design-system-shared:
+        specifier: workspace:*
+        version: link:../shared
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -112,7 +109,7 @@ importers:
 
   packages/system-01:
     dependencies:
-      '@lumir/shared':
+      lumir-design-system-shared:
         specifier: workspace:*
         version: link:../shared
       react:
@@ -146,7 +143,7 @@ importers:
 
   packages/system-02:
     dependencies:
-      '@lumir/shared':
+      lumir-design-system-shared:
         specifier: workspace:*
         version: link:../shared
       react:

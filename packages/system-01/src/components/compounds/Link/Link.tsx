@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { Text, Icon } from '@lumir/shared';
-import { ResponsiveOrSingle } from '@lumir/shared';
+import { Text, Icon } from 'lumir-design-system-shared';
+import { ResponsiveOrSingle } from 'lumir-design-system-shared';
 
 // Link variant 타입
 type LinkVariant = 'default' | 'subtle' | 'prominent';
@@ -154,7 +154,6 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(({
         <Icon 
           name="ExternalLinkIcon" 
           size="xs" 
-          color={getCurrentColor()}
           style={{ opacity: 0.7 }}
         />
       )}

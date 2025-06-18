@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ComboBox as System01ComboBox } from '@lumir/system-01';
-import { ComboBox as System02ComboBox } from '@lumir/system-02';
-import { Surface, Frame, Sizing, Text } from '@lumir/shared';
+import { ComboBox as System01ComboBox } from 'lumir-design-system-01';
+import { ComboBox as System02ComboBox } from 'lumir-design-system-02';
+import { Surface, Frame, Sizing, Text } from 'lumir-design-system-shared';
 
 // 시스템별 ComboBox 컴포넌트 매핑
 const ComboBoxComponents = {

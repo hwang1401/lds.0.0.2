@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, Text, Icon, IconName } from '@lumir/shared';
+import { Surface, Frame, Sizing, Text, Icon, IconName } from 'lumir-design-system-shared';
 import { Button } from '../Button/Button';
 
 type MenuSize = 'md' | 'lg' | 'xlg';
@@ -212,14 +212,12 @@ export const MenuHeader = forwardRef<HTMLDivElement, MenuHeaderProps>(({
               <Icon 
                 name={leftIcon} 
                 size={iconSizeMap[size]} 
-                color={undefined} // Surface의 foreground 상속
               />
             )}
             
             <Text 
               variant="heading-3" 
               weight="bold" 
-              color={undefined} // Surface의 foreground 상속
             >
               {children}
             </Text>
@@ -228,7 +226,6 @@ export const MenuHeader = forwardRef<HTMLDivElement, MenuHeaderProps>(({
               <Icon 
                 name={rightIcon} 
                 size={iconSizeMap[size]} 
-                color={undefined} // Surface의 foreground 상속
               />
             )}
           </Frame>

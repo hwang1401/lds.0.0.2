@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card as System01Card } from '@lumir/system-01';
-import { Card as System02Card } from '@lumir/system-02';
-import { Text, Frame, Surface } from '@lumir/shared';
+import { Card as System01Card } from 'lumir-design-system-01';
+import { Card as System02Card } from 'lumir-design-system-02';
+import { Text, Frame, Surface } from 'lumir-design-system-shared';
 
 // Icon names array for storybook select options
 const iconNames = [

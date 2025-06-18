@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SegmentButton as System01SegmentButton } from '@lumir/system-01';
-import { SegmentButton as System02SegmentButton } from '@lumir/system-02';
-import { Text, Frame } from '@lumir/shared';
+import { SegmentButton as System01SegmentButton } from 'lumir-design-system-01';
+import { SegmentButton as System02SegmentButton } from 'lumir-design-system-02';
+import { Text, Frame } from 'lumir-design-system-shared';
 
 // 시스템별 SegmentButton 컴포넌트 매핑
 const SegmentButtonComponents = {

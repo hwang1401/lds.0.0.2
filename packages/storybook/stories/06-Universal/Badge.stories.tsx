@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Badge as System01Badge } from '@lumir/system-01';
-import { Badge as System02Badge } from '@lumir/system-02';
-import { Frame } from '@lumir/shared';
+import { Badge as System01Badge } from 'lumir-design-system-01';
+import { Badge as System02Badge } from 'lumir-design-system-02';
+import { Frame } from 'lumir-design-system-shared';
 
 // 시스템별 Badge 컴포넌트 매핑
 const BadgeComponents = {

@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react';
-import { Surface, Frame, Sizing, HeightValue, Text, Icon, IconName } from '@lumir/shared';
-import { ResponsiveOrSingle } from '@lumir/shared';
+import { Surface, Frame, Sizing, HeightValue, Text, Icon, IconName } from 'lumir-design-system-shared';
+import { ResponsiveOrSingle } from 'lumir-design-system-shared';
 import { Label } from '../Label';
 
 export interface FieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
@@ -311,7 +311,7 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
     let borderColor: 'secondary-system01-1-rest' | 'secondary-system01-1-hovered' | 'secondary-system01-1-pressed' | 'secondary-system01-1-disabled' = 'secondary-system01-1-rest';
     
     switch (state) {
-      case 'disabled':
+      case 'disabled':  
         borderColor = 'secondary-system01-1-disabled';
         break;
       case 'hovered':
@@ -328,13 +328,6 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
       borderWidth: 'thin' as const,
       borderColor
     };
-  };
-
-  // 아이콘 색상 결정
-  const getIconColor = () => {
-    if (disabled) return 'disabled';
-    if (error) return 'status-error';
-    return 'secondary-system01-3';
   };
 
   // 상태별 interactionState 적용 방식 결정
@@ -416,7 +409,6 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
               <Icon
                 name={leftIcon}
                 size="sm"
-                color={getIconColor()}
               />
             )}
             
@@ -445,7 +437,6 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(({
               <Icon
                 name={rightIcon}
                 size="sm"
-                color={getIconColor()}
               />
             )}
           </Frame>

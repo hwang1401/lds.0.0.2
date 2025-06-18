@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Surface, Frame, Text, Icon, SurfaceProps } from '@lumir/shared';
+import { Surface, Frame, Text, Icon, SurfaceProps } from 'lumir-design-system-shared';
 
 export type TabSize = 'lg' | 'md';
 
