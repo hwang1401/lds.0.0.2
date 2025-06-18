@@ -398,4 +398,176 @@
 .frame--margin-left-lg { margin-left: var(--foundation-foundation-spacing-120-horizontal); }
 .frame--margin-left-xl { margin-left: var(--foundation-foundation-spacing-160-horizontal); }
 .frame--margin-left-xxl { margin-left: var(--foundation-foundation-spacing-200-horizontal); }
-.frame--margin-left-xxxl { margin-left: var(--foundation-foundation-spacing-240-horizontal); } 
+.frame--margin-left-xxxl { margin-left: var(--foundation-foundation-spacing-240-horizontal); }
+
+/* ===== 반응형 레이아웃 미디어 쿼리 ===== */
+
+/* 모바일: ~767px - 반응형 속성이 설정된 경우에만 적용 */
+@media (max-width: 767px) {
+  .frame[style*="--grid-template-columns-mobile"] {
+    grid-template-columns: var(--grid-template-columns-mobile) !important;
+  }
+  .frame[style*="--grid-template-rows-mobile"] {
+    grid-template-rows: var(--grid-template-rows-mobile) !important;
+  }
+  .frame[style*="--flex-direction-mobile"] {
+    flex-direction: var(--flex-direction-mobile) !important;
+  }
+  .frame[style*="--flex-wrap-mobile"] {
+    flex-wrap: var(--flex-wrap-mobile) !important;
+  }
+  .frame[style*="--justify-content-mobile"] {
+    justify-content: var(--justify-content-mobile) !important;
+  }
+  .frame[style*="--align-items-mobile"] {
+    align-items: var(--align-items-mobile) !important;
+  }
+  .frame[style*="--align-content-mobile"] {
+    align-content: var(--align-content-mobile) !important;
+  }
+  .frame[style*="--gap-mobile"] {
+    gap: var(--gap-mobile) !important;
+  }
+  .frame[style*="--row-gap-mobile"] {
+    row-gap: var(--row-gap-mobile) !important;
+  }
+  .frame[style*="--column-gap-mobile"] {
+    column-gap: var(--column-gap-mobile) !important;
+  }
+}
+
+/* 태블릿: 768px~1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .frame[style*="--grid-template-columns-tablet"] {
+    grid-template-columns: var(--grid-template-columns-tablet) !important;
+  }
+  .frame[style*="--grid-template-rows-tablet"] {
+    grid-template-rows: var(--grid-template-rows-tablet) !important;
+  }
+  .frame[style*="--flex-direction-tablet"] {
+    flex-direction: var(--flex-direction-tablet) !important;
+  }
+  .frame[style*="--flex-wrap-tablet"] {
+    flex-wrap: var(--flex-wrap-tablet) !important;
+  }
+  .frame[style*="--justify-content-tablet"] {
+    justify-content: var(--justify-content-tablet) !important;
+  }
+  .frame[style*="--align-items-tablet"] {
+    align-items: var(--align-items-tablet) !important;
+  }
+  .frame[style*="--align-content-tablet"] {
+    align-content: var(--align-content-tablet) !important;
+  }
+  .frame[style*="--gap-tablet"] {
+    gap: var(--gap-tablet) !important;
+  }
+  .frame[style*="--row-gap-tablet"] {
+    row-gap: var(--row-gap-tablet) !important;
+  }
+  .frame[style*="--column-gap-tablet"] {
+    column-gap: var(--column-gap-tablet) !important;
+  }
+}
+
+/* 데스크톱: 1024px~1365px */
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .frame[style*="--grid-template-columns-desktop"] {
+    grid-template-columns: var(--grid-template-columns-desktop) !important;
+  }
+  .frame[style*="--grid-template-rows-desktop"] {
+    grid-template-rows: var(--grid-template-rows-desktop) !important;
+  }
+  .frame[style*="--flex-direction-desktop"] {
+    flex-direction: var(--flex-direction-desktop) !important;
+  }
+  .frame[style*="--flex-wrap-desktop"] {
+    flex-wrap: var(--flex-wrap-desktop) !important;
+  }
+  .frame[style*="--justify-content-desktop"] {
+    justify-content: var(--justify-content-desktop) !important;
+  }
+  .frame[style*="--align-items-desktop"] {
+    align-items: var(--align-items-desktop) !important;
+  }
+  .frame[style*="--align-content-desktop"] {
+    align-content: var(--align-content-desktop) !important;
+  }
+  .frame[style*="--gap-desktop"] {
+    gap: var(--gap-desktop) !important;
+  }
+  .frame[style*="--row-gap-desktop"] {
+    row-gap: var(--row-gap-desktop) !important;
+  }
+  .frame[style*="--column-gap-desktop"] {
+    column-gap: var(--column-gap-desktop) !important;
+  }
+}
+
+/* 데스크톱 L: 1366px~1919px */
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .frame[style*="--grid-template-columns-desktopL"] {
+    grid-template-columns: var(--grid-template-columns-desktopL) !important;
+  }
+  .frame[style*="--grid-template-rows-desktopL"] {
+    grid-template-rows: var(--grid-template-rows-desktopL) !important;
+  }
+  .frame[style*="--flex-direction-desktopL"] {
+    flex-direction: var(--flex-direction-desktopL) !important;
+  }
+  .frame[style*="--flex-wrap-desktopL"] {
+    flex-wrap: var(--flex-wrap-desktopL) !important;
+  }
+  .frame[style*="--justify-content-desktopL"] {
+    justify-content: var(--justify-content-desktopL) !important;
+  }
+  .frame[style*="--align-items-desktopL"] {
+    align-items: var(--align-items-desktopL) !important;
+  }
+  .frame[style*="--align-content-desktopL"] {
+    align-content: var(--align-content-desktopL) !important;
+  }
+  .frame[style*="--gap-desktopL"] {
+    gap: var(--gap-desktopL) !important;
+  }
+  .frame[style*="--row-gap-desktopL"] {
+    row-gap: var(--row-gap-desktopL) !important;
+  }
+  .frame[style*="--column-gap-desktopL"] {
+    column-gap: var(--column-gap-desktopL) !important;
+  }
+}
+
+/* 데스크톱 XL: 1920px+ */
+@media (min-width: 1920px) {
+  .frame[style*="--grid-template-columns-desktopXL"] {
+    grid-template-columns: var(--grid-template-columns-desktopXL) !important;
+  }
+  .frame[style*="--grid-template-rows-desktopXL"] {
+    grid-template-rows: var(--grid-template-rows-desktopXL) !important;
+  }
+  .frame[style*="--flex-direction-desktopXL"] {
+    flex-direction: var(--flex-direction-desktopXL) !important;
+  }
+  .frame[style*="--flex-wrap-desktopXL"] {
+    flex-wrap: var(--flex-wrap-desktopXL) !important;
+  }
+  .frame[style*="--justify-content-desktopXL"] {
+    justify-content: var(--justify-content-desktopXL) !important;
+  }
+  .frame[style*="--align-items-desktopXL"] {
+    align-items: var(--align-items-desktopXL) !important;
+  }
+  .frame[style*="--align-content-desktopXL"] {
+    align-content: var(--align-content-desktopXL) !important;
+  }
+  .frame[style*="--gap-desktopXL"] {
+    gap: var(--gap-desktopXL) !important;
+  }
+  .frame[style*="--row-gap-desktopXL"] {
+    row-gap: var(--row-gap-desktopXL) !important;
+  }
+  .frame[style*="--column-gap-desktopXL"] {
+    column-gap: var(--column-gap-desktopXL) !important;
+  }
+} 

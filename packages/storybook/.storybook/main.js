@@ -29,14 +29,12 @@ const config = {
   // ],
   
   viteFinal: async (config) => {
-    // 🚀 실시간 개발을 위한 소스 파일 직접 참조
+    // 🚀 실시간 개발을 위한 소스 파일 직접 참조 - 새로운 패키지명으로 업데이트
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@lumir/shared': path.resolve(__dirname, '../../shared/src/index.ts'),
-      '@lumir/system-01': path.resolve(__dirname, '../../system-01/src/index.ts'),
-      '@lumir/system-02': path.resolve(__dirname, '../../system-02/src/index.ts'),
-      // Legacy alias for backward compatibility
-      'lumir-shared': path.resolve(__dirname, '../../shared/src/index.ts'),
+      'lumir-design-system-shared': path.resolve(__dirname, '../../shared/src/index.ts'),
+      'lumir-design-system-01': path.resolve(__dirname, '../../system-01/src/index.ts'),
+      'lumir-design-system-02': path.resolve(__dirname, '../../system-02/src/index.ts'),
     };
     
     // TypeScript 해결 강화
@@ -61,9 +59,9 @@ const config = {
         'react-dom'
       ],
       exclude: [
-        '@lumir/shared',
-        '@lumir/system-01', 
-        '@lumir/system-02'
+        'lumir-design-system-shared',
+        'lumir-design-system-01', 
+        'lumir-design-system-02'
       ],
       force: true
     };

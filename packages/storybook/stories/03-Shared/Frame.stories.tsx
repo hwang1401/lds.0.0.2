@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Frame, Text, Surface } from 'lumir-design-system-shared';
+import { Card } from 'lumir-design-system-01';
 import type { DisplayValue, PositionValue, FlexDirection, JustifyContent, AlignItems, SpacingValue } from 'lumir-design-system-shared';
 
 const meta: Meta<typeof Frame> = {
@@ -929,4 +930,320 @@ export const CompoundComponentExample: Story = {
       </Frame>
     </Frame>
   ),
+};
+
+export const ResponsiveCardGrid: Story = {
+  name: '반응형 카드 그리드',
+  render: () => (
+    <Frame
+      display="grid"
+      gridTemplateColumns={{
+        mobile: "1fr",           // 모바일: 1열
+        tablet: "1fr 1fr",       // 태블릿: 2열  
+        desktop: "1fr 1fr 1fr"   // 데스크톱: 3열
+      }}
+      gap="md"
+      padding="lg"
+      style={{ backgroundColor: '#f5f5f5', minHeight: '400px' }}
+    >
+      <div style={{ 
+        backgroundColor: 'white', 
+        padding: '16px', 
+        borderRadius: '8px',
+        border: '1px solid #ddd',
+        textAlign: 'center'
+      }}>
+        카드 1
+      </div>
+      <div style={{ 
+        backgroundColor: 'white', 
+        padding: '16px', 
+        borderRadius: '8px',
+        border: '1px solid #ddd',
+        textAlign: 'center'
+      }}>
+        카드 2
+      </div>
+      <div style={{ 
+        backgroundColor: 'white', 
+        padding: '16px', 
+        borderRadius: '8px',
+        border: '1px solid #ddd',
+        textAlign: 'center'
+      }}>
+        카드 3
+      </div>
+      <div style={{ 
+        backgroundColor: 'white', 
+        padding: '16px', 
+        borderRadius: '8px',
+        border: '1px solid #ddd',
+        textAlign: 'center'
+      }}>
+        카드 4
+      </div>
+      <div style={{ 
+        backgroundColor: 'white', 
+        padding: '16px', 
+        borderRadius: '8px',
+        border: '1px solid #ddd',
+        textAlign: 'center'
+      }}>
+        카드 5
+      </div>
+      <div style={{ 
+        backgroundColor: 'white', 
+        padding: '16px', 
+        borderRadius: '8px',
+        border: '1px solid #ddd',
+        textAlign: 'center'
+      }}>
+        카드 6
+      </div>
+    </Frame>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: `
+### 반응형 카드 그리드 예시
+
+실제 사용자님이 원했던 기능입니다:
+- **모바일**: 카드가 화면 너비에 꽉 차게 1열로 배치
+- **태블릿**: 카드가 2열로 배치되면서 각각 50% 너비
+- **데스크톱**: 카드가 3열로 배치되면서 각각 33.3% 너비
+
+브라우저 개발자 도구에서 화면 크기를 조정하면서 테스트해보세요!
+
+\`\`\`tsx
+<Frame
+  display="grid"
+  gridTemplateColumns={{
+    mobile: "1fr",           // 모바일: 1열
+    tablet: "1fr 1fr",       // 태블릿: 2열  
+    desktop: "1fr 1fr 1fr"   // 데스크톱: 3열
+  }}
+  gap="md"
+>
+  {cards.map(card => <Card key={card.id} {...card} />)}
+</Frame>
+\`\`\`
+        `
+      }
+    }
+  }
+};
+
+export const ResponsiveFlexLayout: Story = {
+  name: '반응형 Flex 레이아웃',
+  render: () => (
+    <Frame
+      display="flex"
+      direction={{
+        mobile: "column",     // 모바일: 세로 배치
+        desktop: "row"        // 데스크톱: 가로 배치
+      }}
+      gap={{
+        mobile: "sm",         // 모바일: 작은 간격
+        desktop: "lg"         // 데스크톱: 큰 간격
+      }}
+      padding="lg"
+      style={{ backgroundColor: '#f0f0f0', minHeight: '300px' }}
+    >
+      <div style={{ 
+        backgroundColor: '#007bff', 
+        color: 'white',
+        padding: '20px', 
+        borderRadius: '8px',
+        flex: 1,
+        textAlign: 'center'
+      }}>
+        사이드바
+      </div>
+      <div style={{ 
+        backgroundColor: '#28a745', 
+        color: 'white',
+        padding: '20px', 
+        borderRadius: '8px',
+        flex: 3,
+        textAlign: 'center'
+      }}>
+        메인 콘텐츠
+      </div>
+    </Frame>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: `
+### 반응형 Flex 레이아웃 예시
+
+- **모바일**: 세로 배치 (column)
+- **데스크톱**: 가로 배치 (row)
+
+\`\`\`tsx
+<Frame
+  display="flex"
+  direction={{
+    mobile: "column",     // 모바일: 세로 배치
+    desktop: "row"        // 데스크톱: 가로 배치
+  }}
+  gap={{
+    mobile: "sm",         // 모바일: 작은 간격
+    desktop: "lg"         // 데스크톱: 큰 간격
+  }}
+>
+  <div>사이드바</div>
+  <div>메인 콘텐츠</div>
+</Frame>
+\`\`\`
+        `
+      }
+    }
+  }
+};
+
+export const ResponsiveCardGridReal: Story = {
+  name: '🎯 실제 반응형 카드 그리드 (System-01 Card)',
+  parameters: {
+    docs: {
+      description: {
+        story: `
+**실제 Card 컴포넌트를 사용한 반응형 Grid 예시**
+
+- **모바일 (767px 이하)**: 카드가 1열로 전체 너비 차지
+- **태블릿 (768px~1023px)**: 카드가 2열로 배치
+- **데스크톱 (1024px 이상)**: 카드가 3열로 배치
+
+**브라우저 크기를 조절해서 반응형 동작을 확인해보세요!**
+
+\`\`\`tsx
+<Frame
+  display="grid"
+  gridTemplateColumns={{
+    mobile: "1fr",           // 모바일: 1열
+    tablet: "1fr 1fr",       // 태블릿: 2열
+    desktop: "1fr 1fr 1fr"   // 데스크톱: 3열
+  }}
+  gap="lg"
+  padding="lg"
+>
+  {cardData.map(card => (
+    <Card 
+      key={card.id}
+      title={card.title}
+      description={card.description}
+      variant={card.variant}
+    />
+  ))}
+</Frame>
+\`\`\`
+        `,
+      },
+    },
+  },
+  render: () => {
+    // 샘플 카드 데이터
+    const cardData = [
+      {
+        id: 1,
+        title: "반응형 카드 1",
+        description: "모바일에서는 전체 너비로, 데스크톱에서는 3분의 1 너비로 자동 조정됩니다.",
+        variant: "transparent" as const,
+      },
+      {
+        id: 2,
+        title: "반응형 카드 2", 
+        description: "Frame의 gridTemplateColumns 속성으로 브레이크포인트별 열 수를 제어합니다.",
+        variant: "outlined" as const,
+      },
+      {
+        id: 3,
+        title: "반응형 카드 3",
+        description: "Card 컴포넌트의 maxWidth 제한이 제거되어 Grid에 맞게 확장됩니다.",
+        variant: "filled" as const,
+      },
+      {
+        id: 4,
+        title: "반응형 카드 4",
+        description: "브라우저 창 크기를 조절해서 1열 → 2열 → 3열 변화를 확인해보세요.",
+        variant: "transparent" as const,
+      },
+      {
+        id: 5,
+        title: "반응형 카드 5",
+        description: "모든 카드가 동일한 높이를 유지하며 Grid에 정렬됩니다.",
+        variant: "outlined" as const,
+      },
+      {
+        id: 6,
+        title: "반응형 카드 6",
+        description: "이제 실제 프로젝트에서 이런 방식으로 반응형 레이아웃을 구현할 수 있습니다!",
+        variant: "filled" as const,
+      },
+    ];
+
+    return (
+      <Frame display="flex" direction="column" gap="xl" padding="lg">
+        
+        {/* 제목과 설명 */}
+        <Frame display="flex" direction="column" gap="md">
+          <Text variant="heading-2" weight="bold">🎯 실제 반응형 카드 그리드</Text>
+          <Text variant="body-1">
+            브라우저 창 크기를 조절해서 <strong>모바일(1열) → 태블릿(2열) → 데스크톱(3열)</strong> 변화를 확인해보세요!
+          </Text>
+          
+          {/* 브레이크포인트 안내 */}
+          <Surface background="secondary-system01-1-rest" borderRadius="md" borderWidth="thin" borderStyle="solid" borderColor="secondary-system01-2-rest">
+            <Frame padding="md" display="flex" direction="column" gap="sm">
+              <Text variant="caption-1" weight="medium">📱 브레이크포인트 안내:</Text>
+              <Frame display="flex" direction="column" gap="xs">
+                <Text variant="caption-2">• 모바일 (~767px): 1열 레이아웃</Text>
+                <Text variant="caption-2">• 태블릿 (768px~1023px): 2열 레이아웃</Text>
+                <Text variant="caption-2">• 데스크톱 (1024px+): 3열 레이아웃</Text>
+              </Frame>
+            </Frame>
+          </Surface>
+        </Frame>
+
+        {/* 실제 반응형 카드 그리드 */}
+        <Frame
+          display="grid"
+          gridTemplateColumns={{
+            mobile: "1fr",           // 모바일: 1열 (카드가 전체 너비)
+            tablet: "1fr 1fr",       // 태블릿: 2열 (카드가 50% 너비)
+            desktop: "1fr 1fr 1fr"   // 데스크톱: 3열 (카드가 33.3% 너비)
+          }}
+          gap="lg"
+          style={{ 
+            backgroundColor: 'var(--foundation-foundation-color-grey-light-98)',
+            borderRadius: 'var(--foundation-foundation-radius-80)',
+            padding: 'var(--foundation-foundation-spacing-200)'
+          }}
+        >
+          {cardData.map(card => (
+            <Card 
+              key={card.id}
+              title={card.title}
+              description={card.description}
+              variant={card.variant}
+            />
+          ))}
+        </Frame>
+
+        {/* 추가 설명 */}
+        <Surface background="cta-system01-1-rest" foreground="cta-system01-oncolor" borderRadius="md">
+          <Frame padding="lg" display="flex" direction="column" gap="sm">
+            <Text variant="body-2" weight="medium">✅ 완성된 기능</Text>
+            <Frame display="flex" direction="column" gap="xs">
+              <Text variant="caption-1">• Frame 컴포넌트의 반응형 Grid 지원</Text>
+              <Text variant="caption-1">• Card 컴포넌트의 maxWidth 제한 제거</Text>
+              <Text variant="caption-1">• 브레이크포인트별 자동 크기 조정</Text>
+              <Text variant="caption-1">• 실제 프로젝트에서 바로 사용 가능</Text>
+            </Frame>
+          </Frame>
+        </Surface>
+      </Frame>
+    );
+  },
 }; 

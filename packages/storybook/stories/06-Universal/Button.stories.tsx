@@ -12,8 +12,12 @@ const ButtonComponents = {
 
 // 동적 Button 컴포넌트
 const UniversalButton = ({ system, ...props }: any) => {
-  const ButtonComponent = ButtonComponents[system as keyof typeof ButtonComponents] || System01Button;
-  return <ButtonComponent {...props} />;
+  if (system === 'system-02') {
+    const Component = System02Button as any;
+    return <Component {...props} />;
+  }
+  const Component = System01Button as any;
+  return <Component {...props} />;
 };
 
 const meta: Meta<typeof UniversalButton> = {
@@ -47,6 +51,11 @@ const meta: Meta<typeof UniversalButton> = {
     isFullWidth: {
       control: 'boolean',
       description: '전체 너비 적용 여부'
+    },
+    textAlign: {
+      control: 'select',
+      options: ['left', 'center', 'right'],
+      description: 'full width일 때 텍스트 정렬 방식 (isFullWidth=true일 때만 적용)'
     },
     isLoading: {
       control: 'boolean',
@@ -207,9 +216,57 @@ export const StateShowcase: Story = {
             With Icons
           </Text>
           <Frame display="flex" direction="row" gap="sm">
-            <UniversalButton system={system} leftIcon="LineIconsArrowArrow1RightIcon">추가</UniversalButton>
-            <UniversalButton system={system} rightIcon="LineIconsArrowChevronRightIcon">다음</UniversalButton>
-            <UniversalButton system={system} buttonType="icon-only" leftIcon="SearchIcon" aria-label="검색" />
+            <UniversalButton system={system} leftIcon="LineIconsArrowChevronRightIcon">Left Icon</UniversalButton>
+            <UniversalButton system={system} rightIcon="LineIconsArrowChevronRightIcon">Right Icon</UniversalButton>
+            <UniversalButton system={system} leftIcon="LineIconsArrowChevronRightIcon" aria-label="Icon Only" />
+          </Frame>
+        </Frame>
+      </Frame>
+    );
+  },
+};
+
+export const FullWidthAlignment: Story = {
+  render: (args, { globals }) => {
+    const system = globals?.system || 'system-01';
+    const systemName = system === 'system-01' ? 'Clean & Efficient' : 'Modern & Friendly';
+    
+    return (
+      <Frame display="flex" direction="column" gap="lg" width="400px">
+        <Text as="h2" variant="heading-2">
+          {systemName} - Full Width Text Alignment
+        </Text>
+        
+        <Frame display="flex" direction="column" gap="md">
+          <Text as="h3" variant="heading-3">
+            Text Only Buttons
+          </Text>
+          <Frame display="flex" direction="column" gap="sm">
+            <UniversalButton system={system} isFullWidth textAlign="left">Left Aligned</UniversalButton>
+            <UniversalButton system={system} isFullWidth textAlign="center">Center Aligned</UniversalButton>
+            <UniversalButton system={system} isFullWidth textAlign="right">Right Aligned</UniversalButton>
+          </Frame>
+        </Frame>
+        
+        <Frame display="flex" direction="column" gap="md">
+          <Text as="h3" variant="heading-3">
+            With Icons
+          </Text>
+          <Frame display="flex" direction="column" gap="sm">
+            <UniversalButton system={system} isFullWidth textAlign="left" leftIcon="LineIconsArrowArrow1LeftIcon">← Back</UniversalButton>
+            <UniversalButton system={system} isFullWidth textAlign="center" leftIcon="SearchIcon">Search</UniversalButton>
+            <UniversalButton system={system} isFullWidth textAlign="right" rightIcon="LineIconsArrowArrow1RightIcon">Next →</UniversalButton>
+          </Frame>
+        </Frame>
+        
+        <Frame display="flex" direction="column" gap="md">
+          <Text as="h3" variant="heading-3">
+            Different Variants
+          </Text>
+          <Frame display="flex" direction="column" gap="sm">
+            <UniversalButton system={system} variant="filled" isFullWidth textAlign="left">Filled Left</UniversalButton>
+            <UniversalButton system={system} variant="outlined" isFullWidth textAlign="center">Outlined Center</UniversalButton>
+            <UniversalButton system={system} variant="transparent" isFullWidth textAlign="right">Transparent Right</UniversalButton>
           </Frame>
         </Frame>
       </Frame>

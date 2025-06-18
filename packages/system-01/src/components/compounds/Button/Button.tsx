@@ -28,6 +28,11 @@ export interface ButtonProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 
   isFullWidth?: boolean;
   
   /**
+   * full width일 때 텍스트 정렬 방식을 지정합니다. (isFullWidth=true일 때만 적용)
+   */
+  textAlign?: 'left' | 'center' | 'right';
+  
+  /**
    * 버튼의 로딩 상태를 지정합니다.
    */
   isLoading?: boolean;
@@ -73,6 +78,7 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
   colorScheme = 'primary',
   size = 'md',
   isFullWidth = false,
+  textAlign = 'center',
   isLoading = false,
   isSelected = false,
   disabled = false,
@@ -327,6 +333,18 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
     return 'rest';
   };
 
+  // full width일 때 정렬 방식 결정
+  const getJustifyContent = () => {
+    if (!isFullWidth) return 'center';
+    
+    switch (textAlign) {
+      case 'left': return 'flex-start';
+      case 'right': return 'flex-end';
+      case 'center': 
+      default: return 'center';
+    }
+  };
+
   // onClick과 style을 제외한 나머지 props
   const { onClick, style: customStyle, color, ...otherProps } = rest;
 
@@ -361,7 +379,7 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>(({
           display="flex"
           direction="row"
           align="center"
-          justify="center"
+          justify={getJustifyContent()}
           gap="xs"
           fill
           padding={getPadding()}

@@ -161,7 +161,7 @@ export const Card: React.FC<CardProps> = ({
   className,
   width = '100%',
   minWidth,
-  maxWidth = 375, // 피그마 디자인 기준 너비
+  maxWidth, // maxWidth 제한 제거 - Grid에서 자유롭게 확장 가능
   badgeText,
   badgeColor,
   badgeIconName,

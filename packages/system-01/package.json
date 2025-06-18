@@ -1,6 +1,6 @@
 {
   "name": "lumir-design-system-01",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "type": "module",
   "description": "Lumir Design System 01 - Professional & Clean",
   "main": "dist/index.js",
@@ -48,7 +48,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "lumir-design-system-shared": "workspace:*",
+    "lumir-design-system-shared": "^1.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

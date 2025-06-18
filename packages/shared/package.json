@@ -1,6 +1,6 @@
 {
   "name": "lumir-design-system-shared",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "type": "module",
   "description": "Lumir Design System - Shared Components & Tokens",
   "main": "dist/index.js",
