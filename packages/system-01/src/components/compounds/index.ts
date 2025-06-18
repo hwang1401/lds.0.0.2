@@ -10,5 +10,6 @@ export * from './Link';
 export * from './Menu';
 export * from './OptionList';
 export * from './Radio';
+export * from './SegmentButton';
 export * from './Tab';
 export * from './TextDisplay'; 

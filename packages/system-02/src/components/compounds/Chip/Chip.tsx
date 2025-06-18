@@ -110,11 +110,11 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
     if (variant === 'filled') {
       // Filled variant 색상 로직
       if (disabled) return 'secondary-system02-2-disabled';
-      if (selected) {
-        if (actualState === 'pressed') return 'primary-system02-1-pressed';
-        if (actualState === 'hovered') return 'primary-system02-1-hovered';
-        return 'primary-system02-1-rest';
-      }
+    if (selected) {
+      if (actualState === 'pressed') return 'primary-system02-1-pressed';
+      if (actualState === 'hovered') return 'primary-system02-1-hovered';
+      return 'primary-system02-1-rest';
+    }
       if (actualState === 'pressed') return 'secondary-system02-1-pressed';
       if (actualState === 'hovered') return 'secondary-system02-1-hovered';
       return 'secondary-system02-1-rest';
@@ -126,15 +126,15 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
     }
   };
 
-      // 테두리 색상 결정
-    const getBorderColor = () => {
-      if (variant === 'filled') return undefined; // filled는 테두리 없음
-      
-      // outlined variant
+  // 테두리 색상 결정
+  const getBorderColor = () => {
+    if (variant === 'filled') return undefined; // filled는 테두리 없음
+    
+    // outlined variant
       if (disabled) return 'secondary-system02-2-disabled';
-      if (selected) return 'primary-system02-1-rest';
+    if (selected) return 'primary-system02-1-rest';
       return 'secondary-system02-1-rest';
-    };
+  };
 
   // 전경색 결정
   const getForegroundColor = () => {
@@ -221,11 +221,11 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
         padding={config.padding}
         fill
       >
-                  <Text
-            variant={config.variant}
-            color={undefined} // Surface의 foreground 상속
-            style={{
-              overflow: 'hidden',
+        <Text
+          variant={config.variant}
+          color={undefined} // Surface의 foreground 상속
+          style={{
+            overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
             flex: 1,
@@ -252,10 +252,10 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({
               }}
             >
               <Icon
-                                  name="LineIconsCloseCloseIcon"
-                  size={config.iconSize}
+                name="LineIconsCloseCloseIcon"
+                size={config.iconSize}
                   color="secondary-system02-1"
-                />
+              />
             </Frame>
           </Surface>
         )}

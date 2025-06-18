@@ -434,15 +434,15 @@
 /* Primary System01 - Classic & Compact (GitHub Blue) */
 /* Light Mode */
 :global([data-theme="light"]) .surface--foreground-primary-system01-1-rest { color: var(--foundation-foundation-color-blue-light-50); }
-:global([data-theme="light"]) .surface--foreground-primary-system01-1-hovered { color: var(--foundation-foundation-color-blue-light-70); }
+:global([data-theme="light"]) .surface--foreground-primary-system01-1-hovered { color: var(--foundation-foundation-color-blue-light-60); }
 :global([data-theme="light"]) .surface--foreground-primary-system01-1-pressed { color: var(--foundation-foundation-color-blue-light-30); }
 :global([data-theme="light"]) .surface--foreground-primary-system01-1-selected { color: var(--foundation-foundation-color-blue-light-60); }
 :global([data-theme="light"]) .surface--foreground-primary-system01-1-disabled { color: var(--foundation-foundation-color-blue-light-10); }
 :global([data-theme="light"]) .surface--foreground-primary-system01-oncolor { color: var(--foundation-foundation-color-grey-light-100); } /* 시각성 우선: 흰색으로 복원 */
 
-/* Dark Mode */
+/* Dark Mode - 숫자가 낮을수록 더 어둡게 */
 :global([data-theme="dark"]) .surface--foreground-primary-system01-1-rest { color: var(--foundation-foundation-color-blue-dark-50); }
-:global([data-theme="dark"]) .surface--foreground-primary-system01-1-hovered { color: var(--foundation-foundation-color-blue-dark-70); }
+:global([data-theme="dark"]) .surface--foreground-primary-system01-1-hovered { color: var(--foundation-foundation-color-blue-dark-60); }
 :global([data-theme="dark"]) .surface--foreground-primary-system01-1-pressed { color: var(--foundation-foundation-color-blue-dark-30); }
 :global([data-theme="dark"]) .surface--foreground-primary-system01-1-selected { color: var(--foundation-foundation-color-blue-dark-60); }
 :global([data-theme="dark"]) .surface--foreground-primary-system01-1-disabled { color: var(--foundation-foundation-color-blue-dark-10); }
@@ -457,12 +457,12 @@
 :global([data-theme="light"]) .surface--foreground-primary-system02-1-disabled { color: var(--foundation-foundation-color-purple-light-10); }
 :global([data-theme="light"]) .surface--foreground-primary-system02-oncolor { color: var(--foundation-foundation-color-grey-light-100); } /* 시각성 우선: 흰색으로 복원 */
 
-/* Dark Mode */
-:global([data-theme="dark"]) .surface--foreground-primary-system02-1-rest { color: var(--foundation-foundation-color-purple-dark-60); } /* 브랜드 퍼플 강화 */
-:global([data-theme="dark"]) .surface--foreground-primary-system02-1-hovered { color: var(--foundation-foundation-color-purple-dark-80); } /* 브랜드 퍼플 강화 */
-:global([data-theme="dark"]) .surface--foreground-primary-system02-1-pressed { color: var(--foundation-foundation-color-purple-dark-40); } /* 브랜드 퍼플 강화 */
-:global([data-theme="dark"]) .surface--foreground-primary-system02-1-selected { color: var(--foundation-foundation-color-purple-dark-70); } /* 브랜드 퍼플 강화 */
-:global([data-theme="dark"]) .surface--foreground-primary-system02-1-disabled { color: var(--foundation-foundation-color-purple-dark-20); } /* 브랜드 퍼플 강화 */
+/* Dark Mode - 숫자가 낮을수록 더 어둡게 */
+:global([data-theme="dark"]) .surface--foreground-primary-system02-1-rest { color: var(--foundation-foundation-color-purple-dark-50); }
+:global([data-theme="dark"]) .surface--foreground-primary-system02-1-hovered { color: var(--foundation-foundation-color-purple-dark-70); }
+:global([data-theme="dark"]) .surface--foreground-primary-system02-1-pressed { color: var(--foundation-foundation-color-purple-dark-30); }
+:global([data-theme="dark"]) .surface--foreground-primary-system02-1-selected { color: var(--foundation-foundation-color-purple-dark-60); }
+:global([data-theme="dark"]) .surface--foreground-primary-system02-1-disabled { color: var(--foundation-foundation-color-purple-dark-10); }
 :global([data-theme="dark"]) .surface--foreground-primary-system02-oncolor { color: var(--foundation-foundation-color-grey-dark-0); }
 
 /* Primary System03 - Playful & Dynamic (Orange) */
@@ -474,7 +474,7 @@
 :global([data-theme="light"]) .surface--foreground-primary-system03-1-disabled { color: var(--foundation-foundation-color-orange-light-10); } /* System03 오렌지 유지 */
 :global([data-theme="light"]) .surface--foreground-primary-system03-oncolor { color: var(--foundation-foundation-color-grey-light-100); } /* 시각성 우선: 흰색으로 복원 */
 
-/* Dark Mode */
+/* Dark Mode - 숫자가 낮을수록 더 어둡게 */
 :global([data-theme="dark"]) .surface--foreground-primary-system03-1-rest { color: var(--foundation-foundation-color-orange-dark-50); }
 :global([data-theme="dark"]) .surface--foreground-primary-system03-1-hovered { color: var(--foundation-foundation-color-orange-dark-70); }
 :global([data-theme="dark"]) .surface--foreground-primary-system03-1-pressed { color: var(--foundation-foundation-color-orange-dark-30); }
@@ -735,73 +735,73 @@
  * 테두리 색상 (시스템별 토큰 매핑)
  * ================================================================================================ */
 
-/* Primary System01 */
-:global([data-theme="light"]) .surface--border-color-primary-system01-1-rest  { border-color: var(--foundation-foundation-color-blue-light-10); }
-:global([data-theme="dark"]) .surface--border-color-primary-system01-1-rest  { border-color: var(--foundation-foundation-color-blue-dark-10); }
-:global([data-theme="light"]) .surface--border-color-primary-system01-1-hovered  { border-color: var(--foundation-foundation-color-blue-light-80); }
-:global([data-theme="dark"]) .surface--border-color-primary-system01-1-hovered  { border-color: var(--foundation-foundation-color-blue-dark-80); }
-:global([data-theme="light"]) .surface--border-color-primary-system01-1-pressed  { border-color: var(--foundation-foundation-color-blue-light-40); }
-:global([data-theme="dark"]) .surface--border-color-primary-system01-1-pressed  { border-color: var(--foundation-foundation-color-blue-dark-40); }
-:global([data-theme="light"]) .surface--border-color-primary-system01-1-disabled  { border-color: var(--foundation-foundation-color-blue-light-30); }
-:global([data-theme="dark"]) .surface--border-color-primary-system01-1-disabled  { border-color: var(--foundation-foundation-color-blue-dark-30); }
+/* Primary System01 - 전경색과 동일하게 수정 */
+:global([data-theme="light"]) .surface--border-color-primary-system01-1-rest  { border-color: var(--foundation-foundation-color-blue-light-50); }
+:global([data-theme="dark"]) .surface--border-color-primary-system01-1-rest  { border-color: var(--foundation-foundation-color-blue-dark-50); }
+:global([data-theme="light"]) .surface--border-color-primary-system01-1-hovered  { border-color: var(--foundation-foundation-color-blue-light-60); }
+:global([data-theme="dark"]) .surface--border-color-primary-system01-1-hovered  { border-color: var(--foundation-foundation-color-blue-dark-60); }
+:global([data-theme="light"]) .surface--border-color-primary-system01-1-pressed  { border-color: var(--foundation-foundation-color-blue-light-30); }
+:global([data-theme="dark"]) .surface--border-color-primary-system01-1-pressed  { border-color: var(--foundation-foundation-color-blue-dark-30); }
+:global([data-theme="light"]) .surface--border-color-primary-system01-1-disabled  { border-color: var(--foundation-foundation-color-blue-light-10); }
+:global([data-theme="dark"]) .surface--border-color-primary-system01-1-disabled  { border-color: var(--foundation-foundation-color-blue-dark-10); }
 
-/* Primary System02 */
-:global([data-theme="light"]) .surface--border-color-primary-system02-1-rest  { border-color: var(--foundation-foundation-color-purple-light-60); }
-:global([data-theme="dark"]) .surface--border-color-primary-system02-1-rest  { border-color: var(--foundation-foundation-color-purple-dark-60); }
-:global([data-theme="light"]) .surface--border-color-primary-system02-1-hovered  { border-color: var(--foundation-foundation-color-purple-light-80); }
-:global([data-theme="dark"]) .surface--border-color-primary-system02-1-hovered  { border-color: var(--foundation-foundation-color-purple-dark-80); }
-:global([data-theme="light"]) .surface--border-color-primary-system02-1-pressed  { border-color: var(--foundation-foundation-color-purple-light-40); }
-:global([data-theme="dark"]) .surface--border-color-primary-system02-1-pressed  { border-color: var(--foundation-foundation-color-purple-dark-40); }
-:global([data-theme="light"]) .surface--border-color-primary-system02-1-disabled  { border-color: var(--foundation-foundation-color-purple-light-30); }
-:global([data-theme="dark"]) .surface--border-color-primary-system02-1-disabled  { border-color: var(--foundation-foundation-color-purple-dark-30); }
+/* Primary System02 - 전경색과 동일하게 수정 */
+:global([data-theme="light"]) .surface--border-color-primary-system02-1-rest  { border-color: var(--foundation-foundation-color-purple-light-50); }
+:global([data-theme="dark"]) .surface--border-color-primary-system02-1-rest  { border-color: var(--foundation-foundation-color-purple-dark-50); }
+:global([data-theme="light"]) .surface--border-color-primary-system02-1-hovered  { border-color: var(--foundation-foundation-color-purple-light-70); }
+:global([data-theme="dark"]) .surface--border-color-primary-system02-1-hovered  { border-color: var(--foundation-foundation-color-purple-dark-70); }
+:global([data-theme="light"]) .surface--border-color-primary-system02-1-pressed  { border-color: var(--foundation-foundation-color-purple-light-30); }
+:global([data-theme="dark"]) .surface--border-color-primary-system02-1-pressed  { border-color: var(--foundation-foundation-color-purple-dark-30); }
+:global([data-theme="light"]) .surface--border-color-primary-system02-1-disabled  { border-color: var(--foundation-foundation-color-purple-light-10); }
+:global([data-theme="dark"]) .surface--border-color-primary-system02-1-disabled  { border-color: var(--foundation-foundation-color-purple-dark-10); }
 
-/* Primary System03 */
-:global([data-theme="light"]) .surface--border-color-primary-system03-1-rest  { border-color: var(--foundation-foundation-color-orange-light-60); }
-:global([data-theme="dark"]) .surface--border-color-primary-system03-1-rest  { border-color: var(--foundation-foundation-color-orange-dark-60); }
-:global([data-theme="light"]) .surface--border-color-primary-system03-1-hovered  { border-color: var(--foundation-foundation-color-orange-light-80); }
-:global([data-theme="dark"]) .surface--border-color-primary-system03-1-hovered  { border-color: var(--foundation-foundation-color-orange-dark-80); }
-:global([data-theme="light"]) .surface--border-color-primary-system03-1-pressed  { border-color: var(--foundation-foundation-color-orange-light-40); }
-:global([data-theme="dark"]) .surface--border-color-primary-system03-1-pressed  { border-color: var(--foundation-foundation-color-orange-dark-40); }
-:global([data-theme="light"]) .surface--border-color-primary-system03-1-disabled  { border-color: var(--foundation-foundation-color-orange-light-30); }
-:global([data-theme="dark"]) .surface--border-color-primary-system03-1-disabled  { border-color: var(--foundation-foundation-color-orange-dark-30); }
+/* Primary System03 - 전경색과 동일하게 수정 */
+:global([data-theme="light"]) .surface--border-color-primary-system03-1-rest  { border-color: var(--foundation-foundation-color-orange-light-50); }
+:global([data-theme="dark"]) .surface--border-color-primary-system03-1-rest  { border-color: var(--foundation-foundation-color-orange-dark-50); }
+:global([data-theme="light"]) .surface--border-color-primary-system03-1-hovered  { border-color: var(--foundation-foundation-color-orange-light-70); }
+:global([data-theme="dark"]) .surface--border-color-primary-system03-1-hovered  { border-color: var(--foundation-foundation-color-orange-dark-70); }
+:global([data-theme="light"]) .surface--border-color-primary-system03-1-pressed  { border-color: var(--foundation-foundation-color-orange-light-30); }
+:global([data-theme="dark"]) .surface--border-color-primary-system03-1-pressed  { border-color: var(--foundation-foundation-color-orange-dark-30); }
+:global([data-theme="light"]) .surface--border-color-primary-system03-1-disabled  { border-color: var(--foundation-foundation-color-orange-light-10); }
+:global([data-theme="dark"]) .surface--border-color-primary-system03-1-disabled  { border-color: var(--foundation-foundation-color-orange-dark-10); }
 
-/* Secondary System01 */
-:global([data-theme="light"]) .surface--border-color-secondary-system01-1-rest  { border-color: var(--foundation-foundation-color-grey-light-60); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-1-rest  { border-color: var(--foundation-foundation-color-grey-dark-60); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-1-hovered  { border-color: var(--foundation-foundation-color-grey-light-80); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-1-hovered  { border-color: var(--foundation-foundation-color-grey-dark-80); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-1-pressed  { border-color: var(--foundation-foundation-color-grey-light-90); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-1-pressed  { border-color: var(--foundation-foundation-color-grey-dark-90); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-1-disabled  { border-color: var(--foundation-foundation-color-grey-light-50); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-1-disabled  { border-color: var(--foundation-foundation-color-grey-dark-50); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-2-rest  { border-color: var(--foundation-foundation-color-grey-light-80); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-2-rest  { border-color: var(--foundation-foundation-color-grey-dark-80); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-2-hovered  { border-color: var(--foundation-foundation-color-grey-light-90); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-2-hovered  { border-color: var(--foundation-foundation-color-grey-dark-90); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-2-pressed  { border-color: var(--foundation-foundation-color-grey-light-96); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-2-pressed  { border-color: var(--foundation-foundation-color-grey-dark-96); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-2-disabled  { border-color: var(--foundation-foundation-color-grey-light-70); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-2-disabled  { border-color: var(--foundation-foundation-color-grey-dark-70); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-3-rest  { border-color: var(--foundation-foundation-color-grey-light-100); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-3-rest  { border-color: var(--foundation-foundation-color-grey-dark-100); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-3-hovered  { border-color: var(--foundation-foundation-color-grey-light-96); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-3-hovered  { border-color: var(--foundation-foundation-color-grey-dark-96); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-3-pressed  { border-color: var(--foundation-foundation-color-grey-light-94); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-3-pressed  { border-color: var(--foundation-foundation-color-grey-dark-94); }
-:global([data-theme="light"]) .surface--border-color-secondary-system01-3-disabled  { border-color: var(--foundation-foundation-color-grey-light-90); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system01-3-disabled  { border-color: var(--foundation-foundation-color-grey-dark-90); }
+/* Secondary System01 - 전경색과 동일하게 수정 */
+:global([data-theme="light"]) .surface--border-color-secondary-system01-1-rest  { border-color: var(--foundation-foundation-color-grey-light-20); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-1-rest  { border-color: var(--foundation-foundation-color-grey-dark-20); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-1-hovered  { border-color: var(--foundation-foundation-color-grey-light-50); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-1-hovered  { border-color: var(--foundation-foundation-color-grey-dark-50); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-1-pressed  { border-color: var(--foundation-foundation-color-grey-light-70); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-1-pressed  { border-color: var(--foundation-foundation-color-grey-dark-70); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-1-disabled  { border-color: var(--foundation-foundation-color-grey-light-80); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-1-disabled  { border-color: var(--foundation-foundation-color-grey-dark-80); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-2-rest  { border-color: var(--foundation-foundation-color-grey-light-40); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-2-rest  { border-color: var(--foundation-foundation-color-grey-dark-40); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-2-hovered  { border-color: var(--foundation-foundation-color-grey-light-70); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-2-hovered  { border-color: var(--foundation-foundation-color-grey-dark-70); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-2-pressed  { border-color: var(--foundation-foundation-color-grey-light-90); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-2-pressed  { border-color: var(--foundation-foundation-color-grey-dark-90); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-2-disabled  { border-color: var(--foundation-foundation-color-grey-light-90); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-2-disabled  { border-color: var(--foundation-foundation-color-grey-dark-90); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-3-rest  { border-color: var(--foundation-foundation-color-grey-light-60); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-3-rest  { border-color: var(--foundation-foundation-color-grey-dark-60); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-3-hovered  { border-color: var(--foundation-foundation-color-grey-light-90); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-3-hovered  { border-color: var(--foundation-foundation-color-grey-dark-90); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-3-pressed  { border-color: var(--foundation-foundation-color-grey-light-100); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-3-pressed  { border-color: var(--foundation-foundation-color-grey-dark-100); }
+:global([data-theme="light"]) .surface--border-color-secondary-system01-3-disabled  { border-color: var(--foundation-foundation-color-grey-light-70); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system01-3-disabled  { border-color: var(--foundation-foundation-color-grey-dark-70); }
 :global([data-theme="light"]) .surface--border-color-secondary-system01-inverse-rest  { border-color: var(--foundation-foundation-color-grey-light-0); }
 :global([data-theme="dark"]) .surface--border-color-secondary-system01-inverse-rest  { border-color: var(--foundation-foundation-color-grey-dark-0); }
 
-/* Secondary System02 */
-:global([data-theme="light"]) .surface--border-color-secondary-system02-1-rest  { border-color: var(--foundation-foundation-color-grey-light-60); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system02-1-rest  { border-color: var(--foundation-foundation-color-grey-dark-60); }
-:global([data-theme="light"]) .surface--border-color-secondary-system02-1-hovered  { border-color: var(--foundation-foundation-color-grey-light-80); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system02-1-hovered  { border-color: var(--foundation-foundation-color-grey-dark-80); }
-:global([data-theme="light"]) .surface--border-color-secondary-system02-1-pressed  { border-color: var(--foundation-foundation-color-grey-light-90); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system02-1-pressed  { border-color: var(--foundation-foundation-color-grey-dark-90); }
-:global([data-theme="light"]) .surface--border-color-secondary-system02-1-disabled  { border-color: var(--foundation-foundation-color-grey-light-50); }
-:global([data-theme="dark"]) .surface--border-color-secondary-system02-1-disabled  { border-color: var(--foundation-foundation-color-grey-dark-50); }
+/* Secondary System02 - 전경색과 동일하게 수정 */
+:global([data-theme="light"]) .surface--border-color-secondary-system02-1-rest  { border-color: var(--foundation-foundation-color-grey-light-20); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system02-1-rest  { border-color: var(--foundation-foundation-color-grey-dark-20); }
+:global([data-theme="light"]) .surface--border-color-secondary-system02-1-hovered  { border-color: var(--foundation-foundation-color-grey-light-50); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system02-1-hovered  { border-color: var(--foundation-foundation-color-grey-dark-50); }
+:global([data-theme="light"]) .surface--border-color-secondary-system02-1-pressed  { border-color: var(--foundation-foundation-color-grey-light-70); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system02-1-pressed  { border-color: var(--foundation-foundation-color-grey-dark-70); }
+:global([data-theme="light"]) .surface--border-color-secondary-system02-1-disabled  { border-color: var(--foundation-foundation-color-grey-light-80); }
+:global([data-theme="dark"]) .surface--border-color-secondary-system02-1-disabled  { border-color: var(--foundation-foundation-color-grey-dark-80); }
 :global([data-theme="light"]) .surface--border-color-secondary-system02-2-rest  { border-color: var(--foundation-foundation-color-grey-light-80); }
 :global([data-theme="dark"]) .surface--border-color-secondary-system02-2-rest  { border-color: var(--foundation-foundation-color-grey-dark-80); }
 :global([data-theme="light"]) .surface--border-color-secondary-system02-2-hovered  { border-color: var(--foundation-foundation-color-grey-light-90); }

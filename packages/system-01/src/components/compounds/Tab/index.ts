@@ -1,2 +1,3 @@
-export { default as Tab, useTabContext, TabContext } from './Tab';
-export { default as TabItem } from './TabItem'; 
+export { default } from './Tab';
+export { default as Tab } from './Tab';
+export type { TabProps, TabItem } from './Tab'; 

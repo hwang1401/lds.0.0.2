@@ -1,207 +1,135 @@
-import React, { createContext, useContext, useState } from 'react';
-import { Surface, Frame, Sizing, Text, Icon, IconName } from '@lumir/shared';
+import React, { useState, useEffect } from 'react';
+import { Surface, Frame, Text, Icon, SurfaceProps } from '@lumir/shared';
 
-interface TabContextType {
-  selectedId: string;
-  setSelectedId: (id: string) => void;
-  size?: 'md' | 'lg';
-  showBorder?: boolean;
-}
+export type TabSize = 'lg' | 'md';
 
-export const TabContext = createContext<TabContextType | undefined>(undefined);
-
-export const useTabContext = () => {
-  const context = useContext(TabContext);
-  if (!context) {
-    throw new Error('useTabContext must be used within a Tab');
-  }
-  return context;
-};
-
-interface TabProps {
-  children: React.ReactNode;
-  defaultSelectedId: string;
-  size?: 'md' | 'lg';
-  showBorder?: boolean;
-}
-
-interface TabListProps {
-  children: React.ReactNode;
-}
-
-interface TabItemProps {
+export interface TabItem {
   id: string;
-  children: React.ReactNode;
-  icon?: IconName;
-  iconPosition?: 'before' | 'after' | 'above';
+  label: string;
+  icon?: string;
   disabled?: boolean;
 }
 
-interface TabPanelProps {
-  id: string;
-  children: React.ReactNode;
+export interface TabProps extends Omit<SurfaceProps, 'size' | 'onChange'> {
+  items: TabItem[];
+  selectedId?: string;
+  defaultSelectedId?: string;
+  size?: TabSize;
+  showBorder?: boolean;
+  onChange?: (selectedId: string) => void;
 }
 
-const Tab = ({ children, defaultSelectedId, size = 'lg', showBorder = true }: TabProps) => {
-  const [selectedId, setSelectedId] = useState(defaultSelectedId);
-
-  return (
-    <TabContext.Provider value={{ selectedId, setSelectedId, size, showBorder }}>
-      <Surface>{children}</Surface>
-    </TabContext.Provider>
+const Tab: React.FC<TabProps> = ({
+  items,
+  selectedId: controlledSelectedId,
+  defaultSelectedId,
+  size = 'lg',
+  showBorder = true,
+  onChange,
+  ...surfaceProps
+}) => {
+  const [internalSelectedId, setInternalSelectedId] = useState(
+    defaultSelectedId || items[0]?.id || ''
   );
-};
 
-const TabList = ({ children }: TabListProps) => {
-  const { showBorder } = useTabContext();
-  
-  return (
-    <Surface
-      borderWidth={showBorder ? "thin" : undefined}
-      borderColor={showBorder ? "secondary-system02-2-rest" : undefined}
-      borderStyle={showBorder ? "solid" : undefined}
-      style={{
-        borderTop: 'none',
-        borderLeft: 'none', 
-        borderRight: 'none'
-      }}
-    >
-      <Frame 
-        display="flex"
-        direction="row" 
-        gap="none"
-      >
-        {children}
-      </Frame>
-    </Surface>
-  );
-};
+  // 마우스 상태 관리
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [pressedId, setPressedId] = useState<string | null>(null);
 
-const TabItem = ({ id, children, icon, iconPosition = 'before', disabled = false }: TabItemProps) => {
-  const { selectedId, setSelectedId, size, showBorder } = useTabContext();
-  const [isHovered, setIsHovered] = useState(false);
-  const [isPressed, setIsPressed] = useState(false);
+  // controlled vs uncontrolled 지원
+  const selectedId = controlledSelectedId !== undefined ? controlledSelectedId : internalSelectedId;
 
-  const isSelected = selectedId === id;
-
-  const handleClick = () => {
-    if (!disabled) {
-      setSelectedId(id);
+  const handleTabClick = (id: string) => {
+    if (selectedId !== id) {
+      if (controlledSelectedId === undefined) {
+        setInternalSelectedId(id);
     }
-  };
-
-  // 마우스 이벤트 핸들러들
-  const handleMouseEnter = () => {
-    if (!disabled) {
-      setIsHovered(true);
+      onChange?.(id);
     }
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setIsPressed(false);
-  };
-
-  const handleMouseDown = () => {
-    if (!disabled) {
-      setIsPressed(true);
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsPressed(false);
   };
 
   // 현재 상태 결정
-  const getCurrentState = (): 'rest' | 'hovered' | 'pressed' | 'disabled' => {
-    if (disabled) return 'disabled';
-    if (isPressed) return 'pressed';
-    if (isHovered) return 'hovered';
+  const getCurrentState = (itemId: string): 'rest' | 'hovered' | 'pressed' | 'disabled' => {
+    const item = items.find(item => item.id === itemId);
+    if (item?.disabled) return 'disabled';
+    if (pressedId === itemId) return 'pressed';
+    if (hoveredId === itemId) return 'hovered';
     return 'rest';
   };
 
-  // 아이콘 색상 결정
-  const getIconColor = () => {
-    if (disabled) return 'secondary-system02-1';
-    if (isSelected) return 'primary-system02';
-    return 'secondary-system02-1';
-  };
-
-  // 텍스트 variant 결정
-  const getTextVariant = () => {
-    return size === 'lg' ? 'body-1' : 'body-2';
-  };
-
-  // 텍스트 weight 결정
-  const getTextWeight = () => {
-    return isSelected ? 'bold' : 'regular';
-  };
-
-  // 아이콘 크기 결정
-  const getIconSize = () => {
-    return size === 'lg' ? 'lg' : 'md';
-  };
-
-  const renderContent = () => {
-    const textElement = (
-      <Text 
-        variant={getTextVariant()}
-        weight={getTextWeight()}
-      >
-        {children}
-      </Text>
-    );
-
-    if (!icon) {
-      return textElement;
-    }
-
-    const iconElement = (
-      <Icon
-        name={icon}
-        size={getIconSize()}
-        color={getIconColor()}
-      />
-    );
-
-    // iconPosition에 따른 순서 결정
-    if (iconPosition === 'after') {
-      return (
-        <>
-          {textElement}
-          {iconElement}
-        </>
-      );
-    } else {
-      // 'before' 및 'above' 모두 아이콘이 먼저
-      return (
-        <>
-          {iconElement}
-          {textElement}
-        </>
-      );
-    }
-  };
-
-  // Surface에 적용할 색상 결정
-  const getSurfaceColors = () => {
-    if (disabled) {
+  // 크기별 설정 - System-02는 패딩을 줄여서 간격을 좁힘
+  const getSizeConfig = () => {
+    if (size === 'md') {
       return {
-        foreground: 'secondary-system02-1-disabled' as const,
-        background: undefined
+        padding: 'sm' as const,  // md -> sm으로 변경
+        textVariant: 'body-2' as const,
+        iconSize: 'xs' as const,
+        minHeight: '40px'
+      };
+    }
+    return {
+      padding: 'md' as const,  // lg -> md로 변경
+      textVariant: 'body-1' as const,
+      iconSize: 'sm' as const,
+      minHeight: '48px'
+    };
+  };
+
+  const config = getSizeConfig();
+
+  return (
+    <Surface {...surfaceProps}>
+      <Frame display="flex" direction="row" gap="none" align="flex-start">
+        {items.map((item) => {
+          const isSelected = selectedId === item.id;
+          const isDisabled = item.disabled;
+          const currentState = getCurrentState(item.id);
+
+          // Surface 색상 결정 - 더 연한 호버 색상 사용 (System-02: Purple 계열)
+  const getSurfaceColors = () => {
+            if (isDisabled) {
+      return {
+                foreground: 'secondary-system02-1-disabled' as const,
+                borderColor: 'secondary-system02-1-disabled' as const
       };
     }
     
     if (isSelected) {
+              // 선택된 탭은 primary 색상 사용
+              if (currentState === 'pressed') {
+                return {
+                  foreground: 'primary-system02-1-pressed' as const,
+                  borderColor: 'primary-system02-1-pressed' as const
+                };
+              }
+              if (currentState === 'hovered') {
+                return {
+                  foreground: 'primary-system02-1-hovered' as const,
+                  borderColor: 'primary-system02-1-hovered' as const
+                };
+              }
       return {
         foreground: 'primary-system02-1-rest' as const,
-        background: isHovered ? ('secondary-system02-2-hovered' as const) : undefined
+                borderColor: 'primary-system02-1-rest' as const
+              };
+            }
+            
+            // 비선택 탭은 secondary 색상 사용
+            if (currentState === 'pressed') {
+              return {
+                foreground: 'secondary-system02-1-pressed' as const,
+                borderColor: 'secondary-system02-1-pressed' as const
+              };
+            }
+            if (currentState === 'hovered') {
+              return {
+                foreground: 'secondary-system02-1-hovered' as const,
+                borderColor: 'secondary-system02-1-hovered' as const
       };
     }
-    
     return {
-      foreground: 'secondary-system02-1-rest' as const,
-      background: isHovered ? ('secondary-system02-2-hovered' as const) : undefined
+              foreground: 'secondary-system02-1-rest' as const,
+              borderColor: 'secondary-system02-1-rest' as const
     };
   };
 
@@ -209,54 +137,59 @@ const TabItem = ({ id, children, icon, iconPosition = 'before', disabled = false
 
   return (
     <Surface
+              key={item.id}
+              background={undefined}
       foreground={surfaceColors.foreground}
-      background={surfaceColors.background}
-      borderWidth={isSelected && showBorder ? "medium" : undefined}
-      borderColor={isSelected && showBorder ? "primary-system02-1-rest" as const : undefined}
+              borderRadius="none"
+              borderWidth={isSelected && showBorder ? "medium" : undefined}
+              borderColor={isSelected && showBorder ? surfaceColors.borderColor : undefined}
       borderStyle={isSelected && showBorder ? "solid" : undefined}
-      style={isSelected && showBorder ? {
+              style={{
+                ...(isSelected && showBorder ? {
         borderTop: 'none',
         borderLeft: 'none',
         borderRight: 'none'
-      } : undefined}
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
+                } : {}),
+                cursor: isDisabled ? "not-allowed" : "pointer",
+                minHeight: config.minHeight
+              }}
+              onClick={() => !isDisabled && handleTabClick(item.id)}
+              onMouseEnter={() => !isDisabled && setHoveredId(item.id)}
+              onMouseLeave={() => {
+                setHoveredId(null);
+                setPressedId(null);
+              }}
+              onMouseDown={() => !isDisabled && setPressedId(item.id)}
+              onMouseUp={() => setPressedId(null)}
     >
       <Frame 
         display="flex" 
-        direction={iconPosition === 'above' ? 'column' : 'row'}
+                direction="row"
         align="center"
         justify="center"
-        gap="xs"
-        padding="sm"
+                gap="sm"
+                padding={config.padding}
       >
-        {renderContent()}
+                {item.icon && (
+                  <Icon
+                    name={item.icon as any}
+                    size={config.iconSize}
+                  />
+                )}
+                
+                <Text
+                  variant={config.textVariant}
+                  weight={isSelected ? 'bold' : 'regular'}
+                >
+                  {item.label}
+                </Text>
+      </Frame>
+    </Surface>
+  );
+        })}
       </Frame>
     </Surface>
   );
 };
-
-const TabPanel = ({ id, children }: TabPanelProps) => {
-  const { selectedId } = useTabContext();
-
-  if (selectedId !== id) {
-    return null;
-  }
-
-  return (
-    <Surface>
-      <Frame display="flex" direction="column" padding="lg" gap="md">
-        {children}
-      </Frame>
-    </Surface>
-  );
-};
-
-Tab.List = TabList;
-Tab.Item = TabItem;
-Tab.Panel = TabPanel;
 
 export default Tab;

@@ -17,23 +17,6 @@ export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl' | 'xxxx
  */
 export type IconName = GeneratedIconName;
 
-/**
- * 시스템별 색상 토큰 타입 (상태별 색상 제거, 기본 색상만)
- */
-export type IconColor = 
-  // Primary 색상 (시스템별)
-  | 'primary-system01' | 'primary-system02' | 'primary-system03'
-  // Secondary 색상 (시스템별 + 위계별)
-  | 'secondary-system01-1' | 'secondary-system01-2' | 'secondary-system01-3'
-  | 'secondary-system02-1' | 'secondary-system02-2' | 'secondary-system02-3'
-  | 'secondary-system03-1' | 'secondary-system03-2' | 'secondary-system03-3'
-  // CTA 색상 (시스템별)
-  | 'cta-system01' | 'cta-system02' | 'cta-system03'
-  // Status 색상들 (시스템 공통)
-  | 'status-error' | 'status-warning' | 'status-success' | 'status-info' | 'status-focused'
-  // 유틸리티 색상들
-  | 'oncolor' | 'disabled' | 'transparent';
-
 export interface IconProps {
   /**
    * 아이콘 이름 (생성된 컴포넌트 이름 그대로)
@@ -46,12 +29,6 @@ export interface IconProps {
    * @default 'md'
    */
   size?: IconSize;
-  
-  /**
-   * 아이콘 색상 (시스템별 토큰 기반)
-   * @default 'secondary-system01-1'
-   */
-  color?: IconColor;
   
   /**
    * 추가 CSS 클래스
@@ -84,30 +61,31 @@ export interface IconProps {
 /**
  * Icon 컴포넌트
  * 
- * 생성된 아이콘들을 토큰 기반 사이즈와 시스템별 색상으로 렌더링합니다.
+ * 생성된 아이콘들을 토큰 기반 사이즈로 렌더링합니다.
+ * 색상은 부모 컴포넌트의 Surface foreground 속성을 상속받습니다.
  * 
  * **특징:**
- * - **시스템별 색상 구분**: primary-system01, primary-system02 등으로 시스템별 색상 명시
- * - **위계별 색상 지원**: secondary 색상에서 1, 2, 3 위계별 색상 구분
- * - **단순한 색상 체계**: 상태별 색상 변화 없이 기본 색상만 제공
- * - **명확한 역할**: 아이콘 자체의 색상만 담당 (상태는 부모 컴포넌트에서 처리)
+ * - **Surface 통합**: 독립적인 색상 시스템 제거, Surface foreground 상속
+ * - **단순한 구조**: 사이즈만 제어, 색상은 부모에서 관리
+ * - **일관된 색상**: 텍스트와 동일한 색상 시스템 사용
  * 
  * @example
  * ```tsx
- * // System-02 primary 색상 아이콘
- * <Icon name="heart" color="primary-system02" size="lg" />
+ * // Surface의 foreground 색상 상속
+ * <Surface foreground="primary-system01-1-rest">
+ *   <Icon name="heart" size="lg" />
+ *   <Text>같은 색상 적용</Text>
+ * </Surface>
  * 
- * // Secondary 위계별 색상
- * <Icon name="settings" color="secondary-system01-2" />
- * 
- * // Status 색상
- * <Icon name="alert" color="status-error" />
+ * // 상태별 색상 변화도 자동 적용
+ * <Surface foreground="primary-system01-1-hovered">
+ *   <Icon name="settings" />
+ * </Surface>
  * ```
  */
 export const Icon: React.FC<IconProps> = ({
   name,
   size = 'md',
-  color = 'secondary-system01-1',
   className,
   style,
   'aria-label': ariaLabel,
@@ -122,11 +100,10 @@ export const Icon: React.FC<IconProps> = ({
     return null;
   }
 
-  // CSS 클래스 생성
+  // CSS 클래스 생성 (색상 클래스 제거)
   const classes = [
     styles.icon,
     styles[`icon--size-${size}`],
-    styles[`icon--color-${color}`],
     className
   ].filter(Boolean).join(' ');
 
@@ -134,7 +111,7 @@ export const Icon: React.FC<IconProps> = ({
     <IconComponent
       // 생성된 아이콘의 기본 props 무시하고 CSS 클래스로만 제어
       size={undefined} // 기본 size prop 무시
-      color="currentColor" // CSS 클래스의 color 속성이 적용되도록
+      color="currentColor" // 부모의 color 속성 상속
       className={classes}
       style={style}
       aria-label={ariaLabel}

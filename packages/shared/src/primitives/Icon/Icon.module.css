@@ -2,6 +2,7 @@
   display: inline-block !important;
   vertical-align: middle;
   flex-shrink: 0;
+  color: currentColor; /* 부모의 color 속성 상속 */
 }
 
 /* 사이즈 토큰 기반 - semantic.json과 일치하도록 수정 */
