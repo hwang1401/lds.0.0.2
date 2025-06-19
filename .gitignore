@@ -5,6 +5,17 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Lock files (only root pnpm-lock.yaml should be tracked)
+packages/*/pnpm-lock.yaml
+packages/*/yarn.lock
+packages/*/package-lock.json
+
+# Package files
+*.tgz
+*.tar.gz
+packages/*/*.tgz
+packages/*/*.tar.gz
+
 # Production builds
 dist/
 build/
@@ -57,3 +68,6 @@ temp/
 # Build logs
 *.build.log
 build.log
+
+# Turbo
+.turbo/

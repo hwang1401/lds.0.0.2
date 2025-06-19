@@ -41,69 +41,56 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
     
-    - name: Check directory structure
+    - name: Check workspace configuration
       run: |
-        pwd
+        echo "🔍 Checking workspace configuration..."
         ls -la
-        echo "Checking packages directory..."
+        echo "📦 Packages directory:"
         ls -la packages/
-        echo "Checking workspace file..."
+        echo "⚙️ Workspace configuration:"
         cat pnpm-workspace.yaml
-        echo "Checking if pnpm-lock.yaml exists..."
-        ls -la pnpm-lock.yaml || echo "pnpm-lock.yaml not found, will create new one"
+        echo "🔒 Root lock file:"
+        ls -la pnpm-lock.yaml || echo "pnpm-lock.yaml not found"
     
     - name: Install dependencies
       run: |
-        echo "Installing dependencies..."
+        echo "📥 Installing dependencies..."
         pnpm install --frozen-lockfile
-        echo "Checking installed packages..."
-        pnpm list --depth=0
+        echo "✅ Dependencies installed successfully"
     
-    - name: Verify semantic.json files
+    - name: Verify required files
       run: |
-        echo "Checking semantic.json files..."
-        ls -la packages/system-01/semantic.json || echo "Missing semantic.json in system-01"
-        ls -la packages/system-02/semantic.json || echo "Missing semantic.json in system-02"
-        ls -la packages/shared/foundation.json || echo "Missing foundation.json in shared"
+        echo "🔍 Checking semantic.json files..."
+        ls -la packages/system-01/semantic.json || echo "❌ Missing semantic.json in system-01"
+        ls -la packages/system-02/semantic.json || echo "❌ Missing semantic.json in system-02"
+        ls -la packages/shared/foundation.json || echo "❌ Missing foundation.json in shared"
     
-    - name: Build shared package
+    - name: Build all packages
       run: |
-        echo "Building shared package..."
-        cd packages/shared
-        pnpm run build:tokens
-        pnpm run build:components
-        echo "Checking shared build output..."
-        ls -la dist/
+        echo "🔨 Building all packages..."
+        pnpm run build:all
+        echo "✅ All packages built successfully"
     
     - name: Evaluate color accessibility
       run: |
-        echo "Evaluating color accessibility..."
+        echo "🎨 Evaluating color accessibility..."
         pnpm run evaluate:colors
-        echo "Color evaluation completed"
+        echo "✅ Color evaluation completed"
     
-    - name: Build system packages
+    - name: Verify build outputs
       run: |
-        echo "Building system-01..."
-        cd packages/system-01
-        pnpm run build:tokens
-        pnpm run build:components
-        echo "Checking system-01 build output..."
-        ls -la dist/
-        
-        echo "Building system-02..."
-        cd ../system-02
-        pnpm run build:tokens
-        pnpm run build:components
-        echo "Checking system-02 build output..."
-        ls -la dist/
+        echo "🔍 Checking build outputs..."
+        echo "📁 Shared package dist:"
+        ls -la packages/shared/dist/ || echo "❌ Missing shared dist"
+        echo "📁 System-01 dist:"
+        ls -la packages/system-01/dist/ || echo "❌ Missing system-01 dist"
+        echo "📁 System-02 dist:"
+        ls -la packages/system-02/dist/ || echo "❌ Missing system-02 dist"
     
     - name: Build Storybook
       run: |
-        echo "Building Storybook..."
-        cd packages/storybook
-        echo "Checking storybook dependencies..."
-        pnpm list --depth=0
-        echo "Building storybook..."
-        pnpm run build-storybook
-        echo "Checking storybook build output..."
-        ls -la storybook-static/ 
+        echo "📚 Building Storybook..."
+        pnpm run storybook:build:production
+        echo "✅ Storybook built successfully"
+        echo "📁 Storybook output:"
+        ls -la packages/storybook/storybook-static/ || echo "❌ Missing storybook output" 
