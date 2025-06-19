@@ -10,11 +10,6 @@
     "NODE_OPTIONS": "--max-old-space-size=4096"
   },
   "framework": null,
-  "functions": {
-    "packages/storybook/storybook-static/**": {
-      "maxDuration": 30
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
