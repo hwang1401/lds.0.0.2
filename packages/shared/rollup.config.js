@@ -23,7 +23,7 @@ export default {
       declarationDir: 'dist/types'
     }),
     postcss({
-      extract: false,
+      extract: 'styles.css',
       modules: true,
       use: ['sass']
     }),
