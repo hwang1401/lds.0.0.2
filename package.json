@@ -13,37 +13,28 @@
     "build:shared": "cd packages/shared && pnpm run build",
     "build:systems": "cd packages/system-01 && pnpm run build && cd ../system-02 && pnpm run build",
     "build:all": "pnpm run build:shared && pnpm run build:systems",
-    
     "storybook": "pnpm run build:shared && cd packages/storybook && pnpm run storybook",
     "storybook:build": "cross-env NODE_OPTIONS=--max-old-space-size=4096 pnpm run build:all && cd packages/storybook && cross-env NODE_OPTIONS=--max-old-space-size=4096 pnpm run build-storybook",
     "storybook:build:production": "cross-env NODE_OPTIONS=--max-old-space-size=6144 pnpm run build:all && cd packages/storybook && cross-env NODE_OPTIONS=--max-old-space-size=6144 pnpm run build-storybook",
     "storybook:dev": "concurrently \"pnpm run dev:shared\" \"cd packages/storybook && pnpm run storybook:dev\"",
-    
     "dev:shared": "cd packages/shared && pnpm run build:watch",
-    
     "fresh:install": "pnpm run clean:simple && pnpm install && pnpm run build:shared",
-    "clean": "rm -rf node_modules packages/*/node_modules packages/*/package-lock.json packages/*/pnpm-lock.yaml",
-    "clean:simple": "rm -rf node_modules packages/*/node_modules",
+    "clean": "rimraf node_modules && rimraf packages/shared/node_modules && rimraf packages/system-01/node_modules && rimraf packages/system-02/node_modules && rimraf packages/storybook/node_modules && rimraf packages/utils/node_modules",
+    "clean:simple": "rimraf node_modules && rimraf packages/shared/node_modules && rimraf packages/system-01/node_modules && rimraf packages/system-02/node_modules && rimraf packages/storybook/node_modules && rimraf packages/utils/node_modules",
     "clean:build": "echo 'Cleaning build outputs...'",
-    "clean:deps": "rm -rf node_modules packages/*/node_modules packages/*/.turbo && pnpm store prune",
-    
+    "clean:deps": "pnpm run clean:simple && pnpm store prune",
     "deploy": "pnpm run storybook:build:production",
     "release": "changeset publish",
-    
     "evaluate:colors": "cd packages/shared && pnpm run evaluate:colors",
     "validate:all": "cd packages/shared && pnpm run validate:all",
-    
     "typecheck": "cd packages/shared && tsc --noEmit",
-    
     "publish:shared": "cd packages/shared && pnpm run build && npm publish --access public",
     "publish:system-01": "cd packages/system-01 && pnpm run build && npm publish --access public",
     "publish:system-02": "cd packages/system-02 && pnpm run build && npm publish --access public",
     "publish:all": "pnpm run publish:shared && pnpm run publish:system-01 && pnpm run publish:system-02",
-    
     "version:patch": "pnpm version patch --workspace-root && cd packages/shared && npm version patch && cd ../system-01 && npm version patch && cd ../system-02 && npm version patch",
     "version:minor": "pnpm version minor --workspace-root && cd packages/shared && npm version minor && cd ../system-01 && npm version minor && cd ../system-02 && npm version minor",
     "version:major": "pnpm version major --workspace-root && cd packages/shared && npm version major && cd ../system-01 && npm version major && cd ../system-02 && npm version major",
-    
     "pack:shared": "cd packages/shared && npm pack",
     "pack:system-01": "cd packages/system-01 && npm pack",
     "pack:system-02": "cd packages/system-02 && npm pack",
@@ -60,6 +51,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "concurrently": "^7.6.0",
     "chokidar": "^3.5.3",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.5"
   }
 }

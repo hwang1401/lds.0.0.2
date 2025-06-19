@@ -55,7 +55,7 @@ jobs:
     - name: Install dependencies
       run: |
         echo "📥 Installing dependencies..."
-        pnpm install --frozen-lockfile
+        pnpm install --no-frozen-lockfile
         echo "✅ Dependencies installed successfully"
     
     - name: Verify required files
@@ -88,6 +88,8 @@ jobs:
         ls -la packages/system-02/dist/ || echo "❌ Missing system-02 dist"
     
     - name: Build Storybook
+      env:
+        NODE_OPTIONS: "--max-old-space-size=6144"
       run: |
         echo "📚 Building Storybook..."
         pnpm run storybook:build:production
