@@ -1,6 +1,6 @@
 {
   "name": "lumir-design-system-02",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "type": "module",
   "description": "Lumir Design System 02 - Modern & Friendly",
   "main": "dist/index.js",

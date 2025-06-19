@@ -1,6 +1,6 @@
 {
   "name": "lumir-design-system-01",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "type": "module",
   "description": "Lumir Design System 01 - Professional & Clean",
   "main": "dist/index.js",
