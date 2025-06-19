@@ -8,7 +8,7 @@
   "env": {
     "NODE_VERSION": "20",
     "PNPM_VERSION": "8",
-    "NODE_OPTIONS": "--max-old-space-size=8192",
+    "NODE_OPTIONS": "--max-old-space-size=4096",
     "NODE_ENV": "production"
   },
   "cleanUrls": true,
@@ -21,7 +21,7 @@
   ],
   "functions": {
     "packages/storybook/storybook-static/index.html": {
-      "maxDuration": 30
+      "maxDuration": 60
     }
   },
   "routes": [
