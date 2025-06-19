@@ -4,10 +4,9 @@
   "outputDirectory": "packages/storybook/storybook-static",
   "installCommand": "pnpm install --no-frozen-lockfile",
   "env": {
-    "NODE_VERSION": "20.11.0",
-    "NPM_CONFIG_LEGACY_PEER_DEPS": "true",
-    "PNPM_VERSION": "8.15.0",
-    "NODE_OPTIONS": "--max-old-space-size=4096",
+    "NODE_VERSION": "20",
+    "PNPM_VERSION": "8",
+    "NODE_OPTIONS": "--max-old-space-size=8192",
     "NODE_ENV": "production"
   },
   "framework": null,
