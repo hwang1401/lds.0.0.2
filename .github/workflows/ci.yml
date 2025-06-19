@@ -78,7 +78,6 @@ jobs:
     - name: Evaluate color accessibility
       run: |
         echo "Evaluating color accessibility..."
-        cd packages/shared
         pnpm run evaluate:colors
         echo "Color evaluation completed"
     

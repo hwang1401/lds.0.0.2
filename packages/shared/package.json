@@ -43,6 +43,8 @@
     "build:components": "rollup -c",
     "build": "pnpm run build:tokens && pnpm run build:components",
     "build:watch": "concurrently \"pnpm run build:tokens\" \"pnpm run build:components -- --watch\"",
+    "evaluate:colors": "node scripts/color-evaluation-system.cjs",
+    "validate:all": "echo '🔍 색상 대비 검증 완료' && node scripts/color-evaluation-system.cjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
