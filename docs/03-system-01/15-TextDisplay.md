@@ -626,13 +626,13 @@ function NotificationMessage() {
 
 #### XLG 크기
 - 라벨: `body-2` (14px)
-- 메인: `title-1` (30px, bold)
+- 메인: `title-2` (24px, bold)
 - 설명: `heading-3` (16px)
 - 캡션: `body-2` (14px)
 
 #### LG 크기
 - 라벨: `label-1` (14px)
-- 메인: `title-2` (24px, bold)
+- 메인: `heading-1` (20px, bold)
 - 설명: `body-1` (16px)
 - 캡션: `label-1` (14px)
 

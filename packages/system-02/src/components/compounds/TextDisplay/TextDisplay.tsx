@@ -134,14 +134,14 @@ export const TextDisplay = forwardRef<HTMLDivElement, TextDisplayProps>(({
       case 'xlg':
         return {
           label: 'body-2' as const,         // 14px (피그마는 15px이지만 가장 근접한 토큰)
-          primary: 'title-1' as const,      // 30px (피그마 28px에 가장 가까움)
+          primary: 'title-2' as const,      // 24px (lg의 20px에서 자연스러운 다음 단계)
           description: 'heading-3' as const, // 16px (피그마는 18px이지만 가장 근접한 토큰)
           caption: 'body-2' as const,       // 14px (피그마는 15px이지만 가장 근접한 토큰)
         };
       case 'lg':
         return {
           label: 'label-1' as const,        // 14px (정확히 일치)
-          primary: 'title-2' as const,      // 24px (피그마는 22px이지만 가장 근접한 토큰)
+          primary: 'heading-1' as const,    // 20px (md와 lg 사이의 자연스러운 중간 단계)
           description: 'body-1' as const,   // 16px (정확히 일치)
           caption: 'label-1' as const,      // 14px (정확히 일치)
         };

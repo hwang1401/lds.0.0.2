@@ -125,11 +125,11 @@ color: var(--foundation-foundation-color-secondary-system02-2-rest); /* Label, D
 color: var(--foundation-foundation-color-secondary-system02-1-rest); /* Caption */
 
 /* 폰트 크기 */
-font-size: var(--foundation-foundation-font-fontsize-120); /* xsm */
-font-size: var(--foundation-foundation-font-fontsize-140); /* sm */
-font-size: var(--foundation-foundation-font-fontsize-160); /* md */
-font-size: var(--foundation-foundation-font-fontsize-180); /* lg */
-font-size: var(--foundation-foundation-font-fontsize-200); /* xlg */
+font-size: var(--foundation-foundation-font-fontsize-120); /* xsm - 12px */
+font-size: var(--foundation-foundation-font-fontsize-140); /* sm - 14px */
+font-size: var(--foundation-foundation-font-fontsize-160); /* md - 16px */
+font-size: var(--foundation-foundation-font-fontsize-200); /* lg - 20px (개선됨) */
+font-size: var(--foundation-foundation-font-fontsize-240); /* xlg - 24px (개선됨) */
 ```
 
 ## 관련 컴포넌트
