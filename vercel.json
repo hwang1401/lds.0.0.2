@@ -1,13 +1,20 @@
 {
   "version": 2,
-  "buildCommand": "pnpm run storybook:build",
+  "buildCommand": "pnpm run storybook:build:production",
   "outputDirectory": "packages/storybook/storybook-static",
-  "installCommand": "pnpm install",
+  "installCommand": "pnpm install --frozen-lockfile",
   "env": {
-    "NODE_VERSION": "18.17.0",
-    "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
+    "NODE_VERSION": "20.11.0",
+    "NPM_CONFIG_LEGACY_PEER_DEPS": "true",
+    "PNPM_VERSION": "8.15.0",
+    "NODE_OPTIONS": "--max-old-space-size=4096"
   },
   "framework": null,
+  "functions": {
+    "packages/storybook/storybook-static/**": {
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",

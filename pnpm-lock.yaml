@@ -73,13 +73,13 @@ importers:
   packages/storybook:
     dependencies:
       lumir-design-system-01:
-        specifier: ^1.0.8
-        version: 1.0.8(react-dom@18.3.1)(react@18.3.1)
+        specifier: workspace:*
+        version: link:../system-01
       lumir-design-system-02:
-        specifier: ^1.0.8
+        specifier: workspace:*
         version: link:../system-02
       lumir-design-system-shared:
-        specifier: ^1.0.8
+        specifier: workspace:*
         version: link:../shared
       react:
         specifier: ^18.2.0
@@ -2398,27 +2398,6 @@ packages:
     dependencies:
       yallist: 3.1.1
     dev: true
-
-  /lumir-design-system-01@1.0.8(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-a3UDLdl148MSTpbftJir+lBldoRyyAjMiT6SXr+WID0Msj9LNDo2lnYGqlySe4VHdtUG51hxY4p4/jcWJjXJRA==}
-    peerDependencies:
-      react: '>=16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0'
-      react-dom: '>=16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0'
-    dependencies:
-      lumir-design-system-shared: 1.0.8(react-dom@18.3.1)(react@18.3.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    dev: false
-
-  /lumir-design-system-shared@1.0.8(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-ZtO5YeUStSU7YZbCVh8c96bmSads+UE4hBm8+sIQdjy271skjyGJ7m0adfZoAmO6muVkrPmEUYPN4SRHdgt+Ug==}
-    peerDependencies:
-      react: '>=16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0'
-      react-dom: '>=16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0'
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    dev: false
 
   /magic-string@0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}

@@ -15,7 +15,8 @@
     "build:all": "pnpm run build:shared && pnpm run build:systems",
     
     "storybook": "pnpm run build:shared && cd packages/storybook && pnpm run storybook",
-    "storybook:build": "pnpm run build:all && cd packages/storybook && pnpm run build-storybook",
+    "storybook:build": "NODE_OPTIONS=\"--max-old-space-size=4096\" pnpm run build:all && cd packages/storybook && NODE_OPTIONS=\"--max-old-space-size=4096\" pnpm run build-storybook",
+    "storybook:build:production": "pnpm run clean:build && pnpm install --frozen-lockfile && pnpm run storybook:build",
     "storybook:dev": "concurrently \"pnpm run dev:shared\" \"cd packages/storybook && pnpm run storybook:dev\"",
     
     "dev:shared": "cd packages/shared && pnpm run build:watch",
@@ -23,9 +24,10 @@
     "fresh:install": "pnpm run clean:simple && pnpm install && pnpm run build:shared",
     "clean": "rm -rf node_modules packages/*/node_modules packages/*/package-lock.json packages/*/pnpm-lock.yaml",
     "clean:simple": "rm -rf node_modules packages/*/node_modules",
+    "clean:build": "rm -rf packages/*/dist packages/storybook/storybook-static",
     "clean:deps": "rm -rf node_modules packages/*/node_modules packages/*/.turbo && pnpm store prune",
     
-    "deploy": "pnpm run storybook:build",
+    "deploy": "pnpm run storybook:build:production",
     "release": "changeset publish",
     
     "evaluate:colors": "cd packages/shared && pnpm run evaluate:colors",

@@ -51,7 +51,7 @@ const config = {
       },
     };
     
-    // 실시간 개발을 위한 최적화 설정
+    // 빌드 최적화 설정
     config.optimizeDeps = {
       ...config.optimizeDeps,
       include: [
@@ -64,6 +64,20 @@ const config = {
         'lumir-design-system-02'
       ],
       force: true
+    };
+
+    // 빌드 성능 최적화
+    config.build = {
+      ...config.build,
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom'],
+            'storybook-vendor': ['@storybook/react'],
+          },
+        },
+      },
     };
     
     return config;
