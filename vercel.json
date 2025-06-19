@@ -7,18 +7,50 @@
     "NODE_VERSION": "20.11.0",
     "NPM_CONFIG_LEGACY_PEER_DEPS": "true",
     "PNPM_VERSION": "8.15.0",
-    "NODE_OPTIONS": "--max-old-space-size=4096"
+    "NODE_OPTIONS": "--max-old-space-size=4096",
+    "NODE_ENV": "production"
   },
   "framework": null,
-  "rewrites": [
+  "functions": {
+    "packages/storybook/storybook-static/index.html": {
+      "maxDuration": 30
+    }
+  },
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/sb-common-assets/(.*)",
+      "dest": "/sb-common-assets/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "headers": [
     {
+      "source": "/sb-common-assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.js|.*\\.css|.*\\.ico|.*\\.png|.*\\.jpg|.*\\.svg)",
       "headers": [
         {
           "key": "Cache-Control",

@@ -3,4 +3,23 @@
   body, .docs-story, .sb-show-main {
     font-family: var(--foundation-font-fontfamily-base) !important;
   }
-</style> 
+</style>
+
+<!-- Storybook 8.x 호환성을 위한 글로벌 변수 초기화 -->
+<script>
+  // Storybook 8.x의 필수 글로벌 변수들을 미리 초기화
+  if (typeof window !== 'undefined') {
+    window.__STORYBOOK_PREVIEW_API__ = window.__STORYBOOK_PREVIEW_API__ || {};
+    window.__STORYBOOK_MODULE_PREVIEW_API__ = window.__STORYBOOK_MODULE_PREVIEW_API__ || {};
+    window.__STORYBOOK_ADDONS_PREVIEW__ = window.__STORYBOOK_ADDONS_PREVIEW__ || {};
+    
+    // 추가 안정성을 위한 에러 처리
+    try {
+      if (!window.__STORYBOOK_STORY_STORE__) {
+        window.__STORYBOOK_STORY_STORE__ = {};
+      }
+    } catch (e) {
+      console.warn('Storybook 초기화 중 경고:', e);
+    }
+  }
+</script> 
