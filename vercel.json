@@ -2,7 +2,7 @@
   "version": 2,
   "buildCommand": "pnpm run storybook:build:production",
   "outputDirectory": "packages/storybook/storybook-static",
-  "installCommand": "pnpm install --frozen-lockfile",
+  "installCommand": "pnpm install --no-frozen-lockfile",
   "env": {
     "NODE_VERSION": "20.11.0",
     "NPM_CONFIG_LEGACY_PEER_DEPS": "true",

@@ -68,11 +68,12 @@ const config = {
       force: true
     };
 
-    // 빌드 성능 최적화 - 수정된 manualChunks 설정
+    // 빌드 성능 최적화 - esbuild 사용으로 변경
     config.build = {
       ...config.build,
-      chunkSizeWarningLimit: 1000,
+      chunkSizeWarningLimit: 2000, // 경고 임계값 증가
       sourcemap: false,
+      minify: 'esbuild', // terser 대신 esbuild 사용 (더 빠름)
       rollupOptions: {
         output: {
           manualChunks: (id) => {
@@ -88,6 +89,10 @@ const config = {
             if (id.includes('lumir-design-system')) {
               return 'design-system';
             }
+            // node_modules의 큰 라이브러리들 분리
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
           },
         },
       },
@@ -98,9 +103,19 @@ const config = {
       ...config.define,
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
       // Storybook 8.x의 필수 글로벌 변수들 미리 정의
-      '__STORYBOOK_PREVIEW_API__': 'window.__STORYBOOK_PREVIEW_API__',
-      '__STORYBOOK_MODULE_PREVIEW_API__': 'window.__STORYBOOK_MODULE_PREVIEW_API__'
+      '__STORYBOOK_PREVIEW_API__': 'globalThis.__STORYBOOK_PREVIEW_API__',
+      '__STORYBOOK_MODULE_PREVIEW_API__': 'globalThis.__STORYBOOK_MODULE_PREVIEW_API__',
+      'global': 'globalThis' // Vercel 환경에서 global 객체 문제 해결
     };
+
+    // Vercel 빌드 환경에서 메모리 최적화 - esbuild 옵션
+    if (process.env.VERCEL) {
+      config.esbuild = {
+        ...config.esbuild,
+        drop: ['console', 'debugger'], // console과 debugger 제거
+        legalComments: 'none', // 라이센스 주석 제거
+      };
+    }
     
     return config;
   },
@@ -114,10 +129,17 @@ const config = {
     ${head}
     <script>
       // Storybook 8.x 필수 글로벌 변수 초기화
-      if (typeof window !== 'undefined') {
-        window.__STORYBOOK_PREVIEW_API__ = window.__STORYBOOK_PREVIEW_API__ || {};
-        window.__STORYBOOK_MODULE_PREVIEW_API__ = window.__STORYBOOK_MODULE_PREVIEW_API__ || {};
-      }
+      (function() {
+        if (typeof globalThis !== 'undefined') {
+          globalThis.__STORYBOOK_PREVIEW_API__ = globalThis.__STORYBOOK_PREVIEW_API__ || {};
+          globalThis.__STORYBOOK_MODULE_PREVIEW_API__ = globalThis.__STORYBOOK_MODULE_PREVIEW_API__ || {};
+          // 호환성을 위해 window 객체에도 설정
+          if (typeof window !== 'undefined') {
+            window.__STORYBOOK_PREVIEW_API__ = globalThis.__STORYBOOK_PREVIEW_API__;
+            window.__STORYBOOK_MODULE_PREVIEW_API__ = globalThis.__STORYBOOK_MODULE_PREVIEW_API__;
+          }
+        }
+      })();
     </script>
   `,
 };
