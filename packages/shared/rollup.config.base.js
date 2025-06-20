@@ -32,7 +32,9 @@ export default function createRollupConfig(options = {}) {
       'react',
       'react-dom',
       'react/jsx-runtime',
-      'lumir-design-system-shared'
+      'lumir-design-system-shared',
+      // CSS 파일들을 external로 처리
+      /\.css$/
     ],
     plugins: [
       typescript({
@@ -43,7 +45,9 @@ export default function createRollupConfig(options = {}) {
       postcss({
         extract: 'styles.css',
         minimize: true,
-        modules: true
+        modules: true,
+        // CSS import를 처리하되 번들에 포함하지 않음
+        inject: false
       })
     ]
   };
