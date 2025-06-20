@@ -12,18 +12,19 @@
     "clean": "rm -rf storybook-static .storybook-out"
   },
   "dependencies": {
-    "lumir-design-system-shared": "workspace:*",
     "lumir-design-system-01": "workspace:*",
     "lumir-design-system-02": "workspace:*",
+    "lumir-design-system-shared": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "8.6.14",
     "@storybook/addon-links": "8.6.14",
+    "@storybook/preview-api": "8.6.14",
     "@storybook/react": "8.6.14",
     "@storybook/react-vite": "8.6.14",
-    "@storybook/preview-api": "8.6.14",
+    "cross-env": "^7.0.3",
     "storybook": "8.6.14",
     "vite": "^5.0.0"
   }

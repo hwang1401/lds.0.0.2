@@ -36,7 +36,7 @@ export const useTransition = (
 
   const [isVisible, setIsVisible] = useState<boolean>(show);
   const [shouldRender, setShouldRender] = useState<boolean>(show);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const timeoutRef = useRef<number | undefined>(undefined);
 
   // 시멘틱 토큰 매핑
   const getDurationValue = (): string => {
@@ -71,7 +71,7 @@ export const useTransition = (
       // 다음 프레임에서 애니메이션 시작
       timeoutRef.current = window.setTimeout(() => {
         setIsVisible(true);
-      }, 10);
+      }, 10) as unknown as number;
     } else {
       setIsVisible(false);
       // 애니메이션 완료 후 언마운트
@@ -79,7 +79,7 @@ export const useTransition = (
       timeoutRef.current = window.setTimeout(() => {
         setShouldRender(false);
         onTransitionEnd?.();
-      }, durationMs);
+      }, durationMs) as unknown as number;
     }
 
     return () => {

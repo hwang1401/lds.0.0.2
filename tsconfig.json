@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "declaration": true,
     "strict": true,
+    "noImplicitAny": false,
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "skipLibCheck": true,
