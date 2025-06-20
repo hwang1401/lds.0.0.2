@@ -26,11 +26,28 @@ const config = {
     disableTelemetry: true,
   },
   viteFinal: async (config) => {
+    // Node.js 22 호환성을 위한 최적화
+    config.server = config.server || {};
+    config.server.fs = {
+      strict: false,
+      allow: ['..'],
+    };
+    
+    // 메모리 사용량 최적화
+    config.optimizeDeps = config.optimizeDeps || {};
+    config.optimizeDeps.include = [
+      'react',
+      'react-dom',
+      '@storybook/react',
+    ];
+    
     // 청크 크기 제한 늘리기
     config.build = config.build || {};
     config.build.chunkSizeWarningLimit = 4000;
+    config.build.target = 'esnext';
+    config.build.minify = 'esbuild';
     
-    // 매뉴얼 청크 설정
+    // 매뉴얼 청크 설정 - 메모리 효율성 개선
     config.build.rollupOptions = {
       output: {
         manualChunks: (id) => {
@@ -46,6 +63,10 @@ const config = {
         },
       },
     };
+    
+    // Node.js 22 메모리 관리 최적화
+    config.define = config.define || {};
+    config.define['process.env.NODE_OPTIONS'] = JSON.stringify('--max-old-space-size=4096');
     
     return config;
   },

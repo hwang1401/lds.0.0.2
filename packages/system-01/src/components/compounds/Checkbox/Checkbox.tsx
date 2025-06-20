@@ -158,6 +158,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       return null;
     };
 
+    // children과 dangerouslySetInnerHTML을 제외한 나머지 props
+    const { children, dangerouslySetInnerHTML, ...inputProps } = props as any;
+
     return (
       <Frame 
         display="flex"
@@ -190,7 +193,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             padding: 0,
             border: 'none'
           }}
-          {...props}
+          {...inputProps}
         />
         
         {/* Custom checkbox visual */}
