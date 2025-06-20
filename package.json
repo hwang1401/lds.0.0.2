@@ -28,6 +28,7 @@
     "storybook:dev": "node scripts/storybook-powershell.js",
     "storybook:build": "node scripts/storybook-build.js",
     "storybook:build:prod": "node scripts/storybook-build.js --production",
+    "storybook:build:production": "node scripts/storybook-build.js --production",
     
     "dev:shared": "turbo build:watch --filter=lumir-design-system-shared",
     "dev:system-01": "turbo build:watch --filter=lumir-design-system-01",
@@ -50,6 +51,7 @@
     "validate:colors": "turbo validate:colors --parallel",
     "validate:tokens": "turbo validate:tokens --parallel",
     "validate:accessibility": "turbo validate:accessibility --parallel",
+    "evaluate:colors": "turbo validate:colors --parallel",
     
     "release": "changeset publish",
     "changeset": "changeset",
