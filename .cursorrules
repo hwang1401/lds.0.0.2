@@ -8,6 +8,114 @@ Lumir 디자인 시스템은 5가지 시스템 테마(System-01~05)를 지원하
 - System-04: Aerospace Control (위성 컨트롤, 미션 크리티컬)
 - System-05: Aerospace Dashboard (우주 항공 대시보드)
 
+## 🧹 클린코드 원칙 (필수 준수)
+
+### 1. 코드 가독성
+```typescript
+// ❌ 나쁜 예
+const d = new Date();
+const u = users.filter(u => u.a > 18);
+
+// ✅ 좋은 예
+const currentDate = new Date();
+const adultUsers = users.filter(user => user.age > 18);
+```
+
+### 2. 함수 설계
+```typescript
+// ❌ 너무 긴 함수 (한 가지 이상의 일을 함)
+function processUserDataAndSendEmail(userData) {
+  // 50줄 이상의 코드...
+}
+
+// ✅ 단일 책임 원칙
+function validateUserData(userData) { /* ... */ }
+function sendWelcomeEmail(user) { /* ... */ }
+function processUser(userData) {
+  const validUser = validateUserData(userData);
+  sendWelcomeEmail(validUser);
+}
+```
+
+### 3. 변수 및 함수 명명
+```typescript
+// ❌ 의미 없는 이름
+const data = fetchData();
+const result = calc(a, b);
+
+// ✅ 의도가 명확한 이름
+const userProfiles = fetchUserProfiles();
+const totalPrice = calculateTotalPrice(basePrice, taxRate);
+```
+
+### 4. 주석 사용
+```typescript
+// ❌ 불필요한 주석
+let i = 0; // i를 0으로 초기화
+
+// ✅ 의도를 설명하는 주석
+// 사용자 인증 토큰의 만료 시간을 24시간으로 설정
+const TOKEN_EXPIRY_HOURS = 24;
+```
+
+### 5. 오류 처리
+```typescript
+// ❌ 오류 무시
+try {
+  processData();
+} catch (e) {
+  // 아무것도 하지 않음
+}
+
+// ✅ 적절한 오류 처리
+try {
+  processData();
+} catch (error) {
+  logger.error('데이터 처리 실패:', error);
+  notifyUser('처리 중 오류가 발생했습니다.');
+  throw new ProcessingError('데이터 처리 실패', error);
+}
+```
+
+## 💻 PowerShell 호환성 규칙
+
+### 1. 명령어 연결 금지
+```bash
+# ❌ PowerShell에서 작동하지 않음
+"build": "pnpm run clean && pnpm run compile"
+
+# ✅ PowerShell 호환
+"build": "pnpm run clean && pnpm run compile"  # 별도 스크립트 사용
+"build:powershell": "node scripts/build.js"    # Node.js 스크립트로 처리
+```
+
+### 2. 크로스 플랫폼 스크립트 작성
+```javascript
+// ✅ 플랫폼 독립적인 스크립트
+import { spawn } from 'child_process';
+
+function runCommand(command, args, cwd) {
+  return new Promise((resolve, reject) => {
+    const proc = spawn(command, args, {
+      cwd,
+      stdio: 'inherit',
+      shell: true  // Windows에서 필수
+    });
+    // ... 나머지 구현
+  });
+}
+```
+
+### 3. 파일 경로 처리
+```javascript
+// ❌ 하드코딩된 경로
+const filePath = 'packages/shared/dist';
+
+// ✅ 크로스 플랫폼 경로
+import path from 'path';
+const filePath = path.join('packages', 'shared', 'dist');
+```
+
 ## 🚫 절대 금지 사항
 
 ### 1. 컴포넌트 구조 변경 금지

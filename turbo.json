@@ -1,55 +1,258 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
   "tasks": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"],
-      "inputs": ["src/**", "package.json", "tsconfig.json", "rollup.config.js", "semantic.json", "foundation.json"]
-    },
     "build:tokens": {
-      "outputs": ["dist/css/**", "dist/js/**", "dist/scss/**"],
-      "inputs": ["semantic.json", "../shared/foundation.json"]
+      "cache": true,
+      "inputs": [
+        "semantic.json", 
+        "../shared/foundation.json",
+        "scripts/build-*-tokens.js"
+      ],
+      "outputs": [
+        "dist/css/**",
+        "dist/js/**", 
+        "dist/scss/**",
+        "dist/json/**"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
     },
     "build:components": {
       "dependsOn": ["build:tokens"],
-      "outputs": ["dist/**"],
-      "inputs": ["src/**", "tsconfig.json", "rollup.config.js"]
+      "cache": true,
+      "inputs": [
+        "src/**",
+        "tsconfig.json",
+        "rollup.config.*",
+        "package.json"
+      ],
+      "outputs": [
+        "dist/**",
+        "!dist/css/**",
+        "!dist/js/**",
+        "!dist/scss/**"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
+    "build": {
+      "dependsOn": ["^build", "build:tokens", "build:components"],
+      "cache": true,
+      "inputs": [
+        "src/**",
+        "package.json",
+        "tsconfig.json",
+        "rollup.config.*",
+        "semantic.json",
+        "../shared/foundation.json"
+      ],
+      "outputs": ["dist/**"],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
     },
     "build:watch": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "inputs": [
+        "src/**",
+        "package.json",
+        "tsconfig.json",
+        "rollup.config.*",
+        "semantic.json",
+        "../shared/foundation.json"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true,
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
     },
     "storybook": {
       "dependsOn": ["^build"],
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": ["NODE_ENV", "STORYBOOK_DISABLE_TELEMETRY"],
+      "passThroughEnv": ["CI", "NODE_ENV", "STORYBOOK_DISABLE_TELEMETRY"]
     },
     "storybook:dev": {
       "dependsOn": ["^build"],
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": ["NODE_ENV", "STORYBOOK_DISABLE_TELEMETRY"],
+      "passThroughEnv": ["CI", "NODE_ENV", "STORYBOOK_DISABLE_TELEMETRY"]
     },
     "build-storybook": {
       "dependsOn": ["^build"],
-      "outputs": ["storybook-static/**"]
+      "cache": true,
+      "inputs": [
+        "src/**",
+        ".storybook/**",
+        "stories/**",
+        "package.json"
+      ],
+      "outputs": ["storybook-static/**"],
+      "env": ["NODE_ENV", "STORYBOOK_DISABLE_TELEMETRY"],
+      "passThroughEnv": ["CI", "NODE_ENV", "STORYBOOK_DISABLE_TELEMETRY"]
     },
     "typecheck": {
-      "inputs": ["src/**", "tsconfig.json"]
+      "cache": true,
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "tsconfig.json",
+        "package.json"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
     },
     "lint": {
-      "inputs": ["src/**", ".eslintrc.*", "package.json"]
+      "cache": true,
+      "inputs": [
+        "src/**",
+        ".eslintrc.*",
+        ".eslintignore",
+        "package.json"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
+    },
+    "lint:fix": {
+      "cache": false,
+      "inputs": [
+        "src/**",
+        ".eslintrc.*",
+        ".eslintignore",
+        "package.json"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
     },
     "test": {
-      "inputs": ["src/**", "test/**", "*.test.*", "*.spec.*"]
+      "cache": true,
+      "inputs": [
+        "src/**",
+        "test/**", 
+        "tests/**",
+        "*.test.*",
+        "*.spec.*",
+        "jest.config.*",
+        "vitest.config.*",
+        "package.json"
+      ],
+      "outputs": ["coverage/**"],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true,
+      "inputs": [
+        "src/**",
+        "test/**",
+        "tests/**",
+        "*.test.*",
+        "*.spec.*"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
+    },
+    "test:coverage": {
+      "cache": true,
+      "inputs": [
+        "src/**",
+        "test/**",
+        "tests/**",
+        "*.test.*",
+        "*.spec.*",
+        "jest.config.*",
+        "vitest.config.*"
+      ],
+      "outputs": ["coverage/**"],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
+    },
+    "validate:all": {
+      "dependsOn": ["validate:colors", "validate:tokens", "validate:accessibility"],
+      "cache": true,
+      "inputs": [
+        "src/**",
+        "semantic.json",
+        "../shared/foundation.json",
+        "scripts/**"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
+    },
+    "validate:colors": {
+      "cache": true,
+      "inputs": [
+        "semantic.json",
+        "../shared/foundation.json",
+        "scripts/color-evaluation-system.*"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
+    },
+    "validate:tokens": {
+      "cache": true,
+      "inputs": [
+        "semantic.json",
+        "../shared/foundation.json",
+        "scripts/validate-tokens.*"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
+    },
+    "validate:accessibility": {
+      "cache": true,
+      "inputs": [
+        "src/**",
+        "dist/**",
+        "scripts/accessibility-check.*"
+      ],
+      "env": ["NODE_ENV"],
+      "passThroughEnv": ["CI", "NODE_ENV"]
+    },
+    "version:patch": {
+      "cache": false,
+      "inputs": ["package.json"],
+      "outputs": ["package.json"]
+    },
+    "version:minor": {
+      "cache": false,
+      "inputs": ["package.json"],
+      "outputs": ["package.json"]
+    },
+    "version:major": {
+      "cache": false,
+      "inputs": ["package.json"], 
+      "outputs": ["package.json"]
     },
     "clean": {
       "cache": false
     }
   },
-  "globalDependencies": ["**/.env*"],
-  "globalEnv": ["NODE_ENV"]
+  "globalDependencies": [
+    "**/.env*",
+    ".nvmrc",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
+  ],
+  "globalEnv": [
+    "NODE_ENV",
+    "CI",
+    "STORYBOOK_DISABLE_TELEMETRY"
+  ],
+  "globalPassThroughEnv": [
+    "NODE_ENV",
+    "CI", 
+    "VERCEL",
+    "VERCEL_ENV",
+    "STORYBOOK_DISABLE_TELEMETRY"
+  ]
 } 

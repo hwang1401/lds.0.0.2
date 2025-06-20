@@ -2,14 +2,24 @@
   "name": "@lumir/storybook",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "storybook:dev": "storybook dev -p 6006 --no-open",
+    "storybook": "storybook dev -p 6006 --no-open --no-version-updates",
+    "storybook:dev": "storybook dev -p 6006 --no-open --no-version-updates",
     "build-storybook": "storybook build",
     "build": "storybook build",
-    "preview": "storybook build && pnpm dlx http-server storybook-static -p 6007",
-    "check:deps": "echo '🔍 Checking dependencies...' && pnpm ls @storybook/react",
-    "clean": "rm -rf storybook-static .storybook-out"
+    "preview": "node scripts/serve-preview.js",
+    "serve": "node scripts/serve-preview.js",
+    "clean": "rimraf storybook-static .storybook-out chromatic-output",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings 0",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "test:visual": "echo '👀 비주얼 회귀 테스트는 Chromatic에서 실행됩니다'",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "lumir-design-system-shared": "workspace:*",
@@ -19,12 +29,52 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "8.6.14",
-    "@storybook/addon-links": "8.6.14",
-    "@storybook/react": "8.6.14",
-    "@storybook/react-vite": "8.6.14",
-    "@storybook/preview-api": "8.6.14",
-    "storybook": "8.6.14",
-    "vite": "^5.0.0"
+    "@chromatic-com/storybook": "^2.0.2",
+    "@storybook/addon-a11y": "^8.6.14",
+    "@storybook/addon-actions": "^8.6.14",
+    "@storybook/addon-controls": "^8.6.14",
+    "@storybook/addon-docs": "^8.6.14",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-links": "^8.6.14",
+    "@storybook/addon-measure": "^8.6.14",
+    "@storybook/addon-outline": "^8.6.14",
+    "@storybook/addon-styling-webpack": "^1.0.0",
+    "@storybook/addon-themes": "^8.6.14",
+    "@storybook/addon-viewport": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/manager-api": "^8.6.14",
+    "@storybook/preview-api": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
+    "@storybook/theming": "^8.6.14",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "chromatic": "^11.12.4",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.9.0",
+    "rimraf": "^5.0.5",
+    "storybook": "^8.6.14",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

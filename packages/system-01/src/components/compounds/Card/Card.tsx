@@ -99,11 +99,11 @@ export interface CardProps {
   className?: string;
 
   /** 카드의 너비 (반응형 지원) */
-  width?: any;
+  width?: string | number;
   /** 카드의 최소 너비 (반응형 지원) */
-  minWidth?: any;
+  minWidth?: string | number;
   /** 카드의 최대 너비 (반응형 지원) */
-  maxWidth?: any;
+  maxWidth?: string | number;
 
   // Badge 개별 props 제어
   /** 뱃지 텍스트 */

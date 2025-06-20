@@ -36,7 +36,7 @@ export const useTransition = (
 
   const [isVisible, setIsVisible] = useState<boolean>(show);
   const [shouldRender, setShouldRender] = useState<boolean>(show);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const timeoutRef = useRef<number | undefined>(undefined);
 
   // 시멘틱 토큰 매핑
   const getDurationValue = (): string => {
@@ -63,7 +63,7 @@ export const useTransition = (
   // show prop 변경 감지
   useEffect(() => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
+      window.clearTimeout(timeoutRef.current);
     }
 
     if (show) {
@@ -84,7 +84,7 @@ export const useTransition = (
 
     return () => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+        window.clearTimeout(timeoutRef.current);
       }
     };
   }, [show, duration, onTransitionEnd]);
